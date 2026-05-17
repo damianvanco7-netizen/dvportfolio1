@@ -172,7 +172,7 @@ function HomePage() {
       <section className="relative z-10 bg-white px-5 py-28 md:px-6 md:py-40">
         <div className="max-w-5xl">
           <h2 className="text-[24px] font-medium leading-[1.2] tracking-tight text-foreground md:text-[32px]">
-            <span className="float-left mr-3 mt-1.5 md:mr-3 md:mt-2">
+            <span className="mr-3 inline-flex align-middle">
               <PillLink>About us</PillLink>
             </span>
             Transforming your ideas into impactful digital experiences by
