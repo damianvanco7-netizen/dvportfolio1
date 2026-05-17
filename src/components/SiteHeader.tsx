@@ -27,7 +27,7 @@ export function SiteHeader() {
             />
           </svg>
           <span className="text-[15px] font-medium tracking-tight">
-            Studio Terrace
+            DAMIAN VANCO
           </span>
         </Link>
 
