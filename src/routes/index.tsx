@@ -74,7 +74,7 @@ function PillLink({ children, dot = true }: { children: React.ReactNode; dot?: b
   return (
     <Link
       to="/"
-      className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3.5 py-1.5 text-[13px] text-foreground transition-colors hover:bg-background"
+      className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] text-foreground transition-colors hover:bg-black/10"
     >
       {dot && (
         <span
@@ -101,7 +101,7 @@ function ProjectCard({
   return (
     <Link to="/" className="group block">
       <div
-        className={`${aspect} w-full overflow-hidden rounded-md`}
+        className={`${aspect} w-full overflow-hidden rounded-sm`}
         style={{ backgroundColor: "var(--surface-cream)" }}
       >
         <img
