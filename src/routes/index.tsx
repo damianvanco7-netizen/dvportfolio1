@@ -101,7 +101,7 @@ function ProjectCard({
   return (
     <Link to="/" className="group block">
       <div
-        className={`${aspect} w-full overflow-hidden rounded-sm`}
+        className={`${aspect} relative w-full overflow-hidden rounded-sm`}
         style={{ backgroundColor: "var(--surface-cream)" }}
       >
         <img
@@ -110,6 +110,12 @@ function ProjectCard({
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
         />
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-2 items-center justify-center rounded-full bg-white text-foreground opacity-0 shadow-sm transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </span>
       </div>
       <div className="mt-4 flex items-baseline gap-1.5 text-[13px] text-muted-foreground">
         {tags.map((t, i) => (
@@ -159,11 +165,11 @@ function HomePage() {
         </div>
 
         {/* spacer so the fixed image is visible before content scrolls over it */}
-        <div style={{ height: "55vh" }} />
+        <div style={{ height: "100vh" }} />
       </section>
 
       {/* INTRO */}
-      <section className="relative z-10 bg-background px-5 py-28 md:px-6 md:py-40">
+      <section className="relative z-10 bg-white px-5 py-28 md:px-6 md:py-40">
         <div className="flex flex-col gap-4 md:max-w-3xl md:flex-row md:items-start md:gap-6">
           <div className="shrink-0 pt-1">
             <PillLink>About us</PillLink>
@@ -177,7 +183,7 @@ function HomePage() {
       </section>
 
       {/* LATEST WORK */}
-      <section className="relative z-10 bg-background border-t border-border/60">
+      <section className="relative z-10 bg-white border-t border-border/60">
         <div className="px-5 py-12 md:px-6 md:py-16">
           <div className="mb-10 flex items-end justify-between md:mb-14">
             <h2
@@ -189,13 +195,13 @@ function HomePage() {
             <PillLink>View all projects</PillLink>
           </div>
 
-          <div className="grid grid-cols-1 gap-x-2 gap-y-8 md:grid-cols-2 md:gap-y-10">
+          <div className="grid grid-cols-1 gap-x-2 gap-y-20 md:grid-cols-2 md:gap-y-24">
             {projectsTop.map((p) => (
               <ProjectCard key={p.title} {...p} aspect="aspect-[16/11]" />
             ))}
           </div>
 
-          <div className="mt-2 grid grid-cols-1 gap-x-2 gap-y-8 md:mt-2 md:grid-cols-3">
+          <div className="mt-20 grid grid-cols-1 gap-x-2 gap-y-20 md:mt-24 md:grid-cols-3 md:gap-y-24">
             {projectsBottom.map((p) => (
               <ProjectCard key={p.title} {...p} aspect="aspect-[4/3]" />
             ))}
@@ -204,7 +210,7 @@ function HomePage() {
       </section>
 
       {/* NEWS */}
-      <section className="relative z-10 bg-background border-t border-border/60">
+      <section className="relative z-10 bg-white border-t border-border/60">
         <div className="px-5 py-12 md:px-6 md:py-16">
           <div className="mb-10 flex items-end justify-between md:mb-14">
             <h2
