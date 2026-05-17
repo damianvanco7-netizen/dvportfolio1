@@ -126,13 +126,13 @@ function ProjectCard({
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <SiteHeader />
 
       {/* HERO — fixed background image, content scrolls over it */}
       <div
         aria-hidden="true"
-        className="fixed inset-0 -z-10"
+        className="fixed inset-0 z-0"
         style={{
           backgroundImage: `url(${heroSun})`,
           backgroundSize: "cover",
