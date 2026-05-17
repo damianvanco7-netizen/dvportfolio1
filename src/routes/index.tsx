@@ -49,30 +49,24 @@ const projectsBottom = [
   { img: project5, tags: ["Web Design", "Web Development"], title: "Apex Films" },
 ] as const;
 
-const news = [
+const services = [
   {
     img: news1,
-    title: "Sustainability Meets Aesthetics in Packaging Design",
+    title: "Web Design and Development",
     excerpt:
-      "The intersection of sustainability and aesthetics in packaging design is reshaping the industry. Consumers today are more environmentally conscious, demanding eco-friendly solutions.",
+      "Modern, performant websites crafted from the first wireframe to the final line of code, tailored to your brand.",
   },
   {
     img: news2,
-    title: "Studio 34 got 2 awards",
+    title: "Branding and Identity",
     excerpt:
-      "We are thrilled to share that Studio 34 has recently received two prestigious awards for their outstanding work — recognition for creativity, innovation, and dedication.",
+      "Logos, visual systems and guidelines that give your brand a distinct voice and a consistent presence everywhere.",
   },
   {
     img: news3,
-    title: "When does design end?",
+    title: "Creative Direction",
     excerpt:
-      "The concept of \"when design ends\" is a thought-provoking question. In reality, design is an ever-evolving process that often has no definitive endpoint.",
-  },
-  {
-    img: news4,
-    title: "Driving Success with Market Research",
-    excerpt:
-      "Market research is a crucial component in driving business success and informed decision-making. We leverage advanced methodologies to gather insights.",
+      "Strategic art direction and creative oversight that ties campaigns, products and content into one cohesive story.",
   },
 ] as const;
 
@@ -239,7 +233,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* NEWS */}
+      {/* SERVICES */}
       <section className="relative z-10 bg-white border-t border-border/60">
         <div className="px-5 py-12 md:px-6 md:py-16">
           <div className="mb-10 flex items-end justify-between md:mb-14">
@@ -247,30 +241,30 @@ function HomePage() {
               className="font-medium leading-[0.95] tracking-[-0.03em]"
               style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
             >
-              News
+              Services
             </h2>
-            <PillLink>Read all articles</PillLink>
+            <PillLink>View all services</PillLink>
           </div>
 
-          <div className="grid grid-cols-1 gap-x-2 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-            {news.map((n) => (
-              <Link to="/" key={n.title} className="group block">
+          <div className="grid grid-cols-1 gap-x-2 gap-y-10 md:grid-cols-3">
+            {services.map((s) => (
+              <Link to="/" key={s.title} className="group block">
                 <div
                   className="aspect-[4/3] w-full overflow-hidden rounded-sm"
                   style={{ backgroundColor: "var(--surface-cream)" }}
                 >
                   <img
-                    src={n.img}
-                    alt={n.title}
+                    src={s.img}
+                    alt={s.title}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                 </div>
-                <h3 className="mt-5 text-[18px] leading-snug tracking-tight text-foreground">
-                  {n.title}
+                <h3 className="mt-5 text-[20px] leading-snug tracking-tight text-foreground">
+                  {s.title}
                 </h3>
-                <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">
-                  {n.excerpt}
+                <p className="mt-2 text-[14px] leading-relaxed text-foreground/50 line-clamp-2">
+                  {s.excerpt}
                 </p>
               </Link>
             ))}
