@@ -11,6 +11,12 @@ import news1 from "@/assets/news-1.jpg";
 import news2 from "@/assets/news-2.jpg";
 import news3 from "@/assets/news-3.jpg";
 import news4 from "@/assets/news-4.jpg";
+import logoBirne from "@/assets/logos/birne.png";
+import logoGreenstone from "@/assets/logos/greenstone.png";
+import logoLeadsummit from "@/assets/logos/leadsummit.png";
+import logoZetshop from "@/assets/logos/zetshop.png";
+import logoTncoc from "@/assets/logos/tncoc.png";
+import logoUnuo from "@/assets/logos/unuo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -74,7 +80,7 @@ function PillLink({ children, dot = true }: { children: React.ReactNode; dot?: b
   return (
     <Link
       to="/"
-      className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] text-foreground transition-colors hover:bg-black/10"
+      className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors hover:bg-black/10"
     >
       {dot && (
         <span
@@ -183,14 +189,24 @@ function HomePage() {
 
         {/* CLIENT LOGOS */}
         <div className="mt-16 grid grid-cols-2 gap-2 sm:grid-cols-3 md:mt-24 md:grid-cols-6">
-          {["Lumo", "Warpspeed", "Aster", "Loqo", "Octane", "Nexa"].map((name) => (
+          {[
+            { name: "Birne", src: logoBirne },
+            { name: "Greenstone", src: logoGreenstone },
+            { name: "Lead Summit", src: logoLeadsummit },
+            { name: "Zetshop", src: logoZetshop },
+            { name: "The Netherlands Chamber of Commerce", src: logoTncoc },
+            { name: "Unuo", src: logoUnuo },
+          ].map(({ name, src }) => (
             <div
               key={name}
               className="flex aspect-[5/3] items-center justify-center rounded-sm bg-black/5"
             >
-              <span className="text-[18px] font-semibold tracking-tight text-foreground/80">
-                {name}
-              </span>
+              <img
+                src={src}
+                alt={name}
+                loading="lazy"
+                className="max-h-[55%] max-w-[65%] object-contain opacity-40 transition-opacity duration-300 hover:opacity-100"
+              />
             </div>
           ))}
         </div>
