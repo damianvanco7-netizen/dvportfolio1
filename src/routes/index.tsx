@@ -205,7 +205,7 @@ function HomePage() {
                 src={src}
                 alt={name}
                 loading="lazy"
-                className="h-full w-full object-cover opacity-40 transition-opacity duration-300 hover:opacity-100"
+                className="h-[85%] w-[85%] object-contain opacity-40 transition-opacity duration-300 hover:opacity-100"
               />
             </div>
           ))}
