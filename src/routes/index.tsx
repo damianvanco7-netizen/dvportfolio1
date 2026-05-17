@@ -178,7 +178,7 @@ function HomePage() {
 
       {/* LATEST WORK */}
       <section className="relative z-10 bg-background border-t border-border/60">
-        <div className="mx-auto max-w-[1440px] px-6 py-12 md:px-10 md:py-16">
+        <div className="px-5 py-12 md:px-6 md:py-16">
           <div className="mb-10 flex items-end justify-between md:mb-14">
             <h2
               className="font-medium leading-[0.95] tracking-[-0.03em]"
@@ -205,7 +205,7 @@ function HomePage() {
 
       {/* NEWS */}
       <section className="relative z-10 bg-background border-t border-border/60">
-        <div className="mx-auto max-w-[1440px] px-6 py-12 md:px-10 md:py-16">
+        <div className="px-5 py-12 md:px-6 md:py-16">
           <div className="mb-10 flex items-end justify-between md:mb-14">
             <h2
               className="font-medium leading-[0.95] tracking-[-0.03em]"
