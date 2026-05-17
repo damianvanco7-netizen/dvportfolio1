@@ -7,10 +7,9 @@ import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
-import news1 from "@/assets/news-1.jpg";
-import news2 from "@/assets/news-2.jpg";
-import news3 from "@/assets/news-3.jpg";
-import news4 from "@/assets/news-4.jpg";
+import serviceDesign from "@/assets/services/design-and-development.png";
+import serviceBranding from "@/assets/services/branding-and-identity.png";
+import serviceCreative from "@/assets/services/creative-direction.png";
 import logoBirne from "@/assets/logos/birne.png";
 import logoGreenstone from "@/assets/logos/greenstone.png";
 import logoLeadsummit from "@/assets/logos/leadsummit.png";
@@ -51,19 +50,19 @@ const projectsBottom = [
 
 const services = [
   {
-    img: news1,
+    img: serviceDesign,
     title: "Web Design and Development",
     excerpt:
       "Modern, performant websites crafted from the first wireframe to the final line of code, tailored to your brand.",
   },
   {
-    img: news2,
+    img: serviceBranding,
     title: "Branding and Identity",
     excerpt:
       "Logos, visual systems and guidelines that give your brand a distinct voice and a consistent presence everywhere.",
   },
   {
-    img: news3,
+    img: serviceCreative,
     title: "Creative Direction",
     excerpt:
       "Strategic art direction and creative oversight that ties campaigns, products and content into one cohesive story.",
