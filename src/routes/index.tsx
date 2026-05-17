@@ -129,38 +129,41 @@ function HomePage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      {/* HERO */}
+      {/* HERO — fixed background image, content scrolls over it */}
+      <div
+        aria-hidden="true"
+        className="fixed inset-0 -z-10"
+        style={{
+          backgroundImage: `url(${heroSun})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
+
       <section className="relative">
-        <div className="mx-auto max-w-[1440px] px-6 pt-24 md:px-10 md:pt-32">
+        <div className="px-5 pt-24 md:px-6 md:pt-32">
           <div className="flex items-end justify-between gap-8 pb-10">
             <h1
               className="font-medium leading-[0.95] tracking-[-0.04em] text-foreground"
-              style={{ fontSize: "clamp(3.2rem, 10vw, 9.5rem)" }}
+              style={{ fontSize: "clamp(1.6rem, 5vw, 4.75rem)" }}
             >
               A Digital First
               <br />
               Creative Studio
             </h1>
-            <span className="hidden whitespace-nowrap pb-3 text-[13px] text-muted-foreground md:inline">
-              (Since 2010)
+            <span className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline">
+              (Since 2020)
             </span>
           </div>
         </div>
 
-        {/* Fixed full-width hero image — content below scrolls over it */}
-        <div className="h-screen">
-          <img
-            src={heroSun}
-            alt="Creative studio visual — cream curtain and orange sun"
-            width={1920}
-            height={900}
-            className="sticky top-0 h-screen w-screen object-cover"
-          />
-        </div>
+        {/* spacer so the fixed image is visible before content scrolls over it */}
+        <div className="h-screen" />
       </section>
 
       {/* INTRO */}
-      <section className="relative z-10 bg-background mx-auto max-w-[1440px] px-6 py-28 md:px-10 md:py-40">
+      <section className="relative z-10 bg-background px-5 py-28 md:px-6 md:py-40">
         <div className="flex flex-col gap-4 md:max-w-3xl md:flex-row md:items-start md:gap-6">
           <div className="shrink-0 pt-1">
             <PillLink>About us</PillLink>
@@ -175,7 +178,7 @@ function HomePage() {
 
       {/* LATEST WORK */}
       <section className="relative z-10 bg-background border-t border-border/60">
-        <div className="mx-auto max-w-[1440px] px-6 py-12 md:px-10 md:py-16">
+        <div className="px-5 py-12 md:px-6 md:py-16">
           <div className="mb-10 flex items-end justify-between md:mb-14">
             <h2
               className="font-medium leading-[0.95] tracking-[-0.03em]"
@@ -202,7 +205,7 @@ function HomePage() {
 
       {/* NEWS */}
       <section className="relative z-10 bg-background border-t border-border/60">
-        <div className="mx-auto max-w-[1440px] px-6 py-12 md:px-10 md:py-16">
+        <div className="px-5 py-12 md:px-6 md:py-16">
           <div className="mb-10 flex items-end justify-between md:mb-14">
             <h2
               className="font-medium leading-[0.95] tracking-[-0.03em]"
