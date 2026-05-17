@@ -49,30 +49,24 @@ const projectsBottom = [
   { img: project5, tags: ["Web Design", "Web Development"], title: "Apex Films" },
 ] as const;
 
-const news = [
+const services = [
   {
     img: news1,
-    title: "Sustainability Meets Aesthetics in Packaging Design",
+    title: "Web Design and Development",
     excerpt:
-      "The intersection of sustainability and aesthetics in packaging design is reshaping the industry. Consumers today are more environmentally conscious, demanding eco-friendly solutions.",
+      "Modern, performant websites crafted from the first wireframe to the final line of code, tailored to your brand.",
   },
   {
     img: news2,
-    title: "Studio 34 got 2 awards",
+    title: "Branding and Identity",
     excerpt:
-      "We are thrilled to share that Studio 34 has recently received two prestigious awards for their outstanding work — recognition for creativity, innovation, and dedication.",
+      "Logos, visual systems and guidelines that give your brand a distinct voice and a consistent presence everywhere.",
   },
   {
     img: news3,
-    title: "When does design end?",
+    title: "Creative Direction",
     excerpt:
-      "The concept of \"when design ends\" is a thought-provoking question. In reality, design is an ever-evolving process that often has no definitive endpoint.",
-  },
-  {
-    img: news4,
-    title: "Driving Success with Market Research",
-    excerpt:
-      "Market research is a crucial component in driving business success and informed decision-making. We leverage advanced methodologies to gather insights.",
+      "Strategic art direction and creative oversight that ties campaigns, products and content into one cohesive story.",
   },
 ] as const;
 
