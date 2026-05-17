@@ -142,7 +142,7 @@ function HomePage() {
       />
 
       <section className="relative z-10">
-        <div className="bg-background px-5 pt-24 md:px-6 md:pt-32">
+        <div className="bg-white px-5 pt-24 md:px-6 md:pt-32">
           <div className="flex items-end justify-between gap-8 pb-10">
             <h1
               className="font-medium leading-[0.95] tracking-[-0.04em] text-foreground"
@@ -159,7 +159,7 @@ function HomePage() {
         </div>
 
         {/* spacer so the fixed image is visible before content scrolls over it */}
-        <div className="h-screen" />
+        <div style={{ height: "120vh" }} />
       </section>
 
       {/* INTRO */}
