@@ -74,7 +74,7 @@ function PillLink({ children, dot = true }: { children: React.ReactNode; dot?: b
   return (
     <Link
       to="/"
-      className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-3.5 py-1.5 text-[13px] text-foreground transition-colors hover:bg-background"
+      className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] text-foreground transition-colors hover:bg-black/10"
     >
       {dot && (
         <span
@@ -101,7 +101,7 @@ function ProjectCard({
   return (
     <Link to="/" className="group block">
       <div
-        className={`${aspect} w-full overflow-hidden rounded-md`}
+        className={`${aspect} w-full overflow-hidden rounded-sm`}
         style={{ backgroundColor: "var(--surface-cream)" }}
       >
         <img
@@ -189,13 +189,13 @@ function HomePage() {
             <PillLink>View all projects</PillLink>
           </div>
 
-          <div className="grid grid-cols-1 gap-x-6 gap-y-12 md:grid-cols-2 md:gap-y-16">
+          <div className="grid grid-cols-1 gap-x-2 gap-y-8 md:grid-cols-2 md:gap-y-10">
             {projectsTop.map((p) => (
               <ProjectCard key={p.title} {...p} aspect="aspect-[16/11]" />
             ))}
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 md:mt-16 md:grid-cols-3">
+          <div className="mt-2 grid grid-cols-1 gap-x-2 gap-y-8 md:mt-2 md:grid-cols-3">
             {projectsBottom.map((p) => (
               <ProjectCard key={p.title} {...p} aspect="aspect-[4/3]" />
             ))}
@@ -216,11 +216,11 @@ function HomePage() {
             <PillLink>Read all articles</PillLink>
           </div>
 
-          <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-x-2 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
             {news.map((n) => (
               <Link to="/" key={n.title} className="group block">
                 <div
-                  className="aspect-[4/3] w-full overflow-hidden rounded-md"
+                  className="aspect-[4/3] w-full overflow-hidden rounded-sm"
                   style={{ backgroundColor: "var(--surface-cream)" }}
                 >
                   <img
