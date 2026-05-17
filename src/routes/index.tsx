@@ -170,15 +170,15 @@ function HomePage() {
 
       {/* INTRO */}
       <section className="relative z-10 bg-white px-5 py-28 md:px-6 md:py-40">
-        <div className="flex flex-col gap-4 md:max-w-4xl md:flex-row md:items-start md:gap-6">
-          <div className="shrink-0 pt-2">
-            <PillLink>About us</PillLink>
-          </div>
-          <p className="text-[26px] leading-[1.3] tracking-tight text-foreground md:text-[36px]">
+        <div>
+          <h2 className="text-[32px] font-medium leading-[1.15] tracking-tight text-foreground md:text-[44px]">
+            <span className="float-left mr-3 mt-2 md:mr-4 md:mt-3">
+              <PillLink>About us</PillLink>
+            </span>
             Transforming your ideas into impactful digital experiences by
             delivering top-tier web development and visual content, ensuring
             every project lives up to your brand with creativity and precision.
-          </p>
+          </h2>
         </div>
 
         {/* CLIENT LOGOS */}
