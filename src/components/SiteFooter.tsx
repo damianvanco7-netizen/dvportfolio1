@@ -20,7 +20,7 @@ export function SiteFooter() {
   const amsterdam = useClock("Europe/Amsterdam");
 
   return (
-    <footer className="relative z-10 bg-[var(--surface-cream)]">
+    <footer className="relative z-10 bg-[#ececec]">
       <div className="px-5 pb-8 pt-20 md:px-6 md:pb-10 md:pt-28">
         {/* top row: logo + socials */}
         <div className="flex items-center justify-between">
