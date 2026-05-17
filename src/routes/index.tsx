@@ -170,15 +170,29 @@ function HomePage() {
 
       {/* INTRO */}
       <section className="relative z-10 bg-white px-5 py-28 md:px-6 md:py-40">
-        <div className="flex flex-col gap-4 md:max-w-3xl md:flex-row md:items-start md:gap-6">
-          <div className="shrink-0 pt-1">
+        <div className="flex flex-col gap-4 md:max-w-4xl md:flex-row md:items-start md:gap-6">
+          <div className="shrink-0 pt-2">
             <PillLink>About us</PillLink>
           </div>
-          <p className="text-[22px] leading-[1.35] tracking-tight text-foreground md:text-[28px]">
+          <p className="text-[26px] leading-[1.3] tracking-tight text-foreground md:text-[36px]">
             Transforming your ideas into impactful digital experiences by
             delivering top-tier web development and visual content, ensuring
             every project lives up to your brand with creativity and precision.
           </p>
+        </div>
+
+        {/* CLIENT LOGOS */}
+        <div className="mt-16 grid grid-cols-2 gap-2 sm:grid-cols-3 md:mt-24 md:grid-cols-6">
+          {["Lumo", "Warpspeed", "Aster", "Loqo", "Octane", "Nexa"].map((name) => (
+            <div
+              key={name}
+              className="flex aspect-[5/3] items-center justify-center rounded-sm bg-black/5"
+            >
+              <span className="text-[18px] font-semibold tracking-tight text-foreground/80">
+                {name}
+              </span>
+            </div>
+          ))}
         </div>
       </section>
 
