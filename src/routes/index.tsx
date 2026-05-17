@@ -174,7 +174,7 @@ function HomePage() {
       </section>
 
       {/* LATEST WORK */}
-      <section className="border-t border-border/60">
+      <section className="relative z-10 bg-background border-t border-border/60">
         <div className="mx-auto max-w-[1440px] px-6 py-12 md:px-10 md:py-16">
           <div className="mb-10 flex items-end justify-between md:mb-14">
             <h2
@@ -201,7 +201,7 @@ function HomePage() {
       </section>
 
       {/* NEWS */}
-      <section className="border-t border-border/60">
+      <section className="relative z-10 bg-background border-t border-border/60">
         <div className="mx-auto max-w-[1440px] px-6 py-12 md:px-10 md:py-16">
           <div className="mb-10 flex items-end justify-between md:mb-14">
             <h2
