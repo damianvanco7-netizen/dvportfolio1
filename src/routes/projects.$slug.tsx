@@ -101,7 +101,7 @@ function ProjectPage() {
 
             <div className="mt-10">
               <p className="mb-3 text-[13px] text-foreground/50">Info</p>
-              <p className="max-w-prose text-[15px] leading-relaxed text-foreground/80">
+              <p className="max-w-prose text-[14px] leading-relaxed text-foreground/80">
                 {project.info}
               </p>
             </div>
