@@ -57,13 +57,13 @@ function ProjectPage() {
       <SiteHeader />
 
       <section className="px-5 pt-28 pb-16 md:px-6 md:pt-32">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.7fr_1fr] md:gap-16">
           {/* LEFT — scrolling gallery */}
           <div className="flex flex-col gap-3">
             {project.gallery.map((src: string, i: number) => (
               <div
                 key={i}
-                className="aspect-[4/3] w-full overflow-hidden rounded-sm"
+                className="aspect-[3/2] w-full overflow-hidden rounded-sm"
                 style={{ backgroundColor: "var(--surface-cream)" }}
               >
                 <img
@@ -80,25 +80,24 @@ function ProjectPage() {
           <div className="md:sticky md:top-28 md:self-start">
             <h1
               className="font-medium leading-[1] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2.25rem, 4.5vw, 4rem)" }}
+              style={{ fontSize: "clamp(2.25rem, 3.5vw, 3.25rem)" }}
             >
               {project.title}
             </h1>
 
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors hover:bg-black/10"
-              >
-                <span
-                  className="inline-block h-1.5 w-1.5 rounded-full"
-                  style={{ backgroundColor: "var(--accent-orange)" }}
-                />
-                View live site
-              </a>
-            )}
+            <a
+              href={project.liveUrl ?? "#"}
+              target={project.liveUrl ? "_blank" : undefined}
+              rel={project.liveUrl ? "noreferrer" : undefined}
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors hover:bg-black/10"
+            >
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: "var(--accent-orange)" }}
+              />
+              View live site
+            </a>
+
 
             <div className="mt-10">
               <p className="mb-3 text-[13px] text-foreground/50">Info</p>
