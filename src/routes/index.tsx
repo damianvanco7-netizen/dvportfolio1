@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroSun from "@/assets/hero-sun.jpg";
 import project1 from "@/assets/project-1.jpg";
