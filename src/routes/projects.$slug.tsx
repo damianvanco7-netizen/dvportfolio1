@@ -42,7 +42,7 @@ export const Route = createFileRoute("/projects/$slug")({
 
 function InfoRow({ label, value }: { label: string; value: React.ReactNode }) {
   return (
-    <div className="grid grid-cols-2 gap-4 border-t border-border/60 py-5 text-[14px]">
+    <div className="grid grid-cols-2 gap-4 border-t border-border/60 py-4 text-[13px]">
       <span className="text-foreground/50">{label}</span>
       <div className="text-foreground">{value}</div>
     </div>
@@ -57,7 +57,7 @@ function ProjectPage() {
       <SiteHeader />
 
       <section className="px-5 pt-28 pb-16 md:px-6 md:pt-32">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.7fr_1fr] md:gap-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[2.6fr_1fr] md:gap-20">
           {/* LEFT — scrolling gallery */}
           <div className="flex flex-col gap-3">
             {project.gallery.map((src: string, i: number) => (
@@ -80,7 +80,7 @@ function ProjectPage() {
           <div className="md:sticky md:top-28 md:self-start">
             <h1
               className="font-medium leading-[1] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2.25rem, 3.5vw, 3.25rem)" }}
+              style={{ fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}
             >
               {project.title}
             </h1>
@@ -101,7 +101,7 @@ function ProjectPage() {
 
             <div className="mt-10">
               <p className="mb-3 text-[13px] text-foreground/50">Info</p>
-              <p className="max-w-prose text-[15px] leading-relaxed text-foreground/80">
+              <p className="max-w-prose text-[14px] leading-relaxed text-foreground/80">
                 {project.info}
               </p>
             </div>
