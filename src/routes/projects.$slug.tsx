@@ -60,7 +60,7 @@ function ProjectPage() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
           {/* LEFT — scrolling gallery */}
           <div className="flex flex-col gap-3">
-            {project.gallery.map((src, i) => (
+            {project.gallery.map((src: string, i: number) => (
               <div
                 key={i}
                 className="aspect-[4/3] w-full overflow-hidden rounded-sm"
@@ -110,7 +110,7 @@ function ProjectPage() {
             <div className="mt-12">
               <InfoRow
                 label="Services"
-                value={project.services.map((s) => (
+                value={project.services.map((s: string) => (
                   <div key={s}>{s}</div>
                 ))}
               />
@@ -119,19 +119,19 @@ function ProjectPage() {
               {project.design && (
                 <InfoRow
                   label="Design"
-                  value={project.design.map((n) => <div key={n}>{n}</div>)}
+                  value={project.design.map((n: string) => <div key={n}>{n}</div>)}
                 />
               )}
               {project.motion && (
                 <InfoRow
                   label="Motion"
-                  value={project.motion.map((n) => <div key={n}>{n}</div>)}
+                  value={project.motion.map((n: string) => <div key={n}>{n}</div>)}
                 />
               )}
               {project.development && (
                 <InfoRow
                   label="Development"
-                  value={project.development.map((n) => <div key={n}>{n}</div>)}
+                  value={project.development.map((n: string) => <div key={n}>{n}</div>)}
                 />
               )}
               <div className="border-t border-border/60" />
