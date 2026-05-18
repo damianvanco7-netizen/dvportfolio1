@@ -39,14 +39,14 @@ export const Route = createFileRoute("/")({
 });
 
 const projectsTop = [
-  { img: project1, tags: ["Art Direction", "Web Design"], title: "In-House" },
-  { img: project2, tags: ["Web Design", "Web Development"], title: "Ora Studio" },
+  { slug: "in-house", img: project1, tags: ["Art Direction", "Web Design"], title: "In-House" },
+  { slug: "ora-studio", img: project2, tags: ["Web Design", "Web Development"], title: "Ora Studio" },
 ] as const;
 
 const projectsBottom = [
-  { img: project3, tags: ["Web Development"], title: "Jacob Turner" },
-  { img: project4, tags: ["Art Direction", "Web Development"], title: "Studio B" },
-  { img: project5, tags: ["Web Design", "Web Development"], title: "Apex Films" },
+  { slug: "jacob-turner", img: project3, tags: ["Web Development"], title: "Jacob Turner" },
+  { slug: "studio-b", img: project4, tags: ["Art Direction", "Web Development"], title: "Studio B" },
+  { slug: "apex-films", img: project5, tags: ["Web Design", "Web Development"], title: "Apex Films" },
 ] as const;
 
 const services = [
@@ -88,18 +88,20 @@ function PillLink({ children, dot = true }: { children: React.ReactNode; dot?: b
 }
 
 function ProjectCard({
+  slug,
   img,
   tags,
   title,
   aspect = "aspect-[16/11]",
 }: {
+  slug: string;
   img: string;
   tags: readonly string[];
   title: string;
   aspect?: string;
 }) {
   return (
-    <Link to="/" className="group block">
+    <Link to="/projects/$slug" params={{ slug }} className="group block">
       <div
         className={`${aspect} relative w-full overflow-hidden rounded-sm`}
         style={{ backgroundColor: "var(--surface-cream)" }}
