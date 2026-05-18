@@ -65,7 +65,7 @@ function ProjectPage() {
                 key={i}
                 className="w-full overflow-hidden rounded-sm"
                 style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
-                style={{ backgroundColor: "var(--surface-cream)" }}
+                
               >
                 <img
                   src={src}
