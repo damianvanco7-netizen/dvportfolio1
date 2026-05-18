@@ -57,7 +57,7 @@ function ProjectPage() {
       <SiteHeader />
 
       <section className="px-5 pt-28 pb-16 md:px-6 md:pt-32">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.7fr_1fr] md:gap-16">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[2.6fr_1fr] md:gap-20">
           {/* LEFT — scrolling gallery */}
           <div className="flex flex-col gap-3">
             {project.gallery.map((src: string, i: number) => (
@@ -80,7 +80,7 @@ function ProjectPage() {
           <div className="md:sticky md:top-28 md:self-start">
             <h1
               className="font-medium leading-[1] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2.25rem, 3.5vw, 3.25rem)" }}
+              style={{ fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}
             >
               {project.title}
             </h1>
