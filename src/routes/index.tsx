@@ -269,9 +269,9 @@ function HomePage() {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-10 pt-2">
-                  <div className="flex flex-col gap-6 pl-0 md:pl-[72px]">
+                  <div className="flex flex-col gap-6 pl-0 md:flex-row md:items-start md:gap-10 md:pl-[72px]">
                     <div
-                      className="aspect-[16/9] w-full overflow-hidden rounded-sm md:max-w-3xl"
+                      className="aspect-[16/9] w-full overflow-hidden rounded-sm md:w-[60%] md:max-w-[calc(48rem*0.9)]"
                       style={{ backgroundColor: "var(--surface-cream)" }}
                     >
                       <img
@@ -281,7 +281,7 @@ function HomePage() {
                         className="h-full w-full object-cover"
                       />
                     </div>
-                    <p className="max-w-2xl text-[14px] leading-relaxed text-foreground/50">
+                    <p className="max-w-2xl text-[14px] leading-relaxed text-foreground/50 md:flex-1 md:pt-2">
                       {s.excerpt}
                     </p>
                   </div>
