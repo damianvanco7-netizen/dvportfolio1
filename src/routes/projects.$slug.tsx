@@ -57,13 +57,14 @@ function ProjectPage() {
       <SiteHeader />
 
       <section className="px-5 pt-28 pb-16 md:px-6 md:pt-32">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-[2.6fr_1fr] md:gap-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-[3.6fr_1fr] md:gap-10">
           {/* LEFT — scrolling gallery */}
           <div className="flex flex-col gap-3">
             {project.gallery.map((src: string, i: number) => (
               <div
                 key={i}
-                className="aspect-[3/2] w-full overflow-hidden rounded-sm"
+                className="w-full overflow-hidden rounded-sm"
+                style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
                 style={{ backgroundColor: "var(--surface-cream)" }}
               >
                 <img
