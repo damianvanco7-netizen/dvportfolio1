@@ -245,29 +245,49 @@ function HomePage() {
             <PillLink>View all services</PillLink>
           </div>
 
-          <div className="grid grid-cols-1 gap-x-2 gap-y-10 md:grid-cols-3">
-            {services.map((s) => (
-              <Link to="/" key={s.title} className="group block">
-                <div
-                  className="aspect-[4/3] w-full overflow-hidden rounded-sm"
-                  style={{ backgroundColor: "var(--surface-cream)" }}
-                >
-                  <img
-                    src={s.img}
-                    alt={s.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                  />
-                </div>
-                <h3 className="mt-5 text-[20px] leading-snug tracking-tight text-foreground">
-                  {s.title}
-                </h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-foreground/50 line-clamp-2">
-                  {s.excerpt}
-                </p>
-              </Link>
+          <Accordion type="single" collapsible className="w-full">
+            {services.map((s, i) => (
+              <AccordionItem
+                key={s.title}
+                value={s.title}
+                className="border-b border-border/60"
+              >
+                <AccordionTrigger className="group flex w-full items-center gap-6 py-6 hover:no-underline [&>svg]:hidden">
+                  <span className="w-12 shrink-0 text-[18px] tabular-nums text-foreground/40">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="flex-1 text-left text-[clamp(1.25rem,2.5vw,2rem)] font-normal tracking-tight text-foreground">
+                    {s.title}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="relative ml-auto h-5 w-5 shrink-0 text-foreground/60 transition-transform duration-300 group-data-[state=open]:rotate-45"
+                  >
+                    <span className="absolute left-1/2 top-1/2 h-px w-5 -translate-x-1/2 -translate-y-1/2 bg-current" />
+                    <span className="absolute left-1/2 top-1/2 h-5 w-px -translate-x-1/2 -translate-y-1/2 bg-current" />
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-10 pt-2">
+                  <div className="flex flex-col gap-6 pl-0 md:pl-[72px]">
+                    <div
+                      className="aspect-[16/9] w-full overflow-hidden rounded-sm md:max-w-3xl"
+                      style={{ backgroundColor: "var(--surface-cream)" }}
+                    >
+                      <img
+                        src={s.img}
+                        alt={s.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                    <p className="max-w-2xl text-[14px] leading-relaxed text-foreground/50">
+                      {s.excerpt}
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
