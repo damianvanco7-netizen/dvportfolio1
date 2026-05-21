@@ -3,6 +3,7 @@ import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
+import project6 from "@/assets/news-1.jpg";
 
 export type Project = {
   slug: string;
