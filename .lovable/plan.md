@@ -1,49 +1,28 @@
-# Plán: Homepage podľa studio-terrace.framer.website
+## Čo sa stalo
 
-Postavím **iba homepage** ako vernú repliku referencie. Ostatné podstránky doplníme neskôr — všetky linky v navigácii a CTA budú zatiaľ smerovať na `/` (placeholder), aby build nepadol.
+Detail projektu nezmizol — súbor `src/routes/projects.$slug.tsx` v projekte stále existuje a je registrovaný v route tree. Problém je v naming konvencii TanStack Router:
 
-## Štruktúra stránky (zhora nadol)
+- `src/routes/projects.tsx` → ROUTE `/projects` (listing) — **a zároveň layout pre child routes**
+- `src/routes/projects.$slug.tsx` → child route `/projects/$slug`
 
-1. **Sticky header** — vľavo logo „Studio Terrace" s kosoštvorcovou ikonkou, vpravo nav (Projects, Studio, News, Careers) + oranžové pill CTA „Get in touch" s bodkou.
-2. **Hero** — veľa whitespace hore, dole obrovský nadpis „A Digital First Creative Studio" (3 riadky, tight tracking, čierna), vpravo dole malý text „(Since 2010)". Pod nadpisom plnoširoký vizuál: cream/béžové vertikálne pruhy vľavo, oranžová „sun" guľa vpravo (generovaný obrázok).
-3. **Intro odstavec** — malý „About us" pill chip + jeden krátky paragraf o štúdiu, v ľavej polovici stránky.
-4. **Latest work** — sekcia s nadpisom „Latest work" a tlačidlom „View all projects" vpravo. Grid:
-   - Riadok 1: 2 veľké project karty (50/50)
-   - Riadok 2: 3 menšie project karty (1/3 každá)
-   - Každá karta = obrázok + nad ním malý popis tagov („Art Direction / Web Design") + názov projektu pod obrázkom.
-5. **News** — nadpis sekcie + „Read all articles" vpravo. 4 články v jednom riadku (každý 1/4): obrázok hore, titulok, krátky popis.
-6. **Footer** — minimalistický s copyrightom (referencia ho má len decentne).
+Pretože `projects.tsx` je rodič pre `projects.$slug.tsx`, musí vo svojej komponente vyrenderovať `<Outlet />`, kde sa zobrazí detail. Aktuálne `projects.tsx` `<Outlet />` neobsahuje — renderuje len grid 6 projektov. Výsledok: keď klikneš na projekt a otvorí sa `/projects/aurean-journeys`, matchne sa rodičovský `/projects` layout, ten nevyrenderuje žiadny outlet, takže detail nie je vidno (vidíš stále listing alebo prázdno).
 
-## Technické detaily
+## Riešenie
 
-- Routing: úprava `src/routes/index.tsx`. Header rozdelený do `src/components/SiteHeader.tsx`, footer `src/components/SiteFooter.tsx`.
-- Design tokens v `src/styles.css`: warm off-white background (`oklch` ~ `#FAFAF7`), čierny foreground, oranžový accent (~ `#FF6A1F`) pre CTA a bodky. Pridám tokeny `--accent-orange`, `--surface-cream`.
-- Typografia: bezpätkový grotesk podobný originálu — použijem **Inter Tight** (alebo **Geist**) cez `<link>` v `__root.tsx`, very tight tracking pre hero (-0.04em), font-weight 400/500.
-- Layout: max-width container ~1440px, generózne padding (`px-6 md:px-10`), tenké horizontálne separátory medzi sekciami (`border-t border-border/50`).
-- Responzivita: mobile = jeden stĺpec, projekty/news stackujú; hero font sa zmenší (`clamp`). Bez horizontal scrollu.
-- Pill button: `rounded-full bg-[accent-orange] text-white` s malou bielou bodkou vľavo.
-- SEO meta v `head()` route — vlastný title/description pre homepage.
+Premenovať listing tak, aby nebol rodič pre `$slug`:
 
-## Obrázky (generované)
+- `src/routes/projects.tsx` → `src/routes/projects.index.tsx`
 
-Všetky uložím do `src/assets/` ako `.jpg` a importnem ESM:
+Vďaka tomu:
+- `/projects` (listing) a `/projects/$slug` (detail) budú **dve samostatné súrodenecké routes**, nie parent + child
+- listing sa už nemusí starať o `<Outlet />`
+- detail projektu sa otvorí presne ako pred tým
 
-| Súbor | Účel | Prompt (skrátený) |
-|---|---|---|
-| `hero-sun.jpg` | hero | cream vertical pleated curtain left, glowing orange sun sphere right, soft grain |
-| `project-1.jpg` | In-House | abstract art direction mockup, diagonal lines, muted tones |
-| `project-2.jpg` | Ora Studio | cinematic dark red portrait UI mockup |
-| `project-3.jpg` | Jacob Turner | minimal portfolio website mockup with bold typography |
-| `project-4.jpg` | Studio B | dark studio identity mockup |
-| `project-5.jpg` | Apex Films | film studio web mockup, dark with grid of stills |
-| `news-1.jpg` … `news-4.jpg` | news cards | leather notebook, packaging, awards trophy, market chart — všetko soft editorial photography |
+Obsah súboru sa nemení — len cesta a `createFileRoute("/projects")` ostáva, ale plugin ho zaregistruje ako index route bez child layoutu.
 
-Generujem cez `imagegen` (fast/standard tier), aspect ratio prispôsobený sekcii.
+## Súbory
 
-## Čo NEbudem teraz robiť
+- premenovať `src/routes/projects.tsx` → `src/routes/projects.index.tsx`
+- `src/routeTree.gen.ts` sa pregeneruje automaticky pluginom
 
-- Žiadne podstránky (Projects, Studio, News, Careers, Get in touch, project detaily). Iba homepage.
-- Žiadny backend (Lovable Cloud), žiadny CMS — content je hardcoded v komponente, ľahko sa neskôr nahradí.
-- Žiadne komplexné animácie (scroll parallax, kurzor efekty) — len jemné hover stavy a fade-in, aby to ostalo blízko referencii bez zbytočného „slop".
-
-Po schválení implementujem v jednom prechode a pošlem náhľad.
+Po tejto zmene kliknutie na projekt v Latest work aj v `/projects` opäť otvorí detail projektu so všetkými fotkami a info stĺpcom.
