@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 
-function useClock(tz: string) {
-  // simple SSR-safe formatter
+function formatClock(tz: string) {
   try {
     return new Intl.DateTimeFormat("en-GB", {
       hour: "2-digit",
@@ -13,6 +13,18 @@ function useClock(tz: string) {
   } catch {
     return "--:--:--";
   }
+}
+
+function useClock(tz: string) {
+  // Render a stable placeholder on SSR/first client paint to avoid hydration
+  // mismatches, then update on the client.
+  const [time, setTime] = useState("--:--:--");
+  useEffect(() => {
+    setTime(formatClock(tz));
+    const id = setInterval(() => setTime(formatClock(tz)), 1000);
+    return () => clearInterval(id);
+  }, [tz]);
+  return time;
 }
 
 export function SiteFooter() {
