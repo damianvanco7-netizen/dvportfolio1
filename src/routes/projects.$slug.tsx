@@ -116,24 +116,6 @@ function ProjectPage() {
               />
               <InfoRow label="Client" value={project.client} />
               <InfoRow label="Year" value={project.year} />
-              {project.design && (
-                <InfoRow
-                  label="Design"
-                  value={project.design.map((n: string) => <div key={n}>{n}</div>)}
-                />
-              )}
-              {project.motion && (
-                <InfoRow
-                  label="Motion"
-                  value={project.motion.map((n: string) => <div key={n}>{n}</div>)}
-                />
-              )}
-              {project.development && (
-                <InfoRow
-                  label="Development"
-                  value={project.development.map((n: string) => <div key={n}>{n}</div>)}
-                />
-              )}
               <div className="border-t border-border/60" />
             </div>
           </div>
