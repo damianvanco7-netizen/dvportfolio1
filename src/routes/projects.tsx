@@ -21,7 +21,7 @@ function ProjectsPage() {
       <SiteHeader />
 
       <section className="px-5 pt-16 pb-24 md:px-6 md:pt-20">
-        <div className="grid grid-cols-1 gap-x-6 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-2 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <Link
               key={p.slug}
@@ -30,7 +30,7 @@ function ProjectsPage() {
               className="group block"
             >
               <div
-                className="w-full overflow-hidden"
+                className="w-full overflow-hidden rounded-sm"
                 style={{ aspectRatio: "4 / 3", backgroundColor: "var(--surface-cream)" }}
               >
                 <img
