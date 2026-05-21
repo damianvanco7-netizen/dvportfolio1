@@ -3,11 +3,12 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroSun from "@/assets/hero-sun.jpg";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
-import project4 from "@/assets/project-4.jpg";
-import project5 from "@/assets/project-5.jpg";
+import aureanJourneys from "@/assets/projects/aurean-journeys.jpg";
+import velox from "@/assets/projects/velox.jpg";
+import surikado from "@/assets/projects/surikado.jpg";
+import villaPoton from "@/assets/projects/villa-poton.jpg";
+import stableLabs from "@/assets/projects/stable-labs.jpg";
+import ethereumBratislava from "@/assets/projects/ethereum-bratislava.jpg";
 import serviceDesign from "@/assets/services/design-and-development.png";
 import serviceBranding from "@/assets/services/branding-and-identity.png";
 import serviceCreative from "@/assets/services/creative-direction.png";
@@ -39,14 +40,14 @@ export const Route = createFileRoute("/")({
 });
 
 const projectsTop = [
-  { slug: "in-house", img: project1, tags: ["Art Direction", "Web Design"], title: "In-House" },
-  { slug: "ora-studio", img: project2, tags: ["Web Design", "Web Development"], title: "Ora Studio" },
+  { slug: "aurean-journeys", img: aureanJourneys, tags: ["Art Direction", "Web Design"], title: "Aurean Journeys" },
+  { slug: "velox", img: velox, tags: ["Web Design", "Web Development"], title: "Velox" },
 ] as const;
 
 const projectsBottom = [
-  { slug: "jacob-turner", img: project3, tags: ["Web Development"], title: "Jacob Turner" },
-  { slug: "studio-b", img: project4, tags: ["Art Direction", "Web Development"], title: "Studio B" },
-  { slug: "apex-films", img: project5, tags: ["Web Design", "Web Development"], title: "Apex Films" },
+  { slug: "surikado", img: surikado, tags: ["Brand", "Web Design"], title: "Surikado" },
+  { slug: "villa-poton", img: villaPoton, tags: ["Art Direction", "Web Design"], title: "Villa Potôn" },
+  { slug: "stable-labs", img: stableLabs, tags: ["Web Design", "Web Development"], title: "Stable Labs" },
 ] as const;
 
 const services = [
