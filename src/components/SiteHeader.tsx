@@ -1,10 +1,8 @@
 import { Link } from "@tanstack/react-router";
 
 const navItems = [
-  { label: "Projects", to: "/" },
-  { label: "Studio", to: "/" },
-  { label: "News", to: "/" },
-  { label: "Careers", to: "/" },
+  { label: "Projects", to: "/projects" },
+  { label: "About", to: "/about" },
 ] as const;
 
 export function SiteHeader() {
@@ -37,6 +35,7 @@ export function SiteHeader() {
               key={item.label}
               to={item.to}
               className="text-[15px] text-muted-foreground transition-colors hover:text-foreground"
+              activeProps={{ className: "text-foreground" }}
             >
               {item.label}
             </Link>
