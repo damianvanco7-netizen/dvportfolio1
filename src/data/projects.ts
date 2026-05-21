@@ -3,6 +3,7 @@ import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
+import project6 from "@/assets/news-1.jpg";
 
 export type Project = {
   slug: string;
@@ -86,6 +87,19 @@ export const projects: readonly Project[] = [
     motion: ["Isabella Brooks"],
     development: ["Emma Sullivan"],
     gallery: [project5, project1, project3, project2],
+  },
+  {
+    slug: "infinite",
+    title: "Infinite",
+    cover: project6,
+    tags: ["Web Design", "Web Development"],
+    info: "Infinite is a human-centered creative agency site combining bold editorial typography with dense, magazine-style grids.",
+    services: ["Web Design", "Web Development"],
+    client: "Infinite",
+    year: "2025",
+    design: ["Frank Meir"],
+    development: ["Alexander Turner"],
+    gallery: [project6, project2, project4],
   },
 ];
 
