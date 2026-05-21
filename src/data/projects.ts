@@ -88,6 +88,19 @@ export const projects: readonly Project[] = [
     development: ["Emma Sullivan"],
     gallery: [project5, project1, project3, project2],
   },
+  {
+    slug: "infinite",
+    title: "Infinite",
+    cover: project6,
+    tags: ["Web Design", "Web Development"],
+    info: "Infinite is a human-centered creative agency site combining bold editorial typography with dense, magazine-style grids.",
+    services: ["Web Design", "Web Development"],
+    client: "Infinite",
+    year: "2025",
+    design: ["Frank Meir"],
+    development: ["Alexander Turner"],
+    gallery: [project6, project2, project4],
+  },
 ];
 
 export const getProject = (slug: string) =>
