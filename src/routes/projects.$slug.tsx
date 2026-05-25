@@ -60,21 +60,34 @@ function ProjectPage() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-[3.6fr_1fr] md:gap-10">
           {/* LEFT — scrolling gallery */}
           <div className="flex flex-col gap-3">
-            {project.gallery.map((src: string, i: number) => (
-              <div
-                key={i}
-                className="w-full overflow-hidden rounded-sm"
-                style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
-                
-              >
-                <img
-                  src={src}
-                  alt={`${project.title} — image ${i + 1}`}
-                  loading={i === 0 ? "eager" : "lazy"}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            ))}
+            {project.gallery.map((src: string, i: number) => {
+              const isVideo = /\.(mp4|webm|mov)$/i.test(src);
+              return (
+                <div
+                  key={i}
+                  className="w-full overflow-hidden rounded-sm"
+                  style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
+                >
+                  {isVideo ? (
+                    <video
+                      src={src}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      src={src}
+                      alt={`${project.title} — image ${i + 1}`}
+                      loading={i === 0 ? "eager" : "lazy"}
+                      className="h-full w-full object-cover"
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* RIGHT — sticky info column */}
