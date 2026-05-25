@@ -46,6 +46,16 @@ import eightBites14 from "@/assets/projects/8bites-14.webp";
 import eightBites15 from "@/assets/projects/8bites-15.webp";
 import eightBites16 from "@/assets/projects/8bites-16.webp";
 import eightBites17 from "@/assets/projects/8bites-17.webp";
+import lavaStone1 from "@/assets/projects/lava-stone-1.webp";
+import lavaStone2 from "@/assets/projects/lava-stone-2.webp";
+import lavaStone3 from "@/assets/projects/lava-stone-3.webp";
+import lavaStone4 from "@/assets/projects/lava-stone-4.webp";
+import lavaStone5 from "@/assets/projects/lava-stone-5.webp";
+import lavaStone6 from "@/assets/projects/lava-stone-6.webp";
+import lavaStone7 from "@/assets/projects/lava-stone-7.webp";
+import lavaStone8 from "@/assets/projects/lava-stone-8.webp";
+import lavaStone9 from "@/assets/projects/lava-stone-9.webp";
+import lavaStone10 from "@/assets/projects/lava-stone-10.webp";
 
 export type Project = {
   slug: string;
@@ -131,12 +141,23 @@ export const projects: readonly Project[] = [
     slug: "ethereum-bratislava",
     title: "Ethereum Bratislava",
     cover: ethereumBratislava,
-    tags: ["Web Design", "3D & Animation"],
+    tags: ["Visual Identity", "Web Design and Development"],
     info: "This project is a fully custom-designed and developed website built from scratch using a vibe coding approach. From concept and UI design to responsive development and interactive details, I handled the entire process end-to-end, combining creative direction with AI-powered execution. If you want to see more, visit Ethereum Bratislava website directly.",
     services: ["Visual Identity", "Web design and development"],
     client: "Ethereum Bratislava",
     year: "2025, 1 month",
     gallery: [ethereumBratislava1, ethereumBratislava2, ethereumBratislava3, ethereumBratislava4, ethereumBratislava5, ethereumBratislava6],
+  },
+  {
+    slug: "lava-stone",
+    title: "Lava Stone",
+    cover: lavaStone1,
+    tags: ["Visual Identity", "Web Design"],
+    info: "Lava Stone is a brand inspired by the raw power and elegance of Sicilian volcanic stone. The identity translates the heat and texture of lava into a refined visual system — combining vivid volcanic orange gradients with deep night greys, a custom geometric wordmark, and editorial typography.",
+    services: ["Visual Identity", "Web design"],
+    client: "Lava Stone",
+    year: "2024, 3 months",
+    gallery: [lavaStone1, lavaStone2, lavaStone3, lavaStone4, lavaStone5, lavaStone6, lavaStone7, lavaStone8, lavaStone9, lavaStone10],
   },
 ];
 
