@@ -30,6 +30,16 @@ import ethereumBratislava3 from "@/assets/projects/ethereum-bratislava-3.mp4";
 import ethereumBratislava4 from "@/assets/projects/ethereum-bratislava-4.mp4";
 import ethereumBratislava5 from "@/assets/projects/ethereum-bratislava-5.mp4";
 import ethereumBratislava6 from "@/assets/projects/ethereum-bratislava-6.mp4";
+import eightBites1 from "@/assets/projects/8bites-1.webp";
+import eightBites2 from "@/assets/projects/8bites-2.mp4";
+import eightBites3 from "@/assets/projects/8bites-3.webp";
+import eightBites5 from "@/assets/projects/8bites-5.webp";
+import eightBites6 from "@/assets/projects/8bites-6.webp";
+import eightBites7 from "@/assets/projects/8bites-7.webp";
+import eightBites8 from "@/assets/projects/8bites-8.mp4";
+import eightBites9 from "@/assets/projects/8bites-9.webp";
+import eightBites10 from "@/assets/projects/8bites-10.webp";
+import eightBites11 from "@/assets/projects/8bites-11.webp";
 
 export type Project = {
   slug: string;
@@ -54,7 +64,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and front-end development"],
     client: "Aurean Journeys",
     year: "2025, 3 months",
-    gallery: [aureanJourneys, villaPoton, stableLabs],
+    gallery: [aureanJourneys],
   },
   {
     slug: "velox",
@@ -65,7 +75,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and development"],
     client: "Velox",
     year: "2026, 1 month",
-    gallery: [velox, surikado, ethereumBratislava],
+    gallery: [velox],
   },
   {
     slug: "surikado",
@@ -76,7 +86,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and development", "Front-end and back-end"],
     client: "Surikado",
     year: "2026, 2 months",
-    gallery: [surikado, velox, aureanJourneys],
+    gallery: [surikado],
   },
   {
     slug: "villa-poton",
@@ -87,7 +97,18 @@ export const projects: readonly Project[] = [
     services: ["Art direction", "Web design"],
     client: "Villa Potôn",
     year: "2024, 2 months",
-    gallery: [villaPoton, aureanJourneys, stableLabs],
+    gallery: [villaPoton],
+  },
+  {
+    slug: "8bites",
+    title: "8bites",
+    cover: eightBites11,
+    tags: ["Branding", "Web Design"],
+    info: "8bites is a web development studio with a bold, pixel-inspired identity. The project covers the full brand system — from logo and iconography to web design and responsive layouts — built around a vibrant green and black palette that captures the studio's playful yet technical character.",
+    services: ["Branding", "Web design", "Iconography"],
+    client: "8bites",
+    year: "2024, 3 months",
+    gallery: [eightBites1, eightBites2, eightBites3, eightBites5, eightBites6, eightBites7, eightBites8, eightBites9, eightBites10, eightBites11],
   },
   {
     slug: "stable-labs",
