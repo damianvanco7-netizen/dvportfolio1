@@ -56,6 +56,11 @@ import lavaStone7 from "@/assets/projects/lava-stone-7.webp";
 import lavaStone8 from "@/assets/projects/lava-stone-8.webp";
 import lavaStone9 from "@/assets/projects/lava-stone-9.webp";
 import lavaStone10 from "@/assets/projects/lava-stone-10.webp";
+import lavaStone11 from "@/assets/projects/lava-stone-11.webp";
+import lavaStone12 from "@/assets/projects/lava-stone-12.webp";
+import lavaStone13 from "@/assets/projects/lava-stone-13.webp";
+import lavaStone14 from "@/assets/projects/lava-stone-14.webp";
+import lavaStone15 from "@/assets/projects/lava-stone-15.webp";
 
 export type Project = {
   slug: string;
@@ -151,13 +156,13 @@ export const projects: readonly Project[] = [
   {
     slug: "lava-stone",
     title: "Lava Stone",
-    cover: lavaStone1,
+    cover: lavaStone13,
     tags: ["Visual Identity", "Web Design"],
     info: "Lavastone carries lava stone products from two talented Sicilian makers - Pietracolata and Sansone. In addition to selling their works, they also provide design, consulting or complete realization.",
     services: ["Visual Identity", "Web design"],
     client: "Lava Stone",
     year: "2023, 2 months",
-    gallery: [lavaStone1, lavaStone2, lavaStone3, lavaStone4, lavaStone5, lavaStone6, lavaStone7, lavaStone8, lavaStone9, lavaStone10],
+    gallery: [lavaStone1, lavaStone2, lavaStone3, lavaStone4, lavaStone5, lavaStone6, lavaStone7, lavaStone8, lavaStone9, lavaStone10, lavaStone11, lavaStone12, lavaStone13, lavaStone14, lavaStone15],
   },
 ];
 
