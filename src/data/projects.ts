@@ -40,6 +40,12 @@ import eightBites8 from "@/assets/projects/8bites-8.mp4";
 import eightBites9 from "@/assets/projects/8bites-9.webp";
 import eightBites10 from "@/assets/projects/8bites-10.webp";
 import eightBites11 from "@/assets/projects/8bites-11.webp";
+import eightBites12 from "@/assets/projects/8bites-12.mp4";
+import eightBites13 from "@/assets/projects/8bites-13.webp";
+import eightBites14 from "@/assets/projects/8bites-14.webp";
+import eightBites15 from "@/assets/projects/8bites-15.webp";
+import eightBites16 from "@/assets/projects/8bites-16.webp";
+import eightBites17 from "@/assets/projects/8bites-17.webp";
 
 export type Project = {
   slug: string;
@@ -102,13 +108,13 @@ export const projects: readonly Project[] = [
   {
     slug: "8bites",
     title: "8bites",
-    cover: eightBites11,
+    cover: eightBites8,
     tags: ["Branding", "Web Design"],
     info: "8bites is a web development studio with a bold, pixel-inspired identity. The project covers the full brand system — from logo and iconography to web design and responsive layouts — built around a vibrant green and black palette that captures the studio's playful yet technical character.",
     services: ["Branding", "Web design", "Iconography"],
     client: "8bites",
     year: "2024, 3 months",
-    gallery: [eightBites1, eightBites2, eightBites3, eightBites5, eightBites6, eightBites7, eightBites8, eightBites9, eightBites10, eightBites11],
+    gallery: [eightBites1, eightBites2, eightBites3, eightBites5, eightBites6, eightBites7, eightBites8, eightBites9, eightBites10, eightBites11, eightBites12, eightBites13, eightBites14, eightBites15, eightBites16, eightBites17],
   },
   {
     slug: "stable-labs",
