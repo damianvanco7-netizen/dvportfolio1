@@ -151,7 +151,7 @@ export const projects: readonly Project[] = [
   {
     slug: "lava-stone",
     title: "Lava Stone",
-    cover: lavaStone13,
+    cover: lavaStone1,
     tags: ["Visual Identity", "Web Design"],
     info: "Lavastone carries lava stone products from two talented Sicilian makers - Pietracolata and Sansone. In addition to selling their works, they also provide design, consulting or complete realization.",
     services: ["Visual Identity", "Web design"],
