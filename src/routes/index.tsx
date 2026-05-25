@@ -59,7 +59,7 @@ const services = [
   },
   {
     img: serviceBranding,
-    title: "Branding and Identity",
+    title: "Visual Identity",
     excerpt:
       "Logos, visual systems and guidelines that give your brand a distinct voice and a consistent presence everywhere.",
   },
