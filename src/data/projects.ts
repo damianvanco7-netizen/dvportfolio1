@@ -153,10 +153,10 @@ export const projects: readonly Project[] = [
     title: "Lava Stone",
     cover: lavaStone1,
     tags: ["Visual Identity", "Web Design"],
-    info: "Lava Stone is a brand inspired by the raw power and elegance of Sicilian volcanic stone. The identity translates the heat and texture of lava into a refined visual system — combining vivid volcanic orange gradients with deep night greys, a custom geometric wordmark, and editorial typography.",
+    info: "Lavastone carries lava stone products from two talented Sicilian makers - Pietracolata and Sansone. In addition to selling their works, they also provide design, consulting or complete realization.",
     services: ["Visual Identity", "Web design"],
     client: "Lava Stone",
-    year: "2024, 3 months",
+    year: "2023, 2 months",
     gallery: [lavaStone1, lavaStone2, lavaStone3, lavaStone4, lavaStone5, lavaStone6, lavaStone7, lavaStone8, lavaStone9, lavaStone10],
   },
 ];
