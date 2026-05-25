@@ -46,7 +46,7 @@ const projectsTop = [
 
 const projectsBottom = [
   { slug: "surikado", img: surikado, tags: ["Brand", "Web Design"], title: "Surikado" },
-  { slug: "villa-poton", img: villaPoton, tags: ["Art Direction", "Web Design"], title: "Villa Potôn" },
+  { slug: "ethereum-bratislava", img: ethereumBratislava, tags: ["Web Design", "3D & Animation"], title: "Ethereum Bratislava" },
   { slug: "stable-labs", img: stableLabs, tags: ["Web Design", "Web Development"], title: "Stable Labs" },
 ] as const;
 

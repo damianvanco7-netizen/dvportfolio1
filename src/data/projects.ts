@@ -24,6 +24,12 @@ import stableLabs18 from "@/assets/projects/stable-labs-18.webp";
 import stableLabs19 from "@/assets/projects/stable-labs-19.mp4";
 import stableLabs20 from "@/assets/projects/stable-labs-20.webp";
 import ethereumBratislava from "@/assets/projects/ethereum-bratislava.jpg";
+import ethereumBratislava1 from "@/assets/projects/ethereum-bratislava-1.mp4";
+import ethereumBratislava2 from "@/assets/projects/ethereum-bratislava-2.mp4";
+import ethereumBratislava3 from "@/assets/projects/ethereum-bratislava-3.mp4";
+import ethereumBratislava4 from "@/assets/projects/ethereum-bratislava-4.mp4";
+import ethereumBratislava5 from "@/assets/projects/ethereum-bratislava-5.mp4";
+import ethereumBratislava6 from "@/assets/projects/ethereum-bratislava-6.mp4";
 
 export type Project = {
   slug: string;
@@ -103,7 +109,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and development", "3D design and animation"],
     client: "Ethereum Bratislava",
     year: "2025, 1 month",
-    gallery: [ethereumBratislava, stableLabs, surikado],
+    gallery: [ethereumBratislava1, ethereumBratislava2, ethereumBratislava3, ethereumBratislava4, ethereumBratislava5, ethereumBratislava6],
   },
 ];
 
