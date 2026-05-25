@@ -33,12 +33,23 @@ function ProjectsPage() {
                 className="w-full overflow-hidden rounded-sm"
                 style={{ aspectRatio: "4 / 3", backgroundColor: "var(--surface-cream)" }}
               >
-                <img
-                  src={p.cover}
-                  alt={p.title}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                />
+                {/\.(mp4|webm|mov)$/i.test(p.cover) ? (
+                  <video
+                    src={p.cover}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                ) : (
+                  <img
+                    src={p.cover}
+                    alt={p.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                )}
               </div>
               <div className="mt-4">
                 <p className="text-[13px] text-foreground/50">
