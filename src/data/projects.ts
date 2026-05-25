@@ -92,7 +92,7 @@ export const projects: readonly Project[] = [
     services: ["Branding", "Web design", "Illustration", "Social media communication"],
     client: "StableLabs",
     year: "2024, 6 months",
-    gallery: [stableLabs1, stableLabs2, stableLabs3, stableLabs4, stableLabs5, stableLabs6, stableLabs7, stableLabs8, stableLabs9, stableLabs10, stableLabs11, stableLabs12],
+    gallery: [stableLabs1, stableLabs2, stableLabs3, stableLabs4, stableLabs5, stableLabs6, stableLabs7, stableLabs8, stableLabs9, stableLabs10, stableLabs11, stableLabs12, stableLabs13, stableLabs14, stableLabs15, stableLabs16, stableLabs17, stableLabs18, stableLabs19, stableLabs20],
   },
   {
     slug: "ethereum-bratislava",
