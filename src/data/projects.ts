@@ -6,6 +6,15 @@ import stableLabs from "@/assets/projects/stable-labs.jpg";
 import stableLabs1 from "@/assets/projects/stable-labs-1.webp";
 import stableLabs2 from "@/assets/projects/stable-labs-2.webp";
 import stableLabs3 from "@/assets/projects/stable-labs-3.mp4";
+import stableLabs4 from "@/assets/projects/stable-labs-4.webp";
+import stableLabs5 from "@/assets/projects/stable-labs-5.webp";
+import stableLabs6 from "@/assets/projects/stable-labs-6.webp";
+import stableLabs7 from "@/assets/projects/stable-labs-7.webp";
+import stableLabs8 from "@/assets/projects/stable-labs-8.webp";
+import stableLabs9 from "@/assets/projects/stable-labs-9.webp";
+import stableLabs10 from "@/assets/projects/stable-labs-10.webp";
+import stableLabs11 from "@/assets/projects/stable-labs-11.webp";
+import stableLabs12 from "@/assets/projects/stable-labs-12.mp4";
 import ethereumBratislava from "@/assets/projects/ethereum-bratislava.jpg";
 
 export type Project = {
@@ -75,7 +84,7 @@ export const projects: readonly Project[] = [
     services: ["Branding", "Web design", "Illustration", "Social media communication"],
     client: "StableLabs",
     year: "2024, 6 months",
-    gallery: [stableLabs1, stableLabs2, stableLabs3],
+    gallery: [stableLabs1, stableLabs2, stableLabs3, stableLabs4, stableLabs5, stableLabs6, stableLabs7, stableLabs8, stableLabs9, stableLabs10, stableLabs11, stableLabs12],
   },
   {
     slug: "ethereum-bratislava",
