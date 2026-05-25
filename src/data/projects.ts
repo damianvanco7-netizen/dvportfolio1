@@ -61,6 +61,16 @@ import lavaStone12 from "@/assets/projects/lava-stone-12.webp";
 import lavaStone13 from "@/assets/projects/lava-stone-13.webp";
 import lavaStone14 from "@/assets/projects/lava-stone-14.webp";
 import lavaStone15 from "@/assets/projects/lava-stone-15.webp";
+import leadSummit1 from "@/assets/projects/lead-summit-1.webp";
+import leadSummit2 from "@/assets/projects/lead-summit-2.webp";
+import leadSummit3 from "@/assets/projects/lead-summit-3.webp";
+import leadSummit4 from "@/assets/projects/lead-summit-4.mp4";
+import leadSummit5 from "@/assets/projects/lead-summit-5.mp4";
+import leadSummit6 from "@/assets/projects/lead-summit-6.mp4";
+import leadSummit7 from "@/assets/projects/lead-summit-7.webp";
+import leadSummit8 from "@/assets/projects/lead-summit-8.webp";
+import leadSummit9 from "@/assets/projects/lead-summit-9.webp";
+import leadSummit10 from "@/assets/projects/lead-summit-10.webp";
 
 export type Project = {
   slug: string;
@@ -163,6 +173,17 @@ export const projects: readonly Project[] = [
     client: "Lava Stone",
     year: "2023, 2 months",
     gallery: [lavaStone1, lavaStone2, lavaStone3, lavaStone4, lavaStone5, lavaStone6, lavaStone7, lavaStone8, lavaStone9, lavaStone10, lavaStone11, lavaStone12, lavaStone13, lavaStone14, lavaStone15],
+  },
+  {
+    slug: "lead-summit",
+    title: "Lead Summit",
+    cover: leadSummit1,
+    tags: ["Visual Identity", "Web Design"],
+    info: "Lead Summit is a marketing conference with a dynamic and flexible visual identity, designed to capture the fast-paced nature of lead generation. The branding is built around bold, heavy typography and anchored by a strong, vibrant orange as the key element, giving the event a striking and memorable presence.",
+    services: ["Visual Identity", "Web design", "Social Media communication"],
+    client: "ByWednesday",
+    year: "2025, 2 months",
+    gallery: [leadSummit1, leadSummit2, leadSummit3, leadSummit4, leadSummit5, leadSummit6, leadSummit7, leadSummit8, leadSummit9, leadSummit10],
   },
 ];
 
