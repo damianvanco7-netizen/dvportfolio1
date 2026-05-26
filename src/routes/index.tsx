@@ -5,8 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import heroSun from "@/assets/hero-sun.jpg";
 import aureanJourneys from "@/assets/projects/aurean-journeys.jpg";
 import velox from "@/assets/projects/velox.jpg";
-import surikado from "@/assets/projects/surikado.jpg";
-import villaPoton from "@/assets/projects/villa-poton.jpg";
+import eightBites8 from "@/assets/projects/8bites-8.mp4";
 import stableLabs from "@/assets/projects/stable-labs.jpg";
 import ethereumBratislava from "@/assets/projects/ethereum-bratislava.jpg";
 import serviceDesign from "@/assets/services/design-and-development.png";
@@ -40,14 +39,14 @@ export const Route = createFileRoute("/")({
 });
 
 const projectsTop = [
-  { slug: "aurean-journeys", img: aureanJourneys, tags: ["Art Direction", "Web Design"], title: "Aurean Journeys" },
-  { slug: "velox", img: velox, tags: ["Web Design", "Web Development"], title: "Velox" },
+  { slug: "aurean-journeys", img: aureanJourneys, tags: ["Web design and development"], title: "Aurean Journeys" },
+  { slug: "velox", img: velox, tags: ["Web design and development"], title: "Velox" },
 ] as const;
 
 const projectsBottom = [
-  { slug: "surikado", img: surikado, tags: ["Brand", "Web Design"], title: "Surikado" },
-  { slug: "ethereum-bratislava", img: ethereumBratislava, tags: ["Web Design", "3D & Animation"], title: "Ethereum Bratislava" },
-  { slug: "stable-labs", img: stableLabs, tags: ["Web Design", "Web Development"], title: "Stable Labs" },
+  { slug: "8bites", img: eightBites8, tags: ["Visual Identity", "Web design"], title: "8bites" },
+  { slug: "stable-labs", img: stableLabs, tags: ["Visual Identity", "Web design"], title: "Stable Labs" },
+  { slug: "ethereum-bratislava", img: ethereumBratislava, tags: ["Visual Identity", "Web design and development"], title: "Ethereum Bratislava" },
 ] as const;
 
 const services = [
@@ -107,12 +106,23 @@ function ProjectCard({
         className={`${aspect} relative w-full overflow-hidden rounded-sm`}
         style={{ backgroundColor: "var(--surface-cream)" }}
       >
-        <img
-          src={img}
-          alt={title}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-        />
+        {/\.(mp4|webm|mov)$/i.test(img) ? (
+          <video
+            src={img}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+        ) : (
+          <img
+            src={img}
+            alt={title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+        )}
         <span
           aria-hidden="true"
           className="pointer-events-none absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-2 items-center justify-center rounded-full bg-white text-foreground opacity-0 shadow-sm transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
