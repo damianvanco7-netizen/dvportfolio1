@@ -2,6 +2,7 @@ import aureanJourneys from "@/assets/projects/aurean-journeys.jpg";
 import velox from "@/assets/projects/velox.jpg";
 import surikado from "@/assets/projects/surikado.jpg";
 import villaPoton from "@/assets/projects/villa-poton.jpg";
+import villaPotonVideo from "@/assets/projects/villa-poton.mp4";
 import stableLabs from "@/assets/projects/stable-labs.jpg";
 import stableLabs1 from "@/assets/projects/stable-labs-1.webp";
 import stableLabs2 from "@/assets/projects/stable-labs-2.webp";
@@ -122,13 +123,13 @@ export const projects: readonly Project[] = [
   {
     slug: "villa-poton",
     title: "Villa Potôn",
-    cover: villaPoton,
+    cover: villaPotonVideo,
     tags: ["Web design and development"],
     info: "A quiet, editorial site for a contemporary stone villa — letting architecture and natural light carry the story through generous whitespace and serif typography.",
     services: ["Web design and development"],
     client: "Villa Potôn",
     year: "2024, 2 months",
-    gallery: [villaPoton],
+    gallery: [villaPotonVideo, villaPoton],
   },
   {
     slug: "8bites",
