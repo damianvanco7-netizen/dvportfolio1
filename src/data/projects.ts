@@ -2,6 +2,7 @@ import aureanJourneys from "@/assets/projects/aurean-journeys.jpg";
 import velox from "@/assets/projects/velox.jpg";
 import surikado from "@/assets/projects/surikado.jpg";
 import villaPoton from "@/assets/projects/villa-poton.jpg";
+import villaPotonVideo from "@/assets/projects/villa-poton.mp4";
 import stableLabs from "@/assets/projects/stable-labs.jpg";
 import stableLabs1 from "@/assets/projects/stable-labs-1.webp";
 import stableLabs2 from "@/assets/projects/stable-labs-2.webp";
