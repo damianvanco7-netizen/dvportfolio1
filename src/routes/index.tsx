@@ -106,12 +106,23 @@ function ProjectCard({
         className={`${aspect} relative w-full overflow-hidden rounded-sm`}
         style={{ backgroundColor: "var(--surface-cream)" }}
       >
-        <img
-          src={img}
-          alt={title}
-          loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-        />
+        {/\.(mp4|webm|mov)$/i.test(img) ? (
+          <video
+            src={img}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+        ) : (
+          <img
+            src={img}
+            alt={title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+        )}
         <span
           aria-hidden="true"
           className="pointer-events-none absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-2 items-center justify-center rounded-full bg-white text-foreground opacity-0 shadow-sm transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
