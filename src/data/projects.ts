@@ -1,4 +1,4 @@
-import aureanJourneys2 from "@/assets/projects/aurean-journeys-2.png";
+
 import aureanJourneys3 from "@/assets/projects/aurean-journeys-3.png";
 import aureanJourneys4 from "@/assets/projects/aurean-journeys-4.png";
 import aureanJourneysVideo from "@/assets/projects/aurean-journeys.mp4";
@@ -99,7 +99,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and development"],
     client: "Aurean Journeys",
     year: "2025, 3 months",
-    gallery: [aureanJourneysVideo, aureanJourneys2, aureanJourneys3, aureanJourneys4],
+    gallery: [aureanJourneysVideo, aureanJourneys3, aureanJourneys4],
   },
   {
     slug: "velox",
