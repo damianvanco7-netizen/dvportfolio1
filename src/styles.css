@@ -76,6 +76,7 @@ html, body {
   --background: oklch(0.985 0.005 90);
   --foreground: oklch(0.15 0 0);
   --accent-orange: oklch(0.598 0.226 32);
+  --accent-blue: #0128bc;
   --surface-cream: oklch(0.96 0.02 80);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
