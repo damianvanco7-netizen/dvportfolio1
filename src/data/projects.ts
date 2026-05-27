@@ -97,7 +97,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and development"],
     client: "Aurean Journeys",
     year: "2025, 3 months",
-    gallery: [aureanJourneys],
+    gallery: [aureanJourneysVideo],
   },
   {
     slug: "velox",
