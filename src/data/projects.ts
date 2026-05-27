@@ -1,4 +1,5 @@
 import aureanJourneys from "@/assets/projects/aurean-journeys.jpg";
+import aureanJourneysVideo from "@/assets/projects/aurean-journeys.mp4";
 import velox from "@/assets/projects/velox.jpg";
 import surikado from "@/assets/projects/surikado.jpg";
 import villaPoton from "@/assets/projects/villa-poton.jpg";
@@ -90,13 +91,13 @@ export const projects: readonly Project[] = [
   {
     slug: "aurean-journeys",
     title: "Aurean Journeys",
-    cover: aureanJourneys,
+    cover: aureanJourneysVideo,
     tags: ["Web design and development"],
     info: "This project was about translating the feeling of exclusivity and refined travel into a digital experience. I designed and developed the front-end of the website for a newly established luxury travel brand, shaping its online presence from the ground up. The focus was on creating an atmosphere of elegance and trust while ensuring the journey through the website feels as seamless and intentional as the voyages themselves. If you want to see more, visit Aurean Journeys website directly.",
     services: ["Web design and development"],
     client: "Aurean Journeys",
     year: "2025, 3 months",
-    gallery: [aureanJourneys],
+    gallery: [aureanJourneysVideo],
   },
   {
     slug: "velox",
