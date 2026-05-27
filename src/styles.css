@@ -60,6 +60,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-accent-orange: var(--accent-orange);
+  --color-accent-blue: var(--accent-blue);
   --color-surface-cream: var(--surface-cream);
   --font-sans: "Inter Tight", ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
