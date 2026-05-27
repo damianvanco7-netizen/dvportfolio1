@@ -51,29 +51,54 @@ const projectsBottom = [
 
 const services = [
   {
-    img: serviceDesign,
     title: "Web Design and Development",
     excerpt:
       "Modern, performant websites crafted from the first wireframe to the final line of code, tailored to your brand.",
+    projects: [
+      { slug: "aurean-journeys", title: "Aurean Journeys" },
+      { slug: "velox", title: "Velox" },
+      { slug: "surikado", title: "Surikado AI" },
+      { slug: "villa-poton", title: "Villa Potôn" },
+      { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
+    ],
   },
   {
-    img: serviceBranding,
     title: "Visual Identity",
     excerpt:
       "Logos, visual systems and guidelines that give your brand a distinct voice and a consistent presence everywhere.",
+    projects: [
+      { slug: "8bites", title: "8bites" },
+      { slug: "stable-labs", title: "Stable Labs" },
+      { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
+      { slug: "lava-stone", title: "Lava Stone" },
+      { slug: "lead-summit", title: "Lead Summit" },
+    ],
   },
   {
-    img: serviceCreative,
     title: "Creative Direction",
     excerpt:
       "Strategic art direction and creative oversight that ties campaigns, products and content into one cohesive story.",
+    projects: [
+      { slug: "8bites", title: "8bites" },
+      { slug: "lava-stone", title: "Lava Stone" },
+      { slug: "lead-summit", title: "Lead Summit" },
+      { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
+    ],
   },
 ] as const;
 
-function PillLink({ children, dot = true }: { children: React.ReactNode; dot?: boolean }) {
+function PillLink({
+  children,
+  dot = true,
+  to = "/",
+}: {
+  children: React.ReactNode;
+  dot?: boolean;
+  to?: string;
+}) {
   return (
     <Link
-      to="/"
+      to={to}
       className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors hover:bg-black/10"
     >
       {dot && (
@@ -83,6 +108,18 @@ function PillLink({ children, dot = true }: { children: React.ReactNode; dot?: b
         />
       )}
       {children}
+    </Link>
+  );
+}
+
+function ProjectPill({ slug, title }: { slug: string; title: string }) {
+  return (
+    <Link
+      to="/projects/$slug"
+      params={{ slug }}
+      className="inline-flex items-center rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors hover:bg-black/10"
+    >
+      {title}
     </Link>
   );
 }
