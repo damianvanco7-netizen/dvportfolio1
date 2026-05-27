@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
 import heroSun from "@/assets/hero-sun.jpg";
-import aureanJourneys from "@/assets/projects/aurean-journeys.jpg";
+import aureanJourneys from "@/assets/projects/aurean-journeys.mp4";
 import velox from "@/assets/projects/velox.jpg";
 import eightBites8 from "@/assets/projects/8bites-8.mp4";
 import stableLabs from "@/assets/projects/stable-labs.jpg";
