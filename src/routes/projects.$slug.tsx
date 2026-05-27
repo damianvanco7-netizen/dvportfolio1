@@ -99,18 +99,20 @@ function ProjectPage() {
               {project.title}
             </h1>
 
-            <a
-              href={project.liveUrl ?? "#"}
-              target={project.liveUrl ? "_blank" : undefined}
-              rel={project.liveUrl ? "noreferrer" : undefined}
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors hover:bg-black/10"
-            >
-              <span
-                className="inline-block h-1.5 w-1.5 rounded-full"
-                style={{ backgroundColor: "var(--accent-orange)" }}
-              />
-              View live site
-            </a>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors hover:bg-black/10"
+              >
+                <span
+                  className="inline-block h-1.5 w-1.5 rounded-full"
+                  style={{ backgroundColor: "var(--accent-orange)" }}
+                />
+                View live site
+              </a>
+            )}
 
 
             <div className="mt-10">
