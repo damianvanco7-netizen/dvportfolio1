@@ -266,7 +266,7 @@ function HomePage() {
             >
               Latest work
             </h2>
-            <PillLink>View all projects</PillLink>
+            <PillLink to="/projects">View all projects</PillLink>
           </div>
 
           <div className="grid grid-cols-1 gap-x-2 gap-y-20 md:grid-cols-2 md:gap-y-24">
