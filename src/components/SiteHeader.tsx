@@ -45,7 +45,7 @@ export function SiteHeader() {
         <Link
           to="/"
           className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[14px] font-medium text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "var(--accent-orange)" }}
+          style={{ backgroundColor: "var(--accent-blue)" }}
         >
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
           Get in touch

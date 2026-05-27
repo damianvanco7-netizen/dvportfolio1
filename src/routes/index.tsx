@@ -8,9 +8,6 @@ import velox from "@/assets/projects/velox.jpg";
 import eightBites8 from "@/assets/projects/8bites-8.mp4";
 import stableLabs from "@/assets/projects/stable-labs.jpg";
 import ethereumBratislava from "@/assets/projects/ethereum-bratislava.jpg";
-import serviceDesign from "@/assets/services/design-and-development.png";
-import serviceBranding from "@/assets/services/branding-and-identity.png";
-import serviceCreative from "@/assets/services/creative-direction.png";
 import logoBirne from "@/assets/logos/birne.png";
 import logoGreenstone from "@/assets/logos/greenstone.png";
 import logoLeadsummit from "@/assets/logos/leadsummit.png";
@@ -51,29 +48,54 @@ const projectsBottom = [
 
 const services = [
   {
-    img: serviceDesign,
     title: "Web Design and Development",
     excerpt:
       "Modern, performant websites crafted from the first wireframe to the final line of code, tailored to your brand.",
+    projects: [
+      { slug: "aurean-journeys", title: "Aurean Journeys" },
+      { slug: "velox", title: "Velox" },
+      { slug: "surikado", title: "Surikado AI" },
+      { slug: "villa-poton", title: "Villa Potôn" },
+      { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
+    ],
   },
   {
-    img: serviceBranding,
     title: "Visual Identity",
     excerpt:
       "Logos, visual systems and guidelines that give your brand a distinct voice and a consistent presence everywhere.",
+    projects: [
+      { slug: "8bites", title: "8bites" },
+      { slug: "stable-labs", title: "Stable Labs" },
+      { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
+      { slug: "lava-stone", title: "Lava Stone" },
+      { slug: "lead-summit", title: "Lead Summit" },
+    ],
   },
   {
-    img: serviceCreative,
     title: "Creative Direction",
     excerpt:
       "Strategic art direction and creative oversight that ties campaigns, products and content into one cohesive story.",
+    projects: [
+      { slug: "8bites", title: "8bites" },
+      { slug: "lava-stone", title: "Lava Stone" },
+      { slug: "lead-summit", title: "Lead Summit" },
+      { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
+    ],
   },
 ] as const;
 
-function PillLink({ children, dot = true }: { children: React.ReactNode; dot?: boolean }) {
+function PillLink({
+  children,
+  dot = true,
+  to = "/",
+}: {
+  children: React.ReactNode;
+  dot?: boolean;
+  to?: string;
+}) {
   return (
     <Link
-      to="/"
+      to={to}
       className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors hover:bg-black/10"
     >
       {dot && (
@@ -83,6 +105,18 @@ function PillLink({ children, dot = true }: { children: React.ReactNode; dot?: b
         />
       )}
       {children}
+    </Link>
+  );
+}
+
+function ProjectPill({ slug, title }: { slug: string; title: string }) {
+  return (
+    <Link
+      to="/projects/$slug"
+      params={{ slug }}
+      className="inline-flex items-center rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors hover:bg-black/10"
+    >
+      {title}
     </Link>
   );
 }
@@ -229,7 +263,7 @@ function HomePage() {
             >
               Latest work
             </h2>
-            <PillLink>View all projects</PillLink>
+            <PillLink to="/projects">View all projects</PillLink>
           </div>
 
           <div className="grid grid-cols-1 gap-x-2 gap-y-20 md:grid-cols-2 md:gap-y-24">
@@ -282,21 +316,15 @@ function HomePage() {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-10 pt-2">
-                  <div className="flex flex-col gap-6 pl-0 md:flex-row md:items-start md:gap-10 md:pl-[72px]">
-                    <div
-                      className="aspect-[16/9] w-full overflow-hidden rounded-sm md:w-[60%] md:max-w-[calc(48rem*0.9)]"
-                      style={{ backgroundColor: "var(--surface-cream)" }}
-                    >
-                      <img
-                        src={s.img}
-                        alt={s.title}
-                        loading="lazy"
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                    <p className="max-w-2xl text-[14px] leading-relaxed text-foreground/50 md:flex-1 md:pt-2">
+                  <div className="flex flex-col gap-6 pl-0 md:pl-[72px]">
+                    <p className="max-w-2xl text-[14px] leading-relaxed text-foreground/50">
                       {s.excerpt}
                     </p>
+                    <div className="flex flex-wrap gap-2">
+                      {s.projects.map((p) => (
+                        <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
+                      ))}
+                    </div>
                   </div>
                 </AccordionContent>
               </AccordionItem>
