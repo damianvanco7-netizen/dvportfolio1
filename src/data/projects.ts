@@ -99,6 +99,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and development"],
     client: "Aurean Journeys",
     year: "2025, 3 months",
+    liveUrl: "https://aureanjourneys.com/",
     gallery: [aureanJourneysVideo, aureanJourneys3, aureanJourneys4],
   },
   {
@@ -110,6 +111,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and development"],
     client: "Velox",
     year: "2026, 1 month",
+    liveUrl: "https://veloxsro.sk/en/",
     gallery: [velox],
   },
   {
@@ -121,6 +123,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and development"],
     client: "Surikado",
     year: "2026, 2 months",
+    liveUrl: "https://surikado.sk/en",
     gallery: [surikado],
   },
   {
@@ -132,6 +135,7 @@ export const projects: readonly Project[] = [
     services: ["Web design and development"],
     client: "Villa Potôn",
     year: "2024, 2 months",
+    liveUrl: "https://villapoton.com/",
     gallery: [villaPotonVideo, villaPoton],
   },
   {
@@ -165,6 +169,7 @@ export const projects: readonly Project[] = [
     services: ["Visual Identity", "Web design and development"],
     client: "Ethereum Bratislava",
     year: "2025, 1 month",
+    liveUrl: "https://ethbratislava.com/",
     gallery: [ethereumBratislava1, ethereumBratislava2, ethereumBratislava3, ethereumBratislava4, ethereumBratislava5, ethereumBratislava6],
   },
   {
