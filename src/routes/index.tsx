@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -14,6 +15,8 @@ import logoLeadsummit from "@/assets/logos/leadsummit.png";
 import logoZetshop from "@/assets/logos/zetshop.png";
 import logoTncoc from "@/assets/logos/tncoc.png";
 import logoUnuo from "@/assets/logos/unuo.png";
+import logoCvti from "@/assets/logos/cvti.png";
+import logoNorriv from "@/assets/logos/norriv.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
