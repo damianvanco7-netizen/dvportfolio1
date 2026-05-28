@@ -146,7 +146,7 @@ export const projects: readonly Project[] = [
   {
     slug: "8bites",
     title: "8bites",
-    cover: eightBites9,
+    cover: eightBitesCover,
     tags: ["Visual Identity", "Web design"],
     info: "8bites is a web development studio with a bold, pixel-inspired identity. The project covers the full brand system — from logo and iconography to web design and responsive layouts — built around a vibrant green and black palette that captures the studio's playful yet technical character.",
     services: ["Visual Identity", "Web design"],
