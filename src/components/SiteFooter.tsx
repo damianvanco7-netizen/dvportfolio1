@@ -9,9 +9,8 @@ export function SiteFooter() {
         {/* top row: logo + socials */}
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 text-foreground">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-              <path d="M9 1 17 9l-8 8L1 9z" stroke="currentColor" strokeWidth="1.4" fill="none" />
-            </svg>
+            <img src={symbol} alt="" aria-hidden="true" className="h-[18px] w-auto" />
+
             <span className="text-[15px] font-medium tracking-tight">DAMIAN VANCO</span>
           </Link>
           <div className="flex items-center gap-2">
