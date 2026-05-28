@@ -160,7 +160,7 @@ function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
   }, [index, logos.length]);
 
   const items = [...logos, ...logos.slice(0, visible)];
-  const itemWidth = 100 / visible;
+  const step = 100 / items.length;
 
   return (
     <div className="mt-16 overflow-hidden md:mt-24">
@@ -168,7 +168,7 @@ function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
         className="flex"
         style={{
           width: `${(items.length * 100) / visible}%`,
-          transform: `translateX(-${index * itemWidth}%)`,
+          transform: `translateX(-${index * step}%)`,
           transition: animate ? "transform 700ms ease" : "none",
         }}
       >
