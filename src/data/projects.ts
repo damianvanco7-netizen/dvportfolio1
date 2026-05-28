@@ -151,7 +151,7 @@ export const projects: readonly Project[] = [
     services: ["Visual Identity", "Web design"],
     client: "8bites",
     year: "2024, 3 months",
-    gallery: [eightBites1, eightBites2, eightBites3, eightBites5, eightBites6, eightBites7, eightBites8, eightBites9, eightBites10, eightBites11, eightBites12, eightBites13, eightBites14, eightBites15, eightBites16, eightBites17],
+    gallery: [eightBites9, eightBites1, eightBites2, eightBites3, eightBites5, eightBites6, eightBites7, eightBites8, eightBites10, eightBites11, eightBites12, eightBites13, eightBites14, eightBites15, eightBites16, eightBites17],
   },
   {
     slug: "stable-labs",
