@@ -223,7 +223,7 @@ function HomePage() {
         <div className="max-w-5xl">
           <h2 className="text-[24px] font-medium leading-[1.2] tracking-tight text-foreground md:text-[32px]">
             <span className="mr-3 inline-flex align-middle">
-              <PillLink>About us</PillLink>
+              <PillLink>About</PillLink>
             </span>
             Transforming your ideas into impactful digital experiences by
             delivering top-tier web development and visual content, ensuring
@@ -232,28 +232,18 @@ function HomePage() {
         </div>
 
         {/* CLIENT LOGOS */}
-        <div className="mt-16 grid grid-cols-2 gap-2 sm:grid-cols-3 md:mt-24 md:grid-cols-6">
-          {[
+        <LogoCarousel
+          logos={[
             { name: "Birne", src: logoBirne },
             { name: "Greenstone", src: logoGreenstone },
             { name: "Lead Summit", src: logoLeadsummit },
             { name: "Zetshop", src: logoZetshop },
             { name: "The Netherlands Chamber of Commerce", src: logoTncoc },
             { name: "Unuo", src: logoUnuo },
-          ].map(({ name, src }) => (
-            <div
-              key={name}
-              className="flex aspect-[5/3] items-center justify-center rounded-sm bg-black/5"
-            >
-              <img
-                src={src}
-                alt={name}
-                loading="lazy"
-                className="h-[85%] w-[85%] object-contain opacity-40 transition-opacity duration-300 hover:opacity-100"
-              />
-            </div>
-          ))}
-        </div>
+            { name: "CVTI SR", src: logoCvti },
+            { name: "Norriv", src: logoNorriv },
+          ]}
+        />
       </section>
 
       {/* LATEST WORK */}
