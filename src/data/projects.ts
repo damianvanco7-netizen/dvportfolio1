@@ -2,6 +2,7 @@
 import aureanJourneys3 from "@/assets/projects/aurean-journeys-3.png";
 import aureanJourneys4 from "@/assets/projects/aurean-journeys-4.png";
 import aureanJourneysVideo from "@/assets/projects/aurean-journeys.mp4";
+import aureanJourneysVideo2 from "@/assets/projects/aurean-journeys-4.mp4";
 import velox from "@/assets/projects/velox.jpg";
 import surikado from "@/assets/projects/surikado.jpg";
 import villaPoton from "@/assets/projects/villa-poton.jpg";
@@ -100,7 +101,7 @@ export const projects: readonly Project[] = [
     client: "Aurean Journeys",
     year: "2025, 3 months",
     liveUrl: "https://aureanjourneys.com/",
-    gallery: [aureanJourneysVideo, aureanJourneys3, aureanJourneys4],
+    gallery: [aureanJourneysVideo, aureanJourneys3, aureanJourneys4, aureanJourneysVideo2],
   },
   {
     slug: "velox",
