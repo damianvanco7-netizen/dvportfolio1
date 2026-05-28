@@ -130,7 +130,7 @@ export const projects: readonly Project[] = [
     client: "Villa Potôn",
     year: "2024, 2 months",
     liveUrl: "https://villapoton.com/",
-    gallery: [villaPotonVideo, villaPotonVideo2, villaPoton],
+    gallery: [villaPotonVideo2, villaPotonVideo, villaPoton],
   },
   {
     slug: "surikado",
