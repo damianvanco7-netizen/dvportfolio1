@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -14,6 +15,8 @@ import logoLeadsummit from "@/assets/logos/leadsummit.png";
 import logoZetshop from "@/assets/logos/zetshop.png";
 import logoTncoc from "@/assets/logos/tncoc.png";
 import logoUnuo from "@/assets/logos/unuo.png";
+import logoCvti from "@/assets/logos/cvti.png";
+import logoNorriv from "@/assets/logos/norriv.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -121,6 +124,75 @@ function ProjectPill({ slug, title }: { slug: string; title: string }) {
   );
 }
 
+function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(6);
+  const [animate, setAnimate] = useState(true);
+
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth >= 768) setVisible(6);
+      else if (window.innerWidth >= 640) setVisible(3);
+      else setVisible(2);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setAnimate(true);
+      setIndex((i) => i + 1);
+    }, 3000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    if (index === logos.length) {
+      const t = setTimeout(() => {
+        setAnimate(false);
+        setIndex(0);
+        requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
+      }, 700);
+      return () => clearTimeout(t);
+    }
+  }, [index, logos.length]);
+
+  const items = [...logos, ...logos.slice(0, visible)];
+  const itemWidth = 100 / visible;
+
+  return (
+    <div className="mt-16 overflow-hidden md:mt-24">
+      <div
+        className="flex"
+        style={{
+          width: `${(items.length * 100) / visible}%`,
+          transform: `translateX(-${index * itemWidth}%)`,
+          transition: animate ? "transform 700ms ease" : "none",
+        }}
+      >
+        {items.map(({ name, src }, i) => (
+          <div
+            key={`${name}-${i}`}
+            className="shrink-0 px-1"
+            style={{ width: `${100 / items.length}%` }}
+          >
+            <div className="flex aspect-[5/3] items-center justify-center rounded-sm bg-black/5">
+              <img
+                src={src}
+                alt={name}
+                loading="lazy"
+                className="h-[85%] w-[85%] object-contain opacity-40 transition-opacity duration-300 hover:opacity-100"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ProjectCard({
   slug,
   img,
@@ -220,7 +292,7 @@ function HomePage() {
         <div className="max-w-5xl">
           <h2 className="text-[24px] font-medium leading-[1.2] tracking-tight text-foreground md:text-[32px]">
             <span className="mr-3 inline-flex align-middle">
-              <PillLink>About us</PillLink>
+              <PillLink>About</PillLink>
             </span>
             Transforming your ideas into impactful digital experiences by
             delivering top-tier web development and visual content, ensuring
@@ -229,28 +301,18 @@ function HomePage() {
         </div>
 
         {/* CLIENT LOGOS */}
-        <div className="mt-16 grid grid-cols-2 gap-2 sm:grid-cols-3 md:mt-24 md:grid-cols-6">
-          {[
+        <LogoCarousel
+          logos={[
             { name: "Birne", src: logoBirne },
             { name: "Greenstone", src: logoGreenstone },
             { name: "Lead Summit", src: logoLeadsummit },
             { name: "Zetshop", src: logoZetshop },
             { name: "The Netherlands Chamber of Commerce", src: logoTncoc },
             { name: "Unuo", src: logoUnuo },
-          ].map(({ name, src }) => (
-            <div
-              key={name}
-              className="flex aspect-[5/3] items-center justify-center rounded-sm bg-black/5"
-            >
-              <img
-                src={src}
-                alt={name}
-                loading="lazy"
-                className="h-[85%] w-[85%] object-contain opacity-40 transition-opacity duration-300 hover:opacity-100"
-              />
-            </div>
-          ))}
-        </div>
+            { name: "CVTI SR", src: logoCvti },
+            { name: "Norriv", src: logoNorriv },
+          ]}
+        />
       </section>
 
       {/* LATEST WORK */}
