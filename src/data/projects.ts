@@ -121,14 +121,14 @@ export const projects: readonly Project[] = [
   {
     slug: "surikado",
     title: "Surikado AI",
-    cover: surikado,
+    cover: surikadoVideo,
     tags: ["Web design and development"],
     info: "I developed both the front-end and back-end of this project, delivering a fully functional and user friendly website. It features advanced interactive effects and refined UI details that elevate the overall user experience. If you want to see more, visit Surikado website directly.",
     services: ["Web design and development"],
     client: "Surikado",
     year: "2026, 2 months",
     liveUrl: "https://surikado.sk/en",
-    gallery: [surikado],
+    gallery: [surikadoVideo, surikado2, surikado3],
   },
   {
     slug: "villa-poton",
