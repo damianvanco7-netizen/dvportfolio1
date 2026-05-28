@@ -145,13 +145,13 @@ export const projects: readonly Project[] = [
   {
     slug: "8bites",
     title: "8bites",
-    cover: eightBites8,
+    cover: eightBites9,
     tags: ["Visual Identity", "Web design"],
     info: "8bites is a web development studio with a bold, pixel-inspired identity. The project covers the full brand system — from logo and iconography to web design and responsive layouts — built around a vibrant green and black palette that captures the studio's playful yet technical character.",
     services: ["Visual Identity", "Web design"],
     client: "8bites",
     year: "2024, 3 months",
-    gallery: [eightBites1, eightBites2, eightBites3, eightBites5, eightBites6, eightBites7, eightBites8, eightBites9, eightBites10, eightBites11, eightBites12, eightBites13, eightBites14, eightBites15, eightBites16, eightBites17],
+    gallery: [eightBites9, eightBites1, eightBites2, eightBites3, eightBites5, eightBites6, eightBites7, eightBites8, eightBites10, eightBites11, eightBites12, eightBites13, eightBites14, eightBites15, eightBites16, eightBites17],
   },
   {
     slug: "stable-labs",
