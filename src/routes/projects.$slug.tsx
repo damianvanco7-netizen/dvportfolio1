@@ -108,7 +108,7 @@ function ProjectPage() {
               >
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full"
-                  style={{ backgroundColor: "var(--accent-orange)" }}
+                  style={{ backgroundColor: "var(--accent-blue)" }}
                 />
                 View live site
               </a>

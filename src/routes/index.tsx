@@ -104,7 +104,7 @@ function PillLink({
       {dot && (
         <span
           className="inline-block h-1.5 w-1.5 rounded-full"
-          style={{ backgroundColor: "var(--accent-orange)" }}
+          style={{ backgroundColor: "var(--accent-blue)" }}
         />
       )}
       {children}
@@ -117,9 +117,24 @@ function ProjectPill({ slug, title }: { slug: string; title: string }) {
     <Link
       to="/projects/$slug"
       params={{ slug }}
-      className="inline-flex items-center rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors hover:bg-black/10"
+      className="group inline-flex items-center gap-1.5 rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors hover:bg-black/10"
     >
       {title}
+      <svg
+        aria-hidden="true"
+        width="12"
+        height="12"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="max-w-0 -translate-x-1 opacity-0 transition-all duration-300 group-hover:max-w-[12px] group-hover:translate-x-0 group-hover:opacity-100"
+      >
+        <line x1="7" y1="17" x2="17" y2="7" />
+        <polyline points="7 7 17 7 17 17" />
+      </svg>
     </Link>
   );
 }
@@ -352,7 +367,7 @@ function HomePage() {
             >
               Services
             </h2>
-            <PillLink>View all services</PillLink>
+            <PillLink to="/about">Learn more about me</PillLink>
           </div>
 
           <Accordion type="single" collapsible className="w-full">
