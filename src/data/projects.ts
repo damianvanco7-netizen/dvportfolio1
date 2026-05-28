@@ -10,6 +10,7 @@ import surikado2 from "@/assets/projects/surikado-2.png";
 import surikado3 from "@/assets/projects/surikado-3.png";
 import villaPoton from "@/assets/projects/villa-poton.jpg";
 import villaPotonVideo from "@/assets/projects/villa-poton.mp4";
+import villaPotonVideo2 from "@/assets/projects/villa-poton-2.mp4";
 import stableLabs from "@/assets/projects/stable-labs.jpg";
 import stableLabs1 from "@/assets/projects/stable-labs-1.webp";
 import stableLabs2 from "@/assets/projects/stable-labs-2.webp";
@@ -120,6 +121,18 @@ export const projects: readonly Project[] = [
     gallery: [velox],
   },
   {
+    slug: "villa-poton",
+    title: "Villa Potôn",
+    cover: villaPotonVideo,
+    tags: ["Web design and development"],
+    info: "A quiet, editorial site for a contemporary stone villa — letting architecture and natural light carry the story through generous whitespace and serif typography.",
+    services: ["Web design and development"],
+    client: "Villa Potôn",
+    year: "2024, 2 months",
+    liveUrl: "https://villapoton.com/",
+    gallery: [villaPotonVideo, villaPotonVideo2, villaPoton],
+  },
+  {
     slug: "surikado",
     title: "Surikado AI",
     cover: surikadoVideo,
@@ -130,18 +143,6 @@ export const projects: readonly Project[] = [
     year: "2026, 2 months",
     liveUrl: "https://surikado.sk/en",
     gallery: [surikadoVideo, surikado2, surikado3],
-  },
-  {
-    slug: "villa-poton",
-    title: "Villa Potôn",
-    cover: villaPotonVideo,
-    tags: ["Web design and development"],
-    info: "A quiet, editorial site for a contemporary stone villa — letting architecture and natural light carry the story through generous whitespace and serif typography.",
-    services: ["Web design and development"],
-    client: "Villa Potôn",
-    year: "2024, 2 months",
-    liveUrl: "https://villapoton.com/",
-    gallery: [villaPotonVideo, villaPoton],
   },
   {
     slug: "8bites",
@@ -155,17 +156,6 @@ export const projects: readonly Project[] = [
     gallery: [eightBitesCover, eightBites1, eightBites2, eightBites3, eightBites5, eightBites6, eightBites7, eightBites8, eightBites9, eightBites10, eightBites11, eightBites12, eightBites13, eightBites14, eightBites15, eightBites16, eightBites17],
   },
   {
-    slug: "stable-labs",
-    title: "StableLabs",
-    cover: stableLabs,
-    tags: ["Visual Identity", "Web design"],
-    info: "Stable Labs is a fintech project focused on bringing the Czech koruna and traditional assets onto the blockchain through a CZK stablecoin and a tokenization platform.",
-    services: ["Visual Identity", "Web design"],
-    client: "StableLabs",
-    year: "2024, 6 months",
-    gallery: [stableLabs1, stableLabs2, stableLabs3, stableLabs4, stableLabs5, stableLabs6, stableLabs7, stableLabs8, stableLabs9, stableLabs10, stableLabs11, stableLabs12, stableLabs13, stableLabs14, stableLabs15, stableLabs16, stableLabs17, stableLabs18, stableLabs19, stableLabs20],
-  },
-  {
     slug: "ethereum-bratislava",
     title: "Ethereum Bratislava",
     cover: ethereumBratislava,
@@ -176,6 +166,17 @@ export const projects: readonly Project[] = [
     year: "2025, 1 month",
     liveUrl: "https://ethbratislava.com/",
     gallery: [ethereumBratislava1, ethereumBratislava2, ethereumBratislava3, ethereumBratislava4, ethereumBratislava5, ethereumBratislava6],
+  },
+  {
+    slug: "stable-labs",
+    title: "StableLabs",
+    cover: stableLabs,
+    tags: ["Visual Identity", "Web design"],
+    info: "Stable Labs is a fintech project focused on bringing the Czech koruna and traditional assets onto the blockchain through a CZK stablecoin and a tokenization platform.",
+    services: ["Visual Identity", "Web design"],
+    client: "StableLabs",
+    year: "2024, 6 months",
+    gallery: [stableLabs1, stableLabs2, stableLabs3, stableLabs4, stableLabs5, stableLabs6, stableLabs7, stableLabs8, stableLabs9, stableLabs10, stableLabs11, stableLabs12, stableLabs13, stableLabs14, stableLabs15, stableLabs16, stableLabs17, stableLabs18, stableLabs19, stableLabs20],
   },
   {
     slug: "lava-stone",
