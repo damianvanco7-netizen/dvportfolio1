@@ -6,7 +6,7 @@ import heroSun from "@/assets/hero-sun.jpg";
 import aureanJourneys from "@/assets/projects/aurean-journeys.mp4";
 import velox from "@/assets/projects/velox.jpg";
 import eightBitesCover from "@/assets/projects/8bites-cover.jpeg";
-import stableLabs from "@/assets/projects/stable-labs.jpg";
+import villaPotonVideo from "@/assets/projects/villa-poton-2.mp4";
 import ethereumBratislava from "@/assets/projects/ethereum-bratislava.jpg";
 import logoBirne from "@/assets/logos/birne.png";
 import logoGreenstone from "@/assets/logos/greenstone.png";
