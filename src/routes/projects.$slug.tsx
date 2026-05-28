@@ -92,7 +92,8 @@ function ProjectPage() {
           </div>
 
           {/* RIGHT — sticky info column */}
-          <div className="md:sticky md:top-28 md:self-start">
+          <div className="order-1 md:order-2 md:sticky md:top-28 md:self-start">
+
             <h1
               className="font-medium leading-[1] tracking-[-0.03em]"
               style={{ fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}
