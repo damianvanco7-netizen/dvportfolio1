@@ -201,6 +201,18 @@ export const projects: readonly Project[] = [
     year: "2025, 2 months",
     gallery: [leadSummit1, leadSummit2, leadSummit3, leadSummit4, leadSummit5, leadSummit6, leadSummit7, leadSummit8, leadSummit9, leadSummit10],
   },
+  {
+    slug: "norriv",
+    title: "Norriv",
+    cover: norriv1,
+    tags: ["Web design"],
+    info: "",
+    services: ["Web design"],
+    client: "Norriv",
+    year: "2024, 2 months",
+    liveUrl: "https://www.norriv.com/",
+    gallery: [norriv1],
+  },
 ];
 
 export const getProject = (slug: string) =>
