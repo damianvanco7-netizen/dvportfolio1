@@ -42,7 +42,7 @@ const projectsTop = [
 
 const projectsBottom = [
   { slug: "8bites", img: eightBitesCover, tags: ["Visual Identity", "Web design"], title: "8bites" },
-  { slug: "stable-labs", img: stableLabs, tags: ["Visual Identity", "Web design"], title: "Stable Labs" },
+  { slug: "villa-poton", img: villaPotonVideo, tags: ["Web design and development"], title: "Villa Potôn" },
   { slug: "ethereum-bratislava", img: ethereumBratislava, tags: ["Visual Identity", "Web design and development"], title: "Ethereum Bratislava" },
 ] as const;
 
