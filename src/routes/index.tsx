@@ -367,7 +367,7 @@ function HomePage() {
             >
               Services
             </h2>
-            <PillLink>View all services</PillLink>
+            <PillLink to="/about">Learn more about me</PillLink>
           </div>
 
           <Accordion type="single" collapsible className="w-full">
