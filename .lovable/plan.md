@@ -1,9 +1,11 @@
-## Add video to Villa Potôn project
+## Problém
 
-1. Copy uploaded `vp_video.mp4` → `src/assets/projects/villa-poton.mp4`.
-2. In `src/data/projects.ts`:
-   - Add import `villaPotonVideo from "@/assets/projects/villa-poton.mp4"`.
-   - Set Villa Potôn `cover: villaPotonVideo` (card on /projects will use existing video detection and autoplay it).
-   - Prepend the video to the `gallery` array so it appears on the project detail page.
+Na homepage (`src/routes/index.tsx`) má karta 8bites hardcoded video (`8bites-8.mp4`), preto sa zmena `cover` v `src/data/projects.ts` neprejavila — homepage si ťahá obrázky vlastným importom, nie z `projects.ts`.
 
-No changes needed in `projects.index.tsx` or `projects.$slug.tsx` — both already detect `.mp4` and render a muted, autoplay, looping `<video>`.
+## Riešenie
+
+V `src/routes/index.tsx`:
+1. Nahradiť import `eightBites8 from "@/assets/projects/8bites-8.mp4"` za import nového cover obrázka `8bites-cover.jpeg`.
+2. V `projectsBottom` zmeniť `img: eightBites8` na nový cover.
+
+Tým bude karta 8bites na homepage zobrazovať rovnaký obrázok (laptop medzi skalami) ako na `/projects` a ako prvý obrázok na detaile.
