@@ -179,18 +179,6 @@ export const projects: readonly Project[] = [
     gallery: [stableLabs1, stableLabs2, stableLabs3, stableLabs4, stableLabs5, stableLabs6, stableLabs7, stableLabs8, stableLabs9, stableLabs10, stableLabs11, stableLabs12, stableLabs13, stableLabs14, stableLabs15, stableLabs16, stableLabs17, stableLabs18, stableLabs19, stableLabs20],
   },
   {
-    slug: "ethereum-bratislava",
-    title: "Ethereum Bratislava",
-    cover: ethereumBratislava,
-    tags: ["Visual Identity", "Web design and development"],
-    info: "This project is a fully custom-designed and developed website built from scratch using a vibe coding approach. From concept and UI design to responsive development and interactive details, I handled the entire process end-to-end, combining creative direction with AI-powered execution. If you want to see more, visit Ethereum Bratislava website directly.",
-    services: ["Visual Identity", "Web design and development"],
-    client: "Ethereum Bratislava",
-    year: "2025, 1 month",
-    liveUrl: "https://ethbratislava.com/",
-    gallery: [ethereumBratislava1, ethereumBratislava2, ethereumBratislava3, ethereumBratislava4, ethereumBratislava5, ethereumBratislava6],
-  },
-  {
     slug: "lava-stone",
     title: "Lava Stone",
     cover: lavaStone13,
