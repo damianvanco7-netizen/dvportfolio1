@@ -10,6 +10,7 @@ import surikado2 from "@/assets/projects/surikado-2.png";
 import surikado3 from "@/assets/projects/surikado-3.png";
 import villaPoton from "@/assets/projects/villa-poton.jpg";
 import villaPotonVideo from "@/assets/projects/villa-poton.mp4";
+import villaPotonVideo2 from "@/assets/projects/villa-poton-2.mp4";
 import stableLabs from "@/assets/projects/stable-labs.jpg";
 import stableLabs1 from "@/assets/projects/stable-labs-1.webp";
 import stableLabs2 from "@/assets/projects/stable-labs-2.webp";
