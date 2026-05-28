@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
-import heroSun from "@/assets/hero-sun.jpg";
+import heroVideo from "@/assets/hero.mp4";
 import aureanJourneys from "@/assets/projects/aurean-journeys.mp4";
 import velox from "@/assets/projects/velox.jpg";
 import eightBitesCover from "@/assets/projects/8bites-cover.jpeg";
@@ -270,16 +270,16 @@ function HomePage() {
       <SiteHeader />
 
       {/* HERO — fixed background image, content scrolls over it */}
-      <div
-        aria-hidden="true"
-        className="fixed inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroSun})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+      <div aria-hidden="true" className="fixed inset-0 z-0 overflow-hidden">
+        <video
+          src={heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-full w-full object-cover"
+        />
+      </div>
 
       <section className="relative z-10">
         <div className="flex min-h-[55vh] flex-col justify-end bg-white px-5 pb-2 pt-24 md:px-6 md:pt-32">
