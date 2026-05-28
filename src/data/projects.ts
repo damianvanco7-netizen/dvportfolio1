@@ -101,7 +101,7 @@ export const projects: readonly Project[] = [
     client: "Aurean Journeys",
     year: "2025, 3 months",
     liveUrl: "https://aureanjourneys.com/",
-    gallery: [aureanJourneysVideo, aureanJourneys3, aureanJourneys4],
+    gallery: [aureanJourneysVideo, aureanJourneys3, aureanJourneys4, aureanJourneysVideo2],
   },
   {
     slug: "velox",
