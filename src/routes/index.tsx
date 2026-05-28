@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import heroSun from "@/assets/hero-sun.jpg";
 import aureanJourneys from "@/assets/projects/aurean-journeys.mp4";
 import velox from "@/assets/projects/velox.jpg";
-import eightBites8 from "@/assets/projects/8bites-8.mp4";
+import eightBitesCover from "@/assets/projects/8bites-cover.jpeg";
 import stableLabs from "@/assets/projects/stable-labs.jpg";
 import ethereumBratislava from "@/assets/projects/ethereum-bratislava.jpg";
 import logoBirne from "@/assets/logos/birne.png";
@@ -41,7 +41,7 @@ const projectsTop = [
 ] as const;
 
 const projectsBottom = [
-  { slug: "8bites", img: eightBites8, tags: ["Visual Identity", "Web design"], title: "8bites" },
+  { slug: "8bites", img: eightBitesCover, tags: ["Visual Identity", "Web design"], title: "8bites" },
   { slug: "stable-labs", img: stableLabs, tags: ["Visual Identity", "Web design"], title: "Stable Labs" },
   { slug: "ethereum-bratislava", img: ethereumBratislava, tags: ["Visual Identity", "Web design and development"], title: "Ethereum Bratislava" },
 ] as const;
