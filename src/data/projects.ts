@@ -5,6 +5,9 @@ import aureanJourneysVideo from "@/assets/projects/aurean-journeys.mp4";
 import aureanJourneysVideo2 from "@/assets/projects/aurean-journeys-4.mp4";
 import velox from "@/assets/projects/velox.jpg";
 import surikado from "@/assets/projects/surikado.jpg";
+import surikadoVideo from "@/assets/projects/surikado-1.mp4";
+import surikado2 from "@/assets/projects/surikado-2.png";
+import surikado3 from "@/assets/projects/surikado-3.png";
 import villaPoton from "@/assets/projects/villa-poton.jpg";
 import villaPotonVideo from "@/assets/projects/villa-poton.mp4";
 import stableLabs from "@/assets/projects/stable-labs.jpg";
@@ -118,14 +121,14 @@ export const projects: readonly Project[] = [
   {
     slug: "surikado",
     title: "Surikado AI",
-    cover: surikado,
+    cover: surikadoVideo,
     tags: ["Web design and development"],
     info: "I developed both the front-end and back-end of this project, delivering a fully functional and user friendly website. It features advanced interactive effects and refined UI details that elevate the overall user experience. If you want to see more, visit Surikado website directly.",
     services: ["Web design and development"],
     client: "Surikado",
     year: "2026, 2 months",
     liveUrl: "https://surikado.sk/en",
-    gallery: [surikado],
+    gallery: [surikadoVideo, surikado2, surikado3],
   },
   {
     slug: "villa-poton",
