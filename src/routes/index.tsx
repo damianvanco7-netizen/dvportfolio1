@@ -127,6 +127,7 @@ function ProjectPill({ slug, title }: { slug: string; title: string }) {
 function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(6);
+  const [animate, setAnimate] = useState(true);
 
   useEffect(() => {
     const update = () => {
@@ -140,20 +141,26 @@ function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
   }, []);
 
   useEffect(() => {
-    const id = setInterval(() => setIndex((i) => i + 1), 3000);
+    const id = setInterval(() => {
+      setAnimate(true);
+      setIndex((i) => i + 1);
+    }, 3000);
     return () => clearInterval(id);
   }, []);
 
-  const items = [...logos, ...logos.slice(0, visible)];
-  const itemWidth = 100 / visible;
-  const isSnap = index >= logos.length;
-
   useEffect(() => {
-    if (index >= logos.length) {
-      const t = setTimeout(() => setIndex(0), 700);
+    if (index === logos.length) {
+      const t = setTimeout(() => {
+        setAnimate(false);
+        setIndex(0);
+        requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
+      }, 700);
       return () => clearTimeout(t);
     }
   }, [index, logos.length]);
+
+  const items = [...logos, ...logos.slice(0, visible)];
+  const itemWidth = 100 / visible;
 
   return (
     <div className="mt-16 overflow-hidden md:mt-24">
@@ -162,7 +169,7 @@ function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
         style={{
           width: `${(items.length * 100) / visible}%`,
           transform: `translateX(-${index * itemWidth}%)`,
-          transition: isSnap && index === 0 ? "none" : "transform 700ms ease",
+          transition: animate ? "transform 700ms ease" : "none",
         }}
       >
         {items.map(({ name, src }, i) => (
