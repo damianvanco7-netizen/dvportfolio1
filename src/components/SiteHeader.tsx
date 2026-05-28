@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import symbol from "@/assets/symbol.svg";
+
 
 const navItems = [
   { label: "Projects", to: "/projects" },
@@ -10,20 +12,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 bg-white">
       <div className="flex h-16 items-center justify-between px-5 md:px-6">
         <Link to="/" className="flex items-center gap-2 text-foreground">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M9 1 17 9l-8 8L1 9z"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              fill="none"
-            />
-          </svg>
+          <img src={symbol} alt="" aria-hidden="true" className="h-[18px] w-auto" />
+
           <span className="text-[15px] font-medium tracking-tight">
             DAMIAN VANCO
           </span>
