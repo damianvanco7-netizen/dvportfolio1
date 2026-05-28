@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import symbol from "@/assets/symbol.svg";
+
 
 export function SiteFooter() {
   return (
