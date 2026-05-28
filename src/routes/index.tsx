@@ -124,6 +124,68 @@ function ProjectPill({ slug, title }: { slug: string; title: string }) {
   );
 }
 
+function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(6);
+
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth >= 768) setVisible(6);
+      else if (window.innerWidth >= 640) setVisible(3);
+      else setVisible(2);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => setIndex((i) => i + 1), 3000);
+    return () => clearInterval(id);
+  }, []);
+
+  const items = [...logos, ...logos.slice(0, visible)];
+  const itemWidth = 100 / visible;
+  const isSnap = index >= logos.length;
+
+  useEffect(() => {
+    if (index >= logos.length) {
+      const t = setTimeout(() => setIndex(0), 700);
+      return () => clearTimeout(t);
+    }
+  }, [index, logos.length]);
+
+  return (
+    <div className="mt-16 overflow-hidden md:mt-24">
+      <div
+        className="flex"
+        style={{
+          width: `${(items.length * 100) / visible}%`,
+          transform: `translateX(-${index * itemWidth}%)`,
+          transition: isSnap && index === 0 ? "none" : "transform 700ms ease",
+        }}
+      >
+        {items.map(({ name, src }, i) => (
+          <div
+            key={`${name}-${i}`}
+            className="shrink-0 px-1"
+            style={{ width: `${100 / items.length}%` }}
+          >
+            <div className="flex aspect-[5/3] items-center justify-center rounded-sm bg-black/5">
+              <img
+                src={src}
+                alt={name}
+                loading="lazy"
+                className="h-[85%] w-[85%] object-contain opacity-40 transition-opacity duration-300 hover:opacity-100"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ProjectCard({
   slug,
   img,
