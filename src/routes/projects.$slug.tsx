@@ -59,7 +59,8 @@ function ProjectPage() {
       <section className="px-5 pt-28 pb-16 md:px-6 md:pt-32">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-[3.6fr_1fr] md:gap-10">
           {/* LEFT — scrolling gallery */}
-          <div className="flex flex-col gap-3">
+          <div className="order-2 flex flex-col gap-3 md:order-1">
+
             {project.gallery.map((src: string, i: number) => {
               const isVideo = /\.(mp4|webm|mov)$/i.test(src);
               return (
