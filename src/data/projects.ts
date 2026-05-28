@@ -123,14 +123,14 @@ export const projects: readonly Project[] = [
   {
     slug: "villa-poton",
     title: "Villa Potôn",
-    cover: villaPotonVideo,
+    cover: villaPotonVideo2,
     tags: ["Web design and development"],
     info: "A quiet, editorial site for a contemporary stone villa — letting architecture and natural light carry the story through generous whitespace and serif typography.",
     services: ["Web design and development"],
     client: "Villa Potôn",
     year: "2024, 2 months",
     liveUrl: "https://villapoton.com/",
-    gallery: [villaPotonVideo2, villaPotonVideo, villaPoton],
+    gallery: [villaPotonVideo2, villaPoton],
   },
   {
     slug: "surikado",
