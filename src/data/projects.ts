@@ -46,6 +46,7 @@ import eightBites6 from "@/assets/projects/8bites-6.webp";
 import eightBites7 from "@/assets/projects/8bites-7.webp";
 import eightBites8 from "@/assets/projects/8bites-8.mp4";
 import eightBites9 from "@/assets/projects/8bites-9.webp";
+import eightBitesCover from "@/assets/projects/8bites-cover.png";
 import eightBites10 from "@/assets/projects/8bites-10.webp";
 import eightBites11 from "@/assets/projects/8bites-11.webp";
 import eightBites12 from "@/assets/projects/8bites-12.mp4";
