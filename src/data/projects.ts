@@ -81,6 +81,7 @@ import leadSummit7 from "@/assets/projects/lead-summit-7.webp";
 import leadSummit8 from "@/assets/projects/lead-summit-8.webp";
 import leadSummit9 from "@/assets/projects/lead-summit-9.webp";
 import leadSummit10 from "@/assets/projects/lead-summit-10.webp";
+import norriv1 from "@/assets/projects/norriv-1.png";
 
 export type Project = {
   slug: string;
