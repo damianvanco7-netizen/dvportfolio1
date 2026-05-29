@@ -420,13 +420,23 @@ function HomePage() {
             >
               References
             </h2>
-            <span className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline">
-              (Kind words)
+            <span className="hidden items-center gap-1.5 whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline-flex">
+              <svg
+                aria-hidden="true"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="text-foreground"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              4.8
             </span>
           </div>
 
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
-            {[
+          <ReferencesCarousel
+            items={[
               {
                 name: "Jane Doe",
                 position: "Marketing Director",
@@ -448,31 +458,32 @@ function HomePage() {
                 quote:
                   "Thoughtful, fast, and detail-obsessed. Our conversion rates improved noticeably after the redesign.",
               },
-            ].map((r) => (
-              <figure
-                key={r.name}
-                className="flex flex-col gap-8 border-t border-border/60 pt-8"
-              >
-                <blockquote className="text-[18px] leading-[1.5] tracking-tight text-foreground/80">
-                  “{r.quote}”
-                </blockquote>
-                <figcaption className="mt-auto flex items-center gap-3">
-                  <span
-                    aria-hidden="true"
-                    className="h-10 w-10 shrink-0 rounded-full bg-black/10"
-                  />
-                  <span className="flex flex-col">
-                    <span className="text-[14px] text-foreground">{r.name}</span>
-                    <span className="text-[13px] text-muted-foreground">
-                      {r.position}, {r.company}
-                    </span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+              {
+                name: "Tomáš Horák",
+                position: "Creative Lead",
+                company: "Lead Summit",
+                quote:
+                  "The collaboration felt like a true partnership. Every detail was considered and the result speaks for itself.",
+              },
+              {
+                name: "Elena Ricci",
+                position: "Brand Manager",
+                company: "Unuo",
+                quote:
+                  "Beautiful craft and a calm process. We received a website we are genuinely proud to share with our customers.",
+              },
+              {
+                name: "Lukas Berger",
+                position: "Co-founder",
+                company: "Norriv",
+                quote:
+                  "From strategy to launch the experience was smooth and the visual outcome elevated our positioning instantly.",
+              },
+            ]}
+          />
         </div>
       </section>
+
 
 
       <SiteFooter />
