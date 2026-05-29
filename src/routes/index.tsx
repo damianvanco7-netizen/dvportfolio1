@@ -139,7 +139,93 @@ function ProjectPill({ slug, title }: { slug: string; title: string }) {
   );
 }
 
+type Reference = {
+  name: string;
+  position: string;
+  company: string;
+  quote: string;
+};
+
+function ReferencesCarousel({ items }: { items: Reference[] }) {
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(3);
+  const [animate, setAnimate] = useState(true);
+
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth >= 768) setVisible(3);
+      else if (window.innerWidth >= 640) setVisible(2);
+      else setVisible(1);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setAnimate(true);
+      setIndex((i) => i + 1);
+    }, 3000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    if (index === items.length) {
+      const t = setTimeout(() => {
+        setAnimate(false);
+        setIndex(0);
+        requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
+      }, 700);
+      return () => clearTimeout(t);
+    }
+  }, [index, items.length]);
+
+  const list = [...items, ...items.slice(0, visible)];
+  const step = 100 / list.length;
+
+  return (
+    <div className="overflow-hidden">
+      <div
+        className="flex"
+        style={{
+          width: `${(list.length * 100) / visible}%`,
+          transform: `translateX(-${index * step}%)`,
+          transition: animate ? "transform 700ms ease" : "none",
+        }}
+      >
+        {list.map((r, i) => (
+          <div
+            key={`${r.name}-${i}`}
+            className="shrink-0 px-4 first:pl-0 md:px-5"
+            style={{ width: `${100 / list.length}%` }}
+          >
+            <figure className="flex h-full flex-col gap-8 border-t border-border/60 pt-8">
+              <blockquote className="text-[18px] leading-[1.5] tracking-tight text-foreground/80">
+                “{r.quote}”
+              </blockquote>
+              <figcaption className="mt-auto flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="h-10 w-10 shrink-0 rounded-full bg-black/10"
+                />
+                <span className="flex flex-col">
+                  <span className="text-[14px] text-foreground">{r.name}</span>
+                  <span className="text-[13px] text-muted-foreground">
+                    {r.position}, {r.company}
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
+
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(6);
   const [animate, setAnimate] = useState(true);
