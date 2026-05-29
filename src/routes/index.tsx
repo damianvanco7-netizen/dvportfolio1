@@ -410,6 +410,71 @@ function HomePage() {
         </div>
       </section>
 
+      {/* REFERENCES */}
+      <section className="relative z-10 bg-white border-t border-border/60">
+        <div className="px-5 py-12 md:px-6 md:py-16">
+          <div className="mb-10 flex items-end justify-between md:mb-14">
+            <h2
+              className="font-medium leading-[0.95] tracking-[-0.03em]"
+              style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+            >
+              References
+            </h2>
+            <span className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline">
+              (Kind words)
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
+            {[
+              {
+                name: "Jane Doe",
+                position: "Marketing Director",
+                company: "Birne",
+                quote:
+                  "Working with the studio was effortless. The final website exceeded our expectations and elevated the entire brand.",
+              },
+              {
+                name: "Marek Novák",
+                position: "Founder & CEO",
+                company: "Greenstone",
+                quote:
+                  "A rare combination of strong design sense and clean execution. Communication was clear from day one to launch.",
+              },
+              {
+                name: "Sofia Lindqvist",
+                position: "Head of Product",
+                company: "Zetshop",
+                quote:
+                  "Thoughtful, fast, and detail-obsessed. Our conversion rates improved noticeably after the redesign.",
+              },
+            ].map((r) => (
+              <figure
+                key={r.name}
+                className="flex flex-col gap-8 border-t border-border/60 pt-8"
+              >
+                <blockquote className="text-[18px] leading-[1.5] tracking-tight text-foreground/80">
+                  “{r.quote}”
+                </blockquote>
+                <figcaption className="mt-auto flex items-center gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="h-10 w-10 shrink-0 rounded-full bg-black/10"
+                  />
+                  <span className="flex flex-col">
+                    <span className="text-[14px] text-foreground">{r.name}</span>
+                    <span className="text-[13px] text-muted-foreground">
+                      {r.position}, {r.company}
+                    </span>
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <SiteFooter />
     </div>
   );
