@@ -139,7 +139,93 @@ function ProjectPill({ slug, title }: { slug: string; title: string }) {
   );
 }
 
+type Reference = {
+  name: string;
+  position: string;
+  company: string;
+  quote: string;
+};
+
+function ReferencesCarousel({ items }: { items: Reference[] }) {
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(3);
+  const [animate, setAnimate] = useState(true);
+
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth >= 768) setVisible(3);
+      else if (window.innerWidth >= 640) setVisible(2);
+      else setVisible(1);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setAnimate(true);
+      setIndex((i) => i + 1);
+    }, 3000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    if (index === items.length) {
+      const t = setTimeout(() => {
+        setAnimate(false);
+        setIndex(0);
+        requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
+      }, 700);
+      return () => clearTimeout(t);
+    }
+  }, [index, items.length]);
+
+  const list = [...items, ...items.slice(0, visible)];
+  const step = 100 / list.length;
+
+  return (
+    <div className="overflow-hidden">
+      <div
+        className="flex"
+        style={{
+          width: `${(list.length * 100) / visible}%`,
+          transform: `translateX(-${index * step}%)`,
+          transition: animate ? "transform 700ms ease" : "none",
+        }}
+      >
+        {list.map((r, i) => (
+          <div
+            key={`${r.name}-${i}`}
+            className="shrink-0 px-4 first:pl-0 md:px-5"
+            style={{ width: `${100 / list.length}%` }}
+          >
+            <figure className="flex h-full flex-col gap-8 border-t border-border/60 pt-8">
+              <blockquote className="text-[18px] leading-[1.5] tracking-tight text-foreground/80">
+                “{r.quote}”
+              </blockquote>
+              <figcaption className="mt-auto flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="h-10 w-10 shrink-0 rounded-full bg-black/10"
+                />
+                <span className="flex flex-col">
+                  <span className="text-[14px] text-foreground">{r.name}</span>
+                  <span className="text-[13px] text-muted-foreground">
+                    {r.position}, {r.company}
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
+
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(6);
   const [animate, setAnimate] = useState(true);
@@ -420,13 +506,23 @@ function HomePage() {
             >
               References
             </h2>
-            <span className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline">
-              (Kind words)
+            <span className="hidden items-center gap-1.5 whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline-flex">
+              <svg
+                aria-hidden="true"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="text-foreground"
+              >
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              4.8
             </span>
           </div>
 
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
-            {[
+          <ReferencesCarousel
+            items={[
               {
                 name: "Jane Doe",
                 position: "Marketing Director",
@@ -448,31 +544,32 @@ function HomePage() {
                 quote:
                   "Thoughtful, fast, and detail-obsessed. Our conversion rates improved noticeably after the redesign.",
               },
-            ].map((r) => (
-              <figure
-                key={r.name}
-                className="flex flex-col gap-8 border-t border-border/60 pt-8"
-              >
-                <blockquote className="text-[18px] leading-[1.5] tracking-tight text-foreground/80">
-                  “{r.quote}”
-                </blockquote>
-                <figcaption className="mt-auto flex items-center gap-3">
-                  <span
-                    aria-hidden="true"
-                    className="h-10 w-10 shrink-0 rounded-full bg-black/10"
-                  />
-                  <span className="flex flex-col">
-                    <span className="text-[14px] text-foreground">{r.name}</span>
-                    <span className="text-[13px] text-muted-foreground">
-                      {r.position}, {r.company}
-                    </span>
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+              {
+                name: "Tomáš Horák",
+                position: "Creative Lead",
+                company: "Lead Summit",
+                quote:
+                  "The collaboration felt like a true partnership. Every detail was considered and the result speaks for itself.",
+              },
+              {
+                name: "Elena Ricci",
+                position: "Brand Manager",
+                company: "Unuo",
+                quote:
+                  "Beautiful craft and a calm process. We received a website we are genuinely proud to share with our customers.",
+              },
+              {
+                name: "Lukas Berger",
+                position: "Co-founder",
+                company: "Norriv",
+                quote:
+                  "From strategy to launch the experience was smooth and the visual outcome elevated our positioning instantly.",
+              },
+            ]}
+          />
         </div>
       </section>
+
 
 
       <SiteFooter />
