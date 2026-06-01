@@ -528,42 +528,42 @@ function HomePage() {
                 position: "Marketing Director",
                 company: "Birne",
                 quote:
-                  "Working with the studio was effortless. The final website exceeded our expectations and elevated the entire brand.",
+                  "Over the past years, Damian worked with us across many projects, always delivering reliable, high-quality results.",
               },
               {
                 name: "Marek Novák",
                 position: "Founder & CEO",
                 company: "Greenstone",
                 quote:
-                  "A rare combination of strong design sense and clean execution. Communication was clear from day one to launch.",
+                  "Damian helped us bring the project to life with a polished result, clear process, and strong execution.",
               },
               {
                 name: "Sofia Lindqvist",
                 position: "Head of Product",
                 company: "Zetshop",
                 quote:
-                  "Thoughtful, fast, and detail-obsessed. Our conversion rates improved noticeably after the redesign.",
+                  "Our new interface made the shopping experience faster, cleaner, and much easier to navigate.",
               },
               {
                 name: "Tomáš Horák",
                 position: "Creative Lead",
                 company: "Lead Summit",
                 quote:
-                  "The collaboration felt like a true partnership. Every detail was considered and the result speaks for itself.",
+                  "Damian translated the energy of our event into a bold identity and confident online presence.",
               },
               {
                 name: "Elena Ricci",
                 position: "Brand Manager",
                 company: "Unuo",
                 quote:
-                  "Beautiful craft and a calm process. We received a website we are genuinely proud to share with our customers.",
+                  "The final result feels elegant, practical, and perfectly aligned with how we want to communicate.",
               },
               {
                 name: "Lukas Berger",
                 position: "Co-founder",
                 company: "Norriv",
                 quote:
-                  "From strategy to launch the experience was smooth and the visual outcome elevated our positioning instantly.",
+                  "Damian captured our hologram and 3D visualization work in a website that feels premium, clear, and future-facing.",
               },
             ]}
           />
