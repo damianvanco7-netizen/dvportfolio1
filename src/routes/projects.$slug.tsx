@@ -41,11 +41,40 @@ export const Route = createFileRoute("/projects/$slug")({
   component: ProjectPage,
 });
 
-function InfoRow({ label, value }: { label: string; value: React.ReactNode }) {
+function InfoRow({
+  label,
+  value,
+  delay = 0,
+}: {
+  label: string;
+  value: React.ReactNode;
+  delay?: number;
+}) {
   return (
-    <div className="grid grid-cols-2 gap-4 border-t border-border/60 py-4 text-[13px]">
-      <span className="text-foreground/50">{label}</span>
-      <div className="text-foreground">{value}</div>
+    <div className="relative grid grid-cols-2 gap-4 py-4 text-[13px]">
+      <motion.span
+        aria-hidden
+        className="absolute left-0 right-0 top-0 block h-px origin-left bg-border/60"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.6, delay, ease: [0.65, 0, 0.35, 1] }}
+      />
+      <motion.span
+        className="text-foreground/50"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: delay + 0.1, ease: [0.65, 0, 0.35, 1] }}
+      >
+        {label}
+      </motion.span>
+      <motion.div
+        className="text-foreground"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: delay + 0.1, ease: [0.65, 0, 0.35, 1] }}
+      >
+        {value}
+      </motion.div>
     </div>
   );
 }
@@ -114,48 +143,66 @@ function ProjectPage() {
           {/* RIGHT — sticky info column */}
           <div className="order-1 lg:order-2 lg:sticky lg:top-28 lg:self-start">
 
-            <h1
+            <motion.h1
               className="font-medium leading-[1] tracking-[-0.03em]"
               style={{ fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35, ease: [0.65, 0, 0.35, 1] }}
             >
               {project.title}
-            </h1>
+            </motion.h1>
 
             {project.liveUrl && (
-              <a
+              <motion.a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors hover:bg-black/10"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.45, ease: [0.65, 0, 0.35, 1] }}
               >
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full"
                   style={{ backgroundColor: "var(--accent-blue)" }}
                 />
                 View live site
-              </a>
+              </motion.a>
             )}
 
 
             {project.info && (
-              <div className="mt-10">
+              <motion.div
+                className="mt-10"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.55, ease: [0.65, 0, 0.35, 1] }}
+              >
                 <p className="mb-3 text-[13px] text-foreground/50">Info</p>
                 <p className="max-w-prose text-[14px] leading-relaxed text-foreground/80">
                   {project.info}
                 </p>
-              </div>
+              </motion.div>
             )}
 
-            <div className="mt-12">
+            <div className="relative mt-12">
               <InfoRow
                 label="Services"
                 value={project.services.map((s: string) => (
                   <div key={s}>{s}</div>
                 ))}
+                delay={0.7}
               />
-              <InfoRow label="Client" value={project.client} />
-              <InfoRow label="Year" value={project.year} />
-              <div className="border-t border-border/60" />
+              <InfoRow label="Client" value={project.client} delay={0.8} />
+              <InfoRow label="Year" value={project.year} delay={0.9} />
+              <motion.div
+                aria-hidden
+                className="block h-px origin-left bg-border/60"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 1.0, ease: [0.65, 0, 0.35, 1] }}
+              />
             </div>
           </div>
         </div>
