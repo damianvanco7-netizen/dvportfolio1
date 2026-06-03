@@ -433,30 +433,34 @@ function HomePage() {
 
       {/* INTRO */}
       <section className="relative z-10 bg-white px-5 py-28 md:px-6 md:py-40">
-        <div className="max-w-5xl">
-          <h2 className="text-[24px] font-medium leading-[1.2] tracking-tight text-foreground md:text-[32px]">
-            <span className="mr-3 inline-flex align-middle">
-              <PillLink>About</PillLink>
-            </span>
-            My work sits between brand, design, and development: creating
-            visual identities, websites, and communication systems that help
-            brands feel clear, confident, and recognizable.
-          </h2>
-        </div>
+        <Reveal>
+          <div className="max-w-5xl">
+            <h2 className="text-[24px] font-medium leading-[1.2] tracking-tight text-foreground md:text-[32px]">
+              <span className="mr-3 inline-flex align-middle">
+                <PillLink>About</PillLink>
+              </span>
+              My work sits between brand, design, and development: creating
+              visual identities, websites, and communication systems that help
+              brands feel clear, confident, and recognizable.
+            </h2>
+          </div>
+        </Reveal>
 
         {/* CLIENT LOGOS */}
-        <LogoCarousel
-          logos={[
-            { name: "Birne", src: logoBirne },
-            { name: "Greenstone", src: logoGreenstone },
-            { name: "Lead Summit", src: logoLeadsummit },
-            { name: "Zetshop", src: logoZetshop },
-            { name: "The Netherlands Chamber of Commerce", src: logoTncoc },
-            { name: "Unuo", src: logoUnuo },
-            { name: "CVTI SR", src: logoCvti },
-            { name: "Norriv", src: logoNorriv },
-          ]}
-        />
+        <Reveal delay={0.15}>
+          <LogoCarousel
+            logos={[
+              { name: "Birne", src: logoBirne },
+              { name: "Greenstone", src: logoGreenstone },
+              { name: "Lead Summit", src: logoLeadsummit },
+              { name: "Zetshop", src: logoZetshop },
+              { name: "The Netherlands Chamber of Commerce", src: logoTncoc },
+              { name: "Unuo", src: logoUnuo },
+              { name: "CVTI SR", src: logoCvti },
+              { name: "Norriv", src: logoNorriv },
+            ]}
+          />
+        </Reveal>
       </section>
 
       {/* LATEST WORK */}
