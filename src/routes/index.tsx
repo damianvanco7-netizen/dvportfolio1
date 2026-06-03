@@ -184,7 +184,7 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
     const id = setInterval(() => {
       setAnimate(true);
       setIndex((i) => i + 1);
-    }, 3000);
+    }, 6000);
     return () => clearInterval(id);
   }, []);
 
@@ -194,7 +194,7 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
         setAnimate(false);
         setIndex(0);
         requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
-      }, 700);
+      }, 1400);
       return () => clearTimeout(t);
     }
   }, [index, items.length]);
@@ -209,7 +209,7 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
         style={{
           width: `${(list.length * 100) / visible}%`,
           transform: `translateX(-${index * step}%)`,
-          transition: animate ? "transform 700ms ease" : "none",
+          transition: animate ? "transform 1400ms ease" : "none",
         }}
       >
         {list.map((r, i) => (
@@ -342,7 +342,7 @@ function ProjectCard({
           willChange: "transform",
           backfaceVisibility: "hidden",
         }}
-        transition={{ layout: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
+        transition={{ layout: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }}
       >
         {/\.(mp4|webm|mov)$/i.test(img) ? (
           <video
@@ -514,10 +514,13 @@ function HomePage() {
                     <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
                       {s.excerpt}
                     </p>
-                    <div className="flex flex-wrap gap-2 md:flex-1 md:justify-end">
-                      {s.projects.map((p) => (
-                        <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
-                      ))}
+                    <div className="md:flex-1">
+                      <p className="mb-3 text-[13px] text-foreground/50">Example projects</p>
+                      <div className="flex flex-wrap gap-2">
+                        {s.projects.map((p) => (
+                          <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </AccordionContent>
