@@ -44,29 +44,73 @@ export function GetInTouchDialog({ children }: { children: ReactNode }) {
         {sent ? (
           <div className="flex flex-col items-start">
             <span
-              className="flex h-12 w-12 items-center justify-center rounded-full text-white"
-              style={{ backgroundColor: "var(--accent-blue)" }}
+              className="flex h-14 w-14 items-center justify-center rounded-full text-white"
+              style={{
+                backgroundColor: "var(--accent-blue)",
+                animation: "git-pop 500ms cubic-bezier(0.34, 1.56, 0.64, 1) both",
+              }}
             >
-              <Check className="h-6 w-6" strokeWidth={2.5} />
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <polyline
+                  points="5 12 10 17 19 7"
+                  style={{
+                    strokeDasharray: 30,
+                    strokeDashoffset: 30,
+                    animation: "git-check 500ms ease-out 350ms forwards",
+                  }}
+                />
+              </svg>
             </span>
             <h2
               className="mt-8 font-medium leading-[1.05] tracking-tight text-foreground"
-              style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
+              style={{
+                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                animation: "git-rise 500ms ease-out 250ms both",
+              }}
             >
               Thank you
             </h2>
-            <p className="mt-4 text-[15px] leading-relaxed text-foreground/60">
+            <p
+              className="mt-4 text-[15px] leading-relaxed text-foreground/60"
+              style={{ animation: "git-rise 500ms ease-out 400ms both" }}
+            >
               Your message is on its way. I'll get back to you soon.
             </p>
             <button
               type="button"
               onClick={() => handleOpenChange(false)}
               className="mt-10 inline-flex cursor-pointer items-center gap-2 rounded-full px-5 py-2.5 text-[14px] font-medium text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "var(--accent-blue)" }}
+              style={{
+                backgroundColor: "var(--accent-blue)",
+                animation: "git-rise 500ms ease-out 550ms both",
+              }}
             >
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
               Go back
             </button>
+            <style>{`
+              @keyframes git-pop {
+                0% { transform: scale(0); opacity: 0; }
+                60% { transform: scale(1.1); opacity: 1; }
+                100% { transform: scale(1); opacity: 1; }
+              }
+              @keyframes git-check {
+                to { stroke-dashoffset: 0; }
+              }
+              @keyframes git-rise {
+                from { opacity: 0; transform: translateY(8px); }
+                to { opacity: 1; transform: translateY(0); }
+              }
+            `}</style>
           </div>
         ) : (
           <>
