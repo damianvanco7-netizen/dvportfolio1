@@ -628,6 +628,7 @@ function HomePage() {
               },
             ]}
           />
+          </Reveal>
         </div>
       </section>
 
