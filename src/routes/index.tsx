@@ -466,25 +466,31 @@ function HomePage() {
       {/* LATEST WORK */}
       <section className="relative z-10 bg-white border-t border-border/60">
         <div className="px-5 py-12 md:px-6 md:py-16">
-          <div className="mb-10 flex items-end justify-between md:mb-14">
-            <h2
-              className="font-medium leading-[0.95] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
-            >
-              Latest work
-            </h2>
-            <PillLink to="/projects">View all projects</PillLink>
-          </div>
+          <Reveal>
+            <div className="mb-10 flex items-end justify-between md:mb-14">
+              <h2
+                className="font-medium leading-[0.95] tracking-[-0.03em]"
+                style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+              >
+                Latest work
+              </h2>
+              <PillLink to="/projects">View all projects</PillLink>
+            </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 gap-x-2 gap-y-20 md:grid-cols-2 md:gap-y-24">
-            {projectsTop.map((p) => (
-              <ProjectCard key={p.title} {...p} aspect="aspect-[16/11]" />
+            {projectsTop.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.1}>
+                <ProjectCard {...p} aspect="aspect-[16/11]" />
+              </Reveal>
             ))}
           </div>
 
           <div className="mt-20 grid grid-cols-1 gap-x-2 gap-y-20 md:mt-24 md:grid-cols-3 md:gap-y-24">
-            {projectsBottom.map((p) => (
-              <ProjectCard key={p.title} {...p} aspect="aspect-[4/3]" />
+            {projectsBottom.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.1}>
+                <ProjectCard {...p} aspect="aspect-[4/3]" />
+              </Reveal>
             ))}
           </div>
         </div>
