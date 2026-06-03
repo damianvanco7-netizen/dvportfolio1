@@ -58,7 +58,7 @@ const services = [
   {
     title: "Web Design and Development",
     excerpt:
-      "Modern, performant websites crafted from the first wireframe to the final line of code, tailored to your brand.",
+      "Custom websites built around strong visual direction, clear structure, responsive layouts, and refined front-end execution. The goal is to create websites that not only look distinctive, but also feel intuitive, trustworthy, and easy to use across every device.",
     projects: [
       { slug: "aurean-journeys", title: "Aurean Journeys" },
       { slug: "velox", title: "Velox" },
@@ -70,7 +70,7 @@ const services = [
   {
     title: "Visual Identity",
     excerpt:
-      "Logos, visual systems and guidelines that give your brand a distinct voice and a consistent presence everywhere.",
+      "Visual identities shaped to give brands a clear and recognizable voice across digital and physical touchpoints. From logos, typography, color palettes, and layout systems to supporting brand assets, every element is built to feel consistent, flexible, and true to the character of the brand.",
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "stable-labs", title: "Stable Labs" },
@@ -82,7 +82,7 @@ const services = [
   {
     title: "Social Media Communication",
     excerpt:
-      "Consistent social presence — content direction, formats and visual language that keep your brand recognizable across channels.",
+      "Social media communication designed to keep brands consistent, recognizable, and active across the channels where people meet them most often. From visual templates and campaign direction to content ideas and post designs, every output should feel aligned with the brand and easy to use in everyday communication.",
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "lead-summit", title: "Lead Summit" },
@@ -92,7 +92,7 @@ const services = [
   {
     title: "Creative Direction",
     excerpt:
-      "Strategic art direction and creative oversight that ties campaigns, products and content into one cohesive story.",
+      "Creative direction that connects the brand, website, campaign, or launch into one clear visual approach. This includes shaping the overall mood, message, visual language, and brand presence, making sure the final outcome feels focused, memorable, and aligned with the brand's goals.",
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "lava-stone", title: "Lava Stone" },
@@ -392,9 +392,9 @@ function HomePage() {
               className="font-medium leading-[0.95] tracking-[-0.04em] text-foreground"
               style={{ fontSize: "clamp(1.6rem, 5vw, 4.75rem)" }}
             >
-              A Digital First
+              Shaping Brands With
               <br />
-              Creative Studio
+              Clarity and Character
             </h1>
             <span className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline">
               (Since 2020)
@@ -413,9 +413,9 @@ function HomePage() {
             <span className="mr-3 inline-flex align-middle">
               <PillLink>About</PillLink>
             </span>
-            Transforming your ideas into impactful digital experiences by
-            delivering top-tier web development and visual content, ensuring
-            every project lives up to your brand with creativity and precision.
+            My work sits between brand, design, and development: creating
+            visual identities, websites, and communication systems that help
+            brands feel clear, confident, and recognizable.
           </h2>
         </div>
 
