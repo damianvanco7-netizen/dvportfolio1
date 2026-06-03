@@ -108,16 +108,26 @@ function ProjectPage() {
     <div className="min-h-screen bg-white text-foreground">
       <SiteHeader />
 
+      {/* Sticky back link — fixed on screen, inverts over imagery via mix-blend-difference */}
+      <Link
+        to="/projects"
+        className="pointer-events-auto fixed left-5 top-28 z-40 hidden items-center gap-2 text-[14px] font-medium text-white transition-opacity duration-500 hover:opacity-80 md:left-6 lg:inline-flex"
+        style={{ mixBlendMode: "difference" }}
+      >
+        {t("project.back")}
+      </Link>
+
       <section className="px-5 pt-28 pb-16 md:px-6 md:pt-32">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[3.6fr_1fr] lg:gap-10">
           {/* LEFT — scrolling gallery */}
           <div className="order-2 flex flex-col gap-3 lg:order-1">
             <Link
               to="/projects"
-              className="mb-2 inline-flex w-fit items-center gap-2 text-[14px] text-foreground/60 transition-colors duration-500 hover:text-foreground"
+              className="mb-2 inline-flex w-fit items-center gap-2 text-[14px] text-foreground/60 transition-colors duration-500 hover:text-foreground lg:hidden"
             >
               {t("project.back")}
             </Link>
+
 
 
 

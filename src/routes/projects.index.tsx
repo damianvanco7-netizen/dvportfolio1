@@ -26,6 +26,12 @@ function ProjectsPage() {
       <SiteHeader />
 
       <section className="px-5 pt-16 pb-24 md:px-6 md:pt-20">
+        <div className="mb-10 md:mb-14">
+          <h1 className="text-[14px] font-medium tracking-tight text-foreground">
+            {t("nav.projects")}{" "}
+            <span className="text-foreground/40">({projects.length})</span>
+          </h1>
+        </div>
         <div className="grid grid-cols-1 gap-x-2 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <Link
