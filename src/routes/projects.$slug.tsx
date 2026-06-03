@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { motion } from "motion/react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getProject, projects } from "@/data/projects";
@@ -63,30 +64,49 @@ function ProjectPage() {
 
             {project.gallery.map((src: string, i: number) => {
               const isVideo = /\.(mp4|webm|mov)$/i.test(src);
+              const inner = isVideo ? (
+                <video
+                  src={src}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <img
+                  src={src}
+                  alt={`${project.title} — image ${i + 1}`}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  className="h-full w-full object-cover"
+                />
+              );
+
+              if (i === 0) {
+                return (
+                  <motion.div
+                    key={i}
+                    layoutId={`project-cover-${project.slug}`}
+                    className="w-full overflow-hidden rounded-sm"
+                    style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
+                    transition={{ duration: 0.7, ease: [0.65, 0, 0.35, 1] }}
+                  >
+                    {inner}
+                  </motion.div>
+                );
+              }
+
               return (
-                <div
+                <motion.div
                   key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 + i * 0.05, ease: [0.65, 0, 0.35, 1] }}
                   className="w-full overflow-hidden rounded-sm"
                   style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
                 >
-                  {isVideo ? (
-                    <video
-                      src={src}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    <img
-                      src={src}
-                      alt={`${project.title} — image ${i + 1}`}
-                      loading={i === 0 ? "eager" : "lazy"}
-                      className="h-full w-full object-cover"
-                    />
-                  )}
-                </div>
+                  {inner}
+                </motion.div>
               );
             })}
           </div>
