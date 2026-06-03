@@ -4,10 +4,12 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useT } from "@/lib/i18n";
 
 const RECIPIENT = "damian.vanco7@gmail.com";
 
 export function GetInTouchDialog({ children }: { children: ReactNode }) {
+  const t = useT();
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [name, setName] = useState("");
