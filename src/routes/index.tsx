@@ -6,6 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
+import { useT } from "@/lib/i18n";
+import { localizeTags } from "@/lib/project-i18n";
 import heroVideo from "@/assets/hero.mp4";
 import aureanJourneys from "@/assets/projects/aurean-journeys.mp4";
 import velox from "@/assets/projects/velox.jpg";
