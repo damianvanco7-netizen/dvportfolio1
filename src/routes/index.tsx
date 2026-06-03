@@ -332,7 +332,7 @@ function ProjectCard({
         layoutId={`project-cover-${slug}`}
         className={`${aspect} relative w-full overflow-hidden rounded-sm`}
         style={{ backgroundColor: "var(--surface-cream)" }}
-        transition={{ layout: { type: "spring", stiffness: 180, damping: 26, mass: 0.9 } }}
+        transition={{ layout: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } }}
       >
         {/\.(mp4|webm|mov)$/i.test(img) ? (
           <video
@@ -341,14 +341,14 @@ function ProjectCard({
             muted
             loop
             playsInline
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            className="h-full w-full object-cover"
           />
         ) : (
           <img
             src={img}
             alt={title}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+            className="h-full w-full object-cover"
           />
         )}
         <span

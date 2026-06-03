@@ -118,7 +118,7 @@ function ProjectPage() {
                     layoutId={`project-cover-${project.slug}`}
                     className="w-full overflow-hidden rounded-sm"
                     style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
-                    transition={{ layout: { type: "spring", stiffness: 180, damping: 26, mass: 0.9 } }}
+                    transition={{ layout: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } }}
                   >
                     {inner}
                   </motion.div>
