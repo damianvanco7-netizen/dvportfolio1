@@ -80,6 +80,16 @@ const services = [
     ],
   },
   {
+    title: "Social Media Communication",
+    excerpt:
+      "Consistent social presence — content direction, formats and visual language that keep your brand recognizable across channels.",
+    projects: [
+      { slug: "8bites", title: "8bites" },
+      { slug: "lead-summit", title: "Lead Summit" },
+      { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
+    ],
+  },
+  {
     title: "Creative Direction",
     excerpt:
       "Strategic art direction and creative oversight that ties campaigns, products and content into one cohesive story.",
@@ -487,11 +497,11 @@ function HomePage() {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-10 pt-2">
-                  <div className="flex flex-col gap-6 pl-0 md:pl-[72px]">
-                    <p className="max-w-2xl text-[14px] leading-relaxed text-foreground/50">
+                  <div className="flex flex-col items-start gap-6 pl-0 md:flex-row md:gap-12 md:pl-[72px]">
+                    <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
                       {s.excerpt}
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 md:flex-1 md:justify-end">
                       {s.projects.map((p) => (
                         <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
                       ))}
@@ -514,7 +524,7 @@ function HomePage() {
             >
               References
             </h2>
-            <span className="hidden items-center gap-1.5 whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline-flex">
+            <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-black/5 px-4 py-2 pb-2 text-[13px] text-foreground md:inline-flex">
               <svg
                 aria-hidden="true"
                 width="14"
