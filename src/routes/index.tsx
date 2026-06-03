@@ -388,30 +388,41 @@ function HomePage() {
 
       {/* HERO — fixed background image, content scrolls over it */}
       <div aria-hidden="true" className="fixed inset-0 z-0 overflow-hidden">
-        <video
+        <motion.video
           src={heroVideo}
           autoPlay
           muted
           loop
           playsInline
           className="h-full w-full object-cover"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         />
       </div>
 
       <section className="relative z-10">
         <div className="flex min-h-[55vh] flex-col justify-end bg-white px-5 pb-2 pt-24 md:px-6 md:pt-32">
           <div className="flex items-end justify-between gap-8 pb-10">
-            <h1
+            <motion.h1
               className="font-medium leading-[0.95] tracking-[-0.04em] text-foreground"
               style={{ fontSize: "clamp(1.6rem, 5vw, 4.75rem)" }}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
               Shaping Brands With
               <br />
               Clarity and Character
-            </h1>
-            <span className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline">
+            </motion.h1>
+            <motion.span
+              className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
               (Since 2020)
-            </span>
+            </motion.span>
           </div>
         </div>
 
