@@ -514,10 +514,13 @@ function HomePage() {
                     <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
                       {s.excerpt}
                     </p>
-                    <div className="flex flex-wrap gap-2 md:flex-1 md:justify-end">
-                      {s.projects.map((p) => (
-                        <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
-                      ))}
+                    <div className="md:flex-1">
+                      <p className="mb-3 text-[13px] text-foreground/50">Example projects</p>
+                      <div className="flex flex-wrap gap-2">
+                        {s.projects.map((p) => (
+                          <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </AccordionContent>
