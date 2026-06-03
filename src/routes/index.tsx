@@ -116,7 +116,7 @@ function PillLink({
   return (
     <Link
       to={to}
-      className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors hover:bg-black/10"
+      className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors duration-500 hover:bg-black/10"
     >
       {dot && (
         <span
@@ -134,7 +134,7 @@ function ProjectPill({ slug, title }: { slug: string; title: string }) {
     <Link
       to="/projects/$slug"
       params={{ slug }}
-      className="group inline-flex items-center gap-1.5 rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors hover:bg-black/10"
+      className="group inline-flex items-center gap-1.5 rounded-full bg-black/5 px-4 py-2 text-[13px] font-normal text-foreground transition-colors duration-500 hover:bg-black/10"
     >
       {title}
       <svg
@@ -147,7 +147,7 @@ function ProjectPill({ slug, title }: { slug: string; title: string }) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="max-w-0 -translate-x-1 opacity-0 transition-all duration-300 group-hover:max-w-[12px] group-hover:translate-x-0 group-hover:opacity-100"
+        className="max-w-0 -translate-x-1 opacity-0 transition-all duration-700 group-hover:max-w-[12px] group-hover:translate-x-0 group-hover:opacity-100"
       >
         <line x1="7" y1="17" x2="17" y2="7" />
         <polyline points="7 7 17 7 17 17" />
@@ -304,7 +304,7 @@ function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
                 src={src}
                 alt={name}
                 loading="lazy"
-                className="h-[85%] w-[85%] object-contain opacity-40 transition-opacity duration-300 hover:opacity-100"
+                className="h-[85%] w-[85%] object-contain opacity-40 transition-opacity duration-700 hover:opacity-100"
               />
             </div>
           </div>
@@ -363,7 +363,7 @@ function ProjectCard({
         )}
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-2 items-center justify-center rounded-full bg-white text-foreground opacity-0 shadow-sm transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100"
+          className="pointer-events-none absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-2 items-center justify-center rounded-full bg-white text-foreground opacity-0 shadow-sm transition-all duration-700 group-hover:translate-x-0 group-hover:opacity-100"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </span>
@@ -503,7 +503,7 @@ function HomePage() {
                   </span>
                   <span
                     aria-hidden="true"
-                    className="relative ml-auto h-5 w-5 shrink-0 text-foreground/60 transition-transform duration-300 group-data-[state=open]:rotate-45"
+                    className="relative ml-auto h-5 w-5 shrink-0 text-foreground/60 transition-transform duration-700 group-data-[state=open]:rotate-45"
                   >
                     <span className="absolute left-1/2 top-1/2 h-px w-5 -translate-x-1/2 -translate-y-1/2 bg-current" />
                     <span className="absolute left-1/2 top-1/2 h-5 w-px -translate-x-1/2 -translate-y-1/2 bg-current" />
