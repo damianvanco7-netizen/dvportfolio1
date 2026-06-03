@@ -124,7 +124,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <NavTransitionProvider>
-        <MotionConfig transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>
+        <MotionConfig transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}>
           <OutletShell />
         </MotionConfig>
       </NavTransitionProvider>
