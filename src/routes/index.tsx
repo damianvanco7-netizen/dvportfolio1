@@ -80,6 +80,16 @@ const services = [
     ],
   },
   {
+    title: "Social Media Communication",
+    excerpt:
+      "Consistent social presence — content direction, formats and visual language that keep your brand recognizable across channels.",
+    projects: [
+      { slug: "8bites", title: "8bites" },
+      { slug: "lead-summit", title: "Lead Summit" },
+      { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
+    ],
+  },
+  {
     title: "Creative Direction",
     excerpt:
       "Strategic art direction and creative oversight that ties campaigns, products and content into one cohesive story.",
