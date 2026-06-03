@@ -132,7 +132,7 @@ function ProjectPage() {
                 return (
                   <motion.div
                     key={i}
-                    layoutId={`project-cover-${project.slug}`}
+                    {...(isOpening ? { layoutId: `project-cover-${project.slug}` } : {})}
                     className="w-full overflow-hidden rounded-sm"
                     style={{
                       aspectRatio: "1625 / 1137",
