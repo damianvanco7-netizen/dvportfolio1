@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getProject, projects } from "@/data/projects";
@@ -81,6 +82,12 @@ function InfoRow({
 
 function ProjectPage() {
   const { project } = Route.useLoaderData();
+  const [showRest, setShowRest] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowRest(true), 650);
+    return () => clearTimeout(t);
+  }, [project.slug]);
 
   return (
     <div className="min-h-screen bg-white text-foreground">
@@ -117,11 +124,27 @@ function ProjectPage() {
                     key={i}
                     layoutId={`project-cover-${project.slug}`}
                     className="w-full overflow-hidden rounded-sm"
-                    style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
-                    transition={{ layout: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } }}
+                    style={{
+                      aspectRatio: "1625 / 1137",
+                      backgroundColor: "var(--surface-cream)",
+                      willChange: "transform",
+                      backfaceVisibility: "hidden",
+                    }}
+                    transition={{ layout: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
                   >
                     {inner}
                   </motion.div>
+                );
+              }
+
+              if (!showRest) {
+                return (
+                  <div
+                    key={i}
+                    aria-hidden
+                    className="w-full overflow-hidden rounded-sm"
+                    style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
+                  />
                 );
               }
 
@@ -130,7 +153,7 @@ function ProjectPage() {
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + i * 0.05, ease: [0.65, 0, 0.35, 1] }}
+                  transition={{ duration: 0.5, delay: (i - 1) * 0.04, ease: [0.22, 1, 0.36, 1] }}
                   className="w-full overflow-hidden rounded-sm"
                   style={{ aspectRatio: "1625 / 1137", backgroundColor: "var(--surface-cream)" }}
                 >
