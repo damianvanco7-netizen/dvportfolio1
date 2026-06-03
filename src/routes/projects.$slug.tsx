@@ -130,7 +130,7 @@ function ProjectPage() {
                       willChange: "transform",
                       backfaceVisibility: "hidden",
                     }}
-                    transition={{ layout: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
+                    transition={{ layout: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }}
                   >
                     {inner}
                   </motion.div>
