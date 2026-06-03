@@ -97,10 +97,11 @@ function ProjectPage() {
   const { project } = Route.useLoaderData();
   const [showRest, setShowRest] = useState(false);
   const isOpening = useIsOpeningProject();
+  const t = useT();
 
   useEffect(() => {
-    const t = setTimeout(() => setShowRest(true), 950);
-    return () => clearTimeout(t);
+    const tm = setTimeout(() => setShowRest(true), 950);
+    return () => clearTimeout(tm);
   }, [project.slug]);
 
   return (
@@ -115,7 +116,7 @@ function ProjectPage() {
               to="/projects"
               className="mb-2 inline-flex w-fit items-center gap-2 text-[14px] text-foreground/60 transition-colors duration-500 hover:text-foreground"
             >
-              ← Back to projects
+              {t("project.back")}
             </Link>
 
 
@@ -212,7 +213,7 @@ function ProjectPage() {
                   className="inline-block h-1.5 w-1.5 rounded-full"
                   style={{ backgroundColor: "var(--accent-blue)" }}
                 />
-                View live site
+                {t("project.viewLive")}
               </motion.a>
             )}
 
@@ -224,23 +225,23 @@ function ProjectPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.25, ease: [0.22, 1, 0.36, 1] }}
               >
-                <p className="mb-3 text-[13px] text-foreground/50">Info</p>
+                <p className="mb-3 text-[13px] text-foreground/50">{t("project.info")}</p>
                 <p className="max-w-prose text-[14px] leading-relaxed text-foreground/80">
-                  {project.info}
+                  {localizeInfo(t, project)}
                 </p>
               </motion.div>
             )}
 
             <div className="relative mt-12">
               <InfoRow
-                label="Services"
-                value={project.services.map((s: string) => (
+                label={t("project.services")}
+                value={localizeTags(t, project.services).map((s: string) => (
                   <div key={s}>{s}</div>
                 ))}
                 delay={1.38}
               />
-              <InfoRow label="Client" value={project.client} delay={1.46} />
-              <InfoRow label="Year" value={project.year} delay={1.54} />
+              <InfoRow label={t("project.client")} value={project.client} delay={1.46} />
+              <InfoRow label={t("project.year")} value={localizeYear(t, project.year)} delay={1.54} />
               <motion.div
                 aria-hidden
                 className="block h-px origin-left bg-border/60"
@@ -255,7 +256,7 @@ function ProjectPage() {
         {/* Next project */}
         <div className="mt-32 flex items-center justify-between border-t border-border/60 pt-8">
           <Link to="/projects" className="text-[14px] text-foreground/60 hover:text-foreground">
-            ← Back to projects
+            {t("project.back")}
           </Link>
           {(() => {
             const idx = projects.findIndex((p) => p.slug === project.slug);
@@ -266,7 +267,7 @@ function ProjectPage() {
                 params={{ slug: next.slug }}
                 className="text-[14px] text-foreground hover:underline"
               >
-                Next: {next.title} →
+                {t("project.next", { title: next.title })}
               </Link>
             );
           })()}
