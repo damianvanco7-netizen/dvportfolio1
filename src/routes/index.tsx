@@ -26,17 +26,17 @@ import refNorriv from "@/assets/references/norriv.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Studio Terrace — A Digital First Creative Studio" },
+      { title: "Damian Vanco — Shaping Brands With Clarity and Character" },
       {
         name: "description",
         content:
-          "Transforming ideas into impactful digital experiences through web development and visual content since 2010.",
+          "My work sits between brand, design, and development: creating visual identities, websites, and communication systems that help brands feel clear, confident, and recognizable.",
       },
-      { property: "og:title", content: "Studio Terrace — A Digital First Creative Studio" },
+      { property: "og:title", content: "Damian Vanco — Shaping Brands With Clarity and Character" },
       {
         property: "og:description",
         content:
-          "Transforming ideas into impactful digital experiences through web development and visual content since 2010.",
+          "My work sits between brand, design, and development: creating visual identities, websites, and communication systems that help brands feel clear, confident, and recognizable.",
       },
     ],
   }),
