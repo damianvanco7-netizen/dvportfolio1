@@ -84,6 +84,7 @@ function InfoRow({
 function ProjectPage() {
   const { project } = Route.useLoaderData();
   const [showRest, setShowRest] = useState(false);
+  const isOpening = useIsOpeningProject();
 
   useEffect(() => {
     const t = setTimeout(() => setShowRest(true), 950);
