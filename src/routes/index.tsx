@@ -332,7 +332,7 @@ function ProjectCard({
         layoutId={`project-cover-${slug}`}
         className={`${aspect} relative w-full overflow-hidden rounded-sm`}
         style={{ backgroundColor: "var(--surface-cream)" }}
-        transition={{ duration: 0.7, ease: [0.65, 0, 0.35, 1] }}
+        transition={{ layout: { type: "spring", stiffness: 180, damping: 26, mass: 0.9 } }}
       >
         {/\.(mp4|webm|mov)$/i.test(img) ? (
           <video
