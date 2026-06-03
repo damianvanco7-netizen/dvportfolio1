@@ -5,6 +5,7 @@ import { primeProjectOpen } from "@/lib/nav-transition";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
+import { Reveal } from "@/components/Reveal";
 import heroVideo from "@/assets/hero.mp4";
 import aureanJourneys from "@/assets/projects/aurean-journeys.mp4";
 import velox from "@/assets/projects/velox.jpg";
@@ -342,7 +343,7 @@ function ProjectCard({
           willChange: "transform",
           backfaceVisibility: "hidden",
         }}
-        transition={{ layout: { duration: 1.05, ease: [0.22, 1, 0.36, 1] } }}
+        transition={{ layout: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }}
       >
         {/\.(mp4|webm|mov)$/i.test(img) ? (
           <video
@@ -432,54 +433,64 @@ function HomePage() {
 
       {/* INTRO */}
       <section className="relative z-10 bg-white px-5 py-28 md:px-6 md:py-40">
-        <div className="max-w-5xl">
-          <h2 className="text-[24px] font-medium leading-[1.2] tracking-tight text-foreground md:text-[32px]">
-            <span className="mr-3 inline-flex align-middle">
-              <PillLink>About</PillLink>
-            </span>
-            My work sits between brand, design, and development: creating
-            visual identities, websites, and communication systems that help
-            brands feel clear, confident, and recognizable.
-          </h2>
-        </div>
+        <Reveal>
+          <div className="max-w-5xl">
+            <h2 className="text-[24px] font-medium leading-[1.2] tracking-tight text-foreground md:text-[32px]">
+              <span className="mr-3 inline-flex align-middle">
+                <PillLink>About</PillLink>
+              </span>
+              My work sits between brand, design, and development: creating
+              visual identities, websites, and communication systems that help
+              brands feel clear, confident, and recognizable.
+            </h2>
+          </div>
+        </Reveal>
 
         {/* CLIENT LOGOS */}
-        <LogoCarousel
-          logos={[
-            { name: "Birne", src: logoBirne },
-            { name: "Greenstone", src: logoGreenstone },
-            { name: "Lead Summit", src: logoLeadsummit },
-            { name: "Zetshop", src: logoZetshop },
-            { name: "The Netherlands Chamber of Commerce", src: logoTncoc },
-            { name: "Unuo", src: logoUnuo },
-            { name: "CVTI SR", src: logoCvti },
-            { name: "Norriv", src: logoNorriv },
-          ]}
-        />
+        <Reveal delay={0.15}>
+          <LogoCarousel
+            logos={[
+              { name: "Birne", src: logoBirne },
+              { name: "Greenstone", src: logoGreenstone },
+              { name: "Lead Summit", src: logoLeadsummit },
+              { name: "Zetshop", src: logoZetshop },
+              { name: "The Netherlands Chamber of Commerce", src: logoTncoc },
+              { name: "Unuo", src: logoUnuo },
+              { name: "CVTI SR", src: logoCvti },
+              { name: "Norriv", src: logoNorriv },
+            ]}
+          />
+        </Reveal>
       </section>
 
       {/* LATEST WORK */}
       <section className="relative z-10 bg-white border-t border-border/60">
         <div className="px-5 py-12 md:px-6 md:py-16">
-          <div className="mb-10 flex items-end justify-between md:mb-14">
-            <h2
-              className="font-medium leading-[0.95] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
-            >
-              Latest work
-            </h2>
-            <PillLink to="/projects">View all projects</PillLink>
-          </div>
+          <Reveal>
+            <div className="mb-10 flex items-end justify-between md:mb-14">
+              <h2
+                className="font-medium leading-[0.95] tracking-[-0.03em]"
+                style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+              >
+                Latest work
+              </h2>
+              <PillLink to="/projects">View all projects</PillLink>
+            </div>
+          </Reveal>
 
           <div className="grid grid-cols-1 gap-x-2 gap-y-20 md:grid-cols-2 md:gap-y-24">
-            {projectsTop.map((p) => (
-              <ProjectCard key={p.title} {...p} aspect="aspect-[16/11]" />
+            {projectsTop.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.1}>
+                <ProjectCard {...p} aspect="aspect-[16/11]" />
+              </Reveal>
             ))}
           </div>
 
           <div className="mt-20 grid grid-cols-1 gap-x-2 gap-y-20 md:mt-24 md:grid-cols-3 md:gap-y-24">
-            {projectsBottom.map((p) => (
-              <ProjectCard key={p.title} {...p} aspect="aspect-[4/3]" />
+            {projectsBottom.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.1}>
+                <ProjectCard {...p} aspect="aspect-[4/3]" />
+              </Reveal>
             ))}
           </div>
         </div>
@@ -488,54 +499,57 @@ function HomePage() {
       {/* SERVICES */}
       <section className="relative z-10 bg-white border-t border-border/60">
         <div className="px-5 py-12 md:px-6 md:py-16">
-          <div className="mb-10 flex items-end justify-between md:mb-14">
-            <h2
-              className="font-medium leading-[0.95] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
-            >
-              Services
-            </h2>
-            <PillLink to="/about">Learn more about me</PillLink>
-          </div>
+          <Reveal>
+            <div className="mb-10 flex items-end justify-between md:mb-14">
+              <h2
+                className="font-medium leading-[0.95] tracking-[-0.03em]"
+                style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+              >
+                Services
+              </h2>
+              <PillLink to="/about">Learn more about me</PillLink>
+            </div>
+          </Reveal>
 
           <Accordion type="single" collapsible className="w-full">
             {services.map((s, i) => (
-              <AccordionItem
-                key={s.title}
-                value={s.title}
-                className="border-b border-border/60"
-              >
-                <AccordionTrigger className="group flex w-full items-center gap-6 py-6 hover:no-underline [&>svg]:hidden">
-                  <span className="w-12 shrink-0 text-[18px] tabular-nums text-foreground/40">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="flex-1 text-left text-[clamp(1.25rem,2.5vw,2rem)] font-normal tracking-tight text-foreground">
-                    {s.title}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="relative ml-auto h-5 w-5 shrink-0 text-foreground/60 transition-transform duration-700 group-data-[state=open]:rotate-45"
-                  >
-                    <span className="absolute left-1/2 top-1/2 h-px w-5 -translate-x-1/2 -translate-y-1/2 bg-current" />
-                    <span className="absolute left-1/2 top-1/2 h-5 w-px -translate-x-1/2 -translate-y-1/2 bg-current" />
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="pb-10 pt-2">
-                  <div className="flex flex-col items-start gap-6 pl-0 md:flex-row md:gap-12 md:pl-[72px]">
-                    <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
-                      {s.excerpt}
-                    </p>
-                    <div className="md:flex-1">
-                      <p className="mb-3 text-[13px] text-foreground/50">Example projects</p>
-                      <div className="flex flex-wrap gap-2">
-                        {s.projects.map((p) => (
-                          <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
-                        ))}
+              <Reveal key={s.title} delay={i * 0.08} y={20}>
+                <AccordionItem
+                  value={s.title}
+                  className="border-b border-border/60"
+                >
+                  <AccordionTrigger className="group flex w-full items-center gap-6 py-6 hover:no-underline [&>svg]:hidden">
+                    <span className="w-12 shrink-0 text-[18px] tabular-nums text-foreground/40">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="flex-1 text-left text-[clamp(1.25rem,2.5vw,2rem)] font-normal tracking-tight text-foreground">
+                      {s.title}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="relative ml-auto h-5 w-5 shrink-0 text-foreground/60 transition-transform duration-700 group-data-[state=open]:rotate-45"
+                    >
+                      <span className="absolute left-1/2 top-1/2 h-px w-5 -translate-x-1/2 -translate-y-1/2 bg-current" />
+                      <span className="absolute left-1/2 top-1/2 h-5 w-px -translate-x-1/2 -translate-y-1/2 bg-current" />
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-10 pt-2">
+                    <div className="flex flex-col items-start gap-6 pl-0 md:flex-row md:gap-12 md:pl-[72px]">
+                      <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
+                        {s.excerpt}
+                      </p>
+                      <div className="md:flex-1">
+                        <p className="mb-3 text-[13px] text-foreground/50">Example projects</p>
+                        <div className="flex flex-wrap gap-2">
+                          {s.projects.map((p) => (
+                            <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionContent>
+                </AccordionItem>
+              </Reveal>
             ))}
           </Accordion>
         </div>
@@ -544,27 +558,31 @@ function HomePage() {
       {/* REFERENCES */}
       <section className="relative z-10 bg-white border-t border-border/60">
         <div className="px-5 py-12 md:px-6 md:py-16">
-          <div className="mb-10 flex items-end justify-between md:mb-14">
-            <h2
-              className="font-medium leading-[0.95] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
-            >
-              References
-            </h2>
-            <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-black/5 px-4 py-2 pb-2 text-[13px] text-foreground md:inline-flex">
-              <svg
-                aria-hidden="true"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style={{ color: "var(--accent-blue)" }}
+          <Reveal>
+            <div className="mb-10 flex items-end justify-between md:mb-14">
+              <h2
+                className="font-medium leading-[0.95] tracking-[-0.03em]"
+                style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
               >
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              4.8
-            </span>
-          </div>
+                References
+              </h2>
+              <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-black/5 px-4 py-2 pb-2 text-[13px] text-foreground md:inline-flex">
+                <svg
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  style={{ color: "var(--accent-blue)" }}
+                >
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                4.8
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.15}>
 
           <ReferencesCarousel
             items={[
@@ -610,6 +628,7 @@ function HomePage() {
               },
             ]}
           />
+          </Reveal>
         </div>
       </section>
 
