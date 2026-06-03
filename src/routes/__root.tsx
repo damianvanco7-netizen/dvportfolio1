@@ -124,7 +124,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <MotionConfig
-        transition={{ type: "spring", stiffness: 180, damping: 26, mass: 0.9 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.div key={pathname}>
