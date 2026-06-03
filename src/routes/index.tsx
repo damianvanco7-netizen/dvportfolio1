@@ -209,7 +209,7 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
         style={{
           width: `${(list.length * 100) / visible}%`,
           transform: `translateX(-${index * step}%)`,
-          transition: animate ? "transform 1400ms ease" : "none",
+          transition: animate ? "transform 1800ms ease" : "none",
         }}
       >
         {list.map((r, i) => (
@@ -290,7 +290,7 @@ function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
         style={{
           width: `${(items.length * 100) / visible}%`,
           transform: `translateX(-${index * step}%)`,
-          transition: animate ? "transform 700ms ease" : "none",
+          transition: animate ? "transform 1800ms ease" : "none",
         }}
       >
         {items.map(({ name, src }, i) => (
@@ -342,7 +342,7 @@ function ProjectCard({
           willChange: "transform",
           backfaceVisibility: "hidden",
         }}
-        transition={{ layout: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }}
+        transition={{ layout: { duration: 1.05, ease: [0.22, 1, 0.36, 1] } }}
       >
         {/\.(mp4|webm|mov)$/i.test(img) ? (
           <video
@@ -397,7 +397,7 @@ function HomePage() {
           className="h-full w-full object-cover"
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 2.0, ease: [0.22, 1, 0.36, 1] }}
         />
       </div>
 
@@ -409,7 +409,7 @@ function HomePage() {
               style={{ fontSize: "clamp(1.6rem, 5vw, 4.75rem)" }}
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 1.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
               Shaping Brands With
               <br />

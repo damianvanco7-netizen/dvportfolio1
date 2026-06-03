@@ -41,7 +41,7 @@ function ProjectsPage() {
                   willChange: "transform",
                   backfaceVisibility: "hidden",
                 }}
-                transition={{ layout: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }}
+                transition={{ layout: { duration: 1.05, ease: [0.22, 1, 0.36, 1] } }}
               >
                 {/\.(mp4|webm|mov)$/i.test(p.cover) ? (
                   <video
