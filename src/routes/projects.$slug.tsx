@@ -181,7 +181,7 @@ function ProjectPage() {
               style={{ fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.95, ease: [0.22, 1, 0.36, 1] }}
             >
               {project.title}
             </motion.h1>
@@ -194,7 +194,7 @@ function ProjectPage() {
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors duration-500 hover:bg-black/10"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.95, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.7, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
               >
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full"
@@ -210,7 +210,7 @@ function ProjectPage() {
                 className="mt-10"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.8, delay: 1.25, ease: [0.22, 1, 0.36, 1] }}
               >
                 <p className="mb-3 text-[13px] text-foreground/50">Info</p>
                 <p className="max-w-prose text-[14px] leading-relaxed text-foreground/80">
@@ -234,7 +234,7 @@ function ProjectPage() {
                 className="block h-px origin-left bg-border/60"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 1.42, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.8, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
               />
             </div>
           </div>
