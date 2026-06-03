@@ -98,7 +98,7 @@ export function SiteHeader() {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 top-16 z-40 flex flex-col bg-white px-5 pb-10 pt-8 md:hidden"
           >
-            <nav className="flex flex-1 flex-col gap-5">
+            <nav className="flex flex-1 flex-col justify-center gap-5">
               {navItems.map((item, i) => (
                 <motion.div
                   key={item.to}
@@ -122,7 +122,7 @@ export function SiteHeader() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col gap-4"
+              className="flex flex-col items-start gap-3"
             >
               <div className="mb-2">
                 <LanguageSwitcher />
@@ -132,7 +132,7 @@ export function SiteHeader() {
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
-                  className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-2.5 text-[14px] font-medium text-white transition-opacity hover:opacity-90"
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium text-white transition-opacity hover:opacity-90"
                   style={{ backgroundColor: "var(--accent-blue)" }}
                 >
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
@@ -144,7 +144,7 @@ export function SiteHeader() {
                 href="https://www.linkedin.com/in/damian-van%C4%8Do-6208551b3/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-black/5 px-6 py-2.5 text-[14px] text-foreground transition-colors duration-500 hover:bg-black/10"
+                className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] text-foreground transition-colors duration-500 hover:bg-black/10"
               >
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full"
