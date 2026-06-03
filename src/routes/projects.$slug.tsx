@@ -59,13 +59,13 @@ function InfoRow({
         className="absolute left-0 right-0 top-0 block h-px origin-left bg-border/60"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
-        transition={{ duration: 0.6, delay, ease: [0.65, 0, 0.35, 1] }}
+        transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
       />
       <motion.span
         className="text-foreground/50"
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: delay + 0.1, ease: [0.65, 0, 0.35, 1] }}
+        transition={{ duration: 0.7, delay: delay + 0.15, ease: [0.22, 1, 0.36, 1] }}
       >
         {label}
       </motion.span>
@@ -73,7 +73,7 @@ function InfoRow({
         className="text-foreground"
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: delay + 0.1, ease: [0.65, 0, 0.35, 1] }}
+        transition={{ duration: 0.7, delay: delay + 0.15, ease: [0.22, 1, 0.36, 1] }}
       >
         {value}
       </motion.div>
@@ -225,10 +225,10 @@ function ProjectPage() {
                 value={project.services.map((s: string) => (
                   <div key={s}>{s}</div>
                 ))}
-                delay={1.18}
+                delay={1.38}
               />
-              <InfoRow label="Client" value={project.client} delay={1.26} />
-              <InfoRow label="Year" value={project.year} delay={1.34} />
+              <InfoRow label="Client" value={project.client} delay={1.46} />
+              <InfoRow label="Year" value={project.year} delay={1.54} />
               <motion.div
                 aria-hidden
                 className="block h-px origin-left bg-border/60"
