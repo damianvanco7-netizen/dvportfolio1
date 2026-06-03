@@ -215,16 +215,16 @@ function ProjectPage() {
                 value={project.services.map((s: string) => (
                   <div key={s}>{s}</div>
                 ))}
-                delay={0.88}
+                delay={1.18}
               />
-              <InfoRow label="Client" value={project.client} delay={0.96} />
-              <InfoRow label="Year" value={project.year} delay={1.04} />
+              <InfoRow label="Client" value={project.client} delay={1.26} />
+              <InfoRow label="Year" value={project.year} delay={1.34} />
               <motion.div
                 aria-hidden
                 className="block h-px origin-left bg-border/60"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 1.12, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, delay: 1.42, ease: [0.22, 1, 0.36, 1] }}
               />
             </div>
           </div>
