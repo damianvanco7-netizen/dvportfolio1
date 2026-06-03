@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import symbol from "@/assets/symbol.svg";
+import { GetInTouchDialog } from "@/components/GetInTouchDialog";
 
 
 const navItems = [
