@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { primeProjectOpen } from "@/lib/nav-transition";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -327,12 +328,21 @@ function ProjectCard({
   aspect?: string;
 }) {
   return (
-    <Link to="/projects/$slug" params={{ slug }} className="group block">
+    <Link
+      to="/projects/$slug"
+      params={{ slug }}
+      onClick={primeProjectOpen}
+      className="group block"
+    >
       <motion.div
         layoutId={`project-cover-${slug}`}
         className={`${aspect} relative w-full overflow-hidden rounded-sm`}
-        style={{ backgroundColor: "var(--surface-cream)" }}
-        transition={{ layout: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } }}
+        style={{
+          backgroundColor: "var(--surface-cream)",
+          willChange: "transform",
+          backfaceVisibility: "hidden",
+        }}
+        transition={{ layout: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }}
       >
         {/\.(mp4|webm|mov)$/i.test(img) ? (
           <video
