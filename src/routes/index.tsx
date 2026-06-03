@@ -184,7 +184,7 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
     const id = setInterval(() => {
       setAnimate(true);
       setIndex((i) => i + 1);
-    }, 3000);
+    }, 6000);
     return () => clearInterval(id);
   }, []);
 
@@ -194,7 +194,7 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
         setAnimate(false);
         setIndex(0);
         requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
-      }, 700);
+      }, 1400);
       return () => clearTimeout(t);
     }
   }, [index, items.length]);
