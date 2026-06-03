@@ -85,7 +85,7 @@ function ProjectPage() {
   const [showRest, setShowRest] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setShowRest(true), 650);
+    const t = setTimeout(() => setShowRest(true), 950);
     return () => clearTimeout(t);
   }, [project.slug]);
 
