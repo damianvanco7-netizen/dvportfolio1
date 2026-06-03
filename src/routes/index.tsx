@@ -524,7 +524,7 @@ function HomePage() {
             >
               References
             </h2>
-            <span className="hidden items-center gap-1.5 whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline-flex">
+            <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-black/5 px-4 py-2 pb-2 text-[13px] text-foreground md:inline-flex">
               <svg
                 aria-hidden="true"
                 width="14"
