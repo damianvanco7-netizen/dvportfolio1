@@ -72,14 +72,14 @@ export function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
           className="relative z-[60] flex h-10 w-10 cursor-pointer items-center justify-center md:hidden"
         >
-          <span className="relative block h-3 w-6">
+          <span className="relative block h-3 w-9">
             <span
-              className={`absolute left-0 top-0 block h-px w-6 bg-foreground transition-transform duration-500 ${
+              className={`absolute left-0 top-0 block h-px w-9 bg-foreground transition-transform duration-500 ${
                 open ? "translate-y-[6px] rotate-45" : ""
               }`}
             />
             <span
-              className={`absolute left-0 bottom-0 block h-px w-6 bg-foreground transition-transform duration-500 ${
+              className={`absolute left-0 bottom-0 block h-px w-9 bg-foreground transition-transform duration-500 ${
                 open ? "-translate-y-[6px] -rotate-45" : ""
               }`}
             />
@@ -96,9 +96,9 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 top-16 z-40 flex flex-col bg-white px-5 pb-10 pt-8 md:hidden"
+            className="fixed inset-0 top-16 z-40 flex flex-col items-center bg-white px-5 pb-10 pt-8 md:hidden"
           >
-            <nav className="flex flex-1 flex-col gap-5">
+            <nav className="flex flex-1 flex-col items-center justify-center gap-5">
               {navItems.map((item, i) => (
                 <motion.div
                   key={item.to}
@@ -109,7 +109,7 @@ export function SiteHeader() {
                   <Link
                     to={item.to}
                     onClick={() => setOpen(false)}
-                    className="block font-medium leading-[1] tracking-[-0.03em] text-black"
+                    className="block text-center font-medium leading-[1] tracking-[-0.03em] text-black"
                     style={{ fontSize: "clamp(2.5rem, 12vw, 4rem)", opacity: 1 }}
                   >
                     {item.label}
@@ -121,14 +121,18 @@ export function SiteHeader() {
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 flex flex-col gap-4"
+              transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col items-center gap-4"
             >
+              <div className="mb-2">
+                <LanguageSwitcher />
+              </div>
+
               <GetInTouchDialog>
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
-                  className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-full px-5 py-3 text-[15px] font-medium text-white transition-opacity hover:opacity-90"
+                  className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full px-6 py-2.5 text-[14px] font-medium text-white transition-opacity hover:opacity-90"
                   style={{ backgroundColor: "var(--accent-blue)" }}
                 >
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
@@ -140,7 +144,7 @@ export function SiteHeader() {
                 href="https://www.linkedin.com/in/damian-van%C4%8Do-6208551b3/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-black/5 px-5 py-3 text-[14px] text-foreground transition-colors duration-500 hover:bg-black/10"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-black/5 px-6 py-2.5 text-[14px] text-foreground transition-colors duration-500 hover:bg-black/10"
               >
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full"
@@ -148,10 +152,6 @@ export function SiteHeader() {
                 />
                 LinkedIn
               </a>
-
-              <div className="mt-2 flex items-center justify-center">
-                <LanguageSwitcher />
-              </div>
             </motion.div>
           </motion.div>
         )}
