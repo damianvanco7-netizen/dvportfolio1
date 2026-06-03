@@ -171,7 +171,7 @@ function ProjectPage() {
               style={{ fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35, ease: [0.65, 0, 0.35, 1] }}
+              transition={{ duration: 0.6, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
               {project.title}
             </motion.h1>
@@ -184,7 +184,7 @@ function ProjectPage() {
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors hover:bg-black/10"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.45, ease: [0.65, 0, 0.35, 1] }}
+                transition={{ duration: 0.5, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
               >
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full"
@@ -200,7 +200,7 @@ function ProjectPage() {
                 className="mt-10"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.55, ease: [0.65, 0, 0.35, 1] }}
+                transition={{ duration: 0.6, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
               >
                 <p className="mb-3 text-[13px] text-foreground/50">Info</p>
                 <p className="max-w-prose text-[14px] leading-relaxed text-foreground/80">
@@ -215,16 +215,16 @@ function ProjectPage() {
                 value={project.services.map((s: string) => (
                   <div key={s}>{s}</div>
                 ))}
-                delay={0.7}
+                delay={0.88}
               />
-              <InfoRow label="Client" value={project.client} delay={0.8} />
-              <InfoRow label="Year" value={project.year} delay={0.9} />
+              <InfoRow label="Client" value={project.client} delay={0.96} />
+              <InfoRow label="Year" value={project.year} delay={1.04} />
               <motion.div
                 aria-hidden
                 className="block h-px origin-left bg-border/60"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 1.0, ease: [0.65, 0, 0.35, 1] }}
+                transition={{ duration: 0.6, delay: 1.12, ease: [0.22, 1, 0.36, 1] }}
               />
             </div>
           </div>
