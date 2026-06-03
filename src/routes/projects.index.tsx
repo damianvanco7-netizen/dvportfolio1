@@ -34,7 +34,7 @@ function ProjectsPage() {
                 layoutId={`project-cover-${p.slug}`}
                 className="relative w-full overflow-hidden rounded-sm"
                 style={{ aspectRatio: "4 / 3", backgroundColor: "var(--surface-cream)" }}
-                transition={{ layout: { type: "spring", stiffness: 180, damping: 26, mass: 0.9 } }}
+                transition={{ layout: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } }}
               >
                 {/\.(mp4|webm|mov)$/i.test(p.cover) ? (
                   <video
@@ -43,14 +43,14 @@ function ProjectsPage() {
                     muted
                     loop
                     playsInline
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    className="h-full w-full object-cover"
                   />
                 ) : (
                   <img
                     src={p.cover}
                     alt={p.title}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    className="h-full w-full object-cover"
                   />
                 )}
                 <span
