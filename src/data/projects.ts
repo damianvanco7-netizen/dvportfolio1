@@ -4,6 +4,7 @@ import aureanJourneys4 from "@/assets/projects/aurean-journeys-4.png";
 import aureanJourneysVideo from "@/assets/projects/aurean-journeys.mp4";
 import aureanJourneysVideo2 from "@/assets/projects/aurean-journeys-4.mp4";
 import velox from "@/assets/projects/velox.jpg";
+import veloxVideo from "@/assets/projects/velox-video.mp4.asset.json";
 import surikado from "@/assets/projects/surikado.jpg";
 import surikadoVideo from "@/assets/projects/surikado-1.mp4";
 import surikado2 from "@/assets/projects/surikado-2.png";
