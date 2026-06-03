@@ -4,10 +4,12 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useT } from "@/lib/i18n";
 
 const RECIPIENT = "damian.vanco7@gmail.com";
 
 export function GetInTouchDialog({ children }: { children: ReactNode }) {
+  const t = useT();
   const [open, setOpen] = useState(false);
   const [sent, setSent] = useState(false);
   const [name, setName] = useState("");
@@ -77,13 +79,13 @@ export function GetInTouchDialog({ children }: { children: ReactNode }) {
                 animation: "git-rise 500ms ease-out 250ms both",
               }}
             >
-              Thank you
+              {t("git.thanks")}
             </h2>
             <p
               className="mt-4 text-[15px] leading-relaxed text-foreground/60"
               style={{ animation: "git-rise 500ms ease-out 400ms both" }}
             >
-              Your message is on its way. I'll get back to you soon.
+              {t("git.thanksBody")}
             </p>
             <button
               type="button"
@@ -95,7 +97,7 @@ export function GetInTouchDialog({ children }: { children: ReactNode }) {
               }}
             >
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
-              Go back
+              {t("git.goBack")}
             </button>
             <style>{`
               @keyframes git-pop {
@@ -118,39 +120,39 @@ export function GetInTouchDialog({ children }: { children: ReactNode }) {
               className="font-medium leading-[1.05] tracking-tight text-foreground"
               style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
             >
-              Get in touch
+              {t("git.title")}
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-foreground/60">
-              Leave your name and a short message — I'll get back to you soon.
+              {t("git.subtitle")}
             </p>
 
             <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-10">
               <Field
                 id="git-name"
-                label="Name"
+                label={t("git.name")}
                 required
                 maxLength={100}
                 value={name}
                 onChange={setName}
-                placeholder="Your name"
+                placeholder={t("git.namePlaceholder")}
               />
               <Field
                 id="git-email"
-                label="Email (optional)"
+                label={t("git.email")}
                 type="email"
                 maxLength={255}
                 value={email}
                 onChange={setEmail}
-                placeholder="you@example.com"
+                placeholder={t("git.emailPlaceholder")}
               />
               <TextareaField
                 id="git-message"
-                label="Message"
+                label={t("git.message")}
                 required
                 maxLength={2000}
                 value={message}
                 onChange={setMessage}
-                placeholder="Tell me about your project..."
+                placeholder={t("git.messagePlaceholder")}
               />
 
               <div className="pt-2">
@@ -160,7 +162,7 @@ export function GetInTouchDialog({ children }: { children: ReactNode }) {
                   style={{ backgroundColor: "var(--accent-blue)" }}
                 >
                   <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
-                  Send message
+                  {t("git.send")}
                 </button>
               </div>
             </form>

@@ -6,6 +6,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
+import { useT } from "@/lib/i18n";
+import { localizeTags } from "@/lib/project-i18n";
 import heroVideo from "@/assets/hero.mp4";
 import aureanJourneys from "@/assets/projects/aurean-journeys.mp4";
 import velox from "@/assets/projects/velox.jpg";
@@ -59,9 +61,8 @@ const projectsBottom = [
 
 const services = [
   {
-    title: "Web Design and Development",
-    excerpt:
-      "Custom websites built around strong visual direction, clear structure, responsive layouts, and refined front-end execution. The goal is to create websites that not only look distinctive, but also feel intuitive, trustworthy, and easy to use across every device.",
+    titleKey: "service.web",
+    excerptKey: "service.web.excerpt",
     projects: [
       { slug: "aurean-journeys", title: "Aurean Journeys" },
       { slug: "velox", title: "Velox" },
@@ -71,9 +72,8 @@ const services = [
     ],
   },
   {
-    title: "Visual Identity",
-    excerpt:
-      "Visual identities shaped to give brands a clear and recognizable voice across digital and physical touchpoints. From logos, typography, color palettes, and layout systems to supporting brand assets, every element is built to feel consistent, flexible, and true to the character of the brand.",
+    titleKey: "service.identity",
+    excerptKey: "service.identity.excerpt",
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "stable-labs", title: "Stable Labs" },
@@ -83,9 +83,8 @@ const services = [
     ],
   },
   {
-    title: "Social Media Communication",
-    excerpt:
-      "Social media communication designed to keep brands consistent, recognizable, and active across the channels where people meet them most often. From visual templates and campaign direction to content ideas and post designs, every output should feel aligned with the brand and easy to use in everyday communication.",
+    titleKey: "service.social",
+    excerptKey: "service.social.excerpt",
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "lead-summit", title: "Lead Summit" },
@@ -93,9 +92,8 @@ const services = [
     ],
   },
   {
-    title: "Creative Direction",
-    excerpt:
-      "Creative direction that connects the brand, website, campaign, or launch into one clear visual approach. This includes shaping the overall mood, message, visual language, and brand presence, making sure the final outcome feels focused, memorable, and aligned with the brand's goals.",
+    titleKey: "service.creative",
+    excerptKey: "service.creative.excerpt",
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "lava-stone", title: "Lava Stone" },
@@ -328,6 +326,8 @@ function ProjectCard({
   title: string;
   aspect?: string;
 }) {
+  const t = useT();
+  const localizedTags = localizeTags(t, tags);
   return (
     <Link
       to="/projects/$slug"
@@ -370,10 +370,10 @@ function ProjectCard({
         </span>
       </motion.div>
       <div className="mt-4 flex items-baseline gap-1.5 text-[13px] text-muted-foreground">
-        {tags.map((t, i) => (
-          <span key={t} className="flex items-baseline gap-1.5">
+        {localizedTags.map((tag, i) => (
+          <span key={`${tag}-${i}`} className="flex items-baseline gap-1.5">
             {i > 0 && <span className="opacity-50">/</span>}
-            <span>{t}</span>
+            <span>{tag}</span>
           </span>
         ))}
       </div>
@@ -383,6 +383,7 @@ function ProjectCard({
 }
 
 function HomePage() {
+  const t = useT();
   return (
     <div className="min-h-screen text-foreground">
       <SiteHeader />
@@ -412,9 +413,9 @@ function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              Shaping Brands With
+              {t("home.heroTitle.line1")}
               <br />
-              Clarity and Character
+              {t("home.heroTitle.line2")}
             </motion.h1>
             <motion.span
               className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline"
@@ -422,7 +423,7 @@ function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              (Since 2020)
+              {t("home.since")}
             </motion.span>
           </div>
         </div>
@@ -437,11 +438,9 @@ function HomePage() {
           <div className="max-w-5xl">
             <h2 className="text-[24px] font-medium leading-[1.2] tracking-tight text-foreground md:text-[32px]">
               <span className="mr-3 inline-flex align-middle">
-                <PillLink>About</PillLink>
+                <PillLink>{t("home.aboutPill")}</PillLink>
               </span>
-              My work sits between brand, design, and development: creating
-              visual identities, websites, and communication systems that help
-              brands feel clear, confident, and recognizable.
+              {t("home.aboutText")}
             </h2>
           </div>
         </Reveal>
@@ -472,9 +471,9 @@ function HomePage() {
                 className="font-medium leading-[0.95] tracking-[-0.03em]"
                 style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
               >
-                Latest work
+                {t("home.latestWork")}
               </h2>
-              <PillLink to="/projects">View all projects</PillLink>
+              <PillLink to="/projects">{t("home.viewAllProjects")}</PillLink>
             </div>
           </Reveal>
 
@@ -505,17 +504,17 @@ function HomePage() {
                 className="font-medium leading-[0.95] tracking-[-0.03em]"
                 style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
               >
-                Services
+                {t("home.services")}
               </h2>
-              <PillLink to="/about">Learn more about me</PillLink>
+              <PillLink to="/about">{t("home.learnMore")}</PillLink>
             </div>
           </Reveal>
 
           <Accordion type="single" collapsible className="w-full">
             {services.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.08} y={20}>
+              <Reveal key={s.titleKey} delay={i * 0.08} y={20}>
                 <AccordionItem
-                  value={s.title}
+                  value={s.titleKey}
                   className="border-b border-border/60"
                 >
                   <AccordionTrigger className="group flex w-full items-center gap-6 py-6 hover:no-underline [&>svg]:hidden">
@@ -523,7 +522,7 @@ function HomePage() {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="flex-1 text-left text-[clamp(1.25rem,2.5vw,2rem)] font-normal tracking-tight text-foreground">
-                      {s.title}
+                      {t(s.titleKey)}
                     </span>
                     <span
                       aria-hidden="true"
@@ -536,10 +535,10 @@ function HomePage() {
                   <AccordionContent className="pb-10 pt-2">
                     <div className="flex flex-col items-start gap-6 pl-0 md:flex-row md:gap-12 md:pl-[72px]">
                       <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
-                        {s.excerpt}
+                        {t(s.excerptKey)}
                       </p>
                       <div className="md:flex-1">
-                        <p className="mb-3 text-[13px] text-foreground/50">Example projects</p>
+                        <p className="mb-3 text-[13px] text-foreground/50">{t("home.exampleProjects")}</p>
                         <div className="flex flex-wrap gap-2">
                           {s.projects.map((p) => (
                             <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
@@ -564,7 +563,7 @@ function HomePage() {
                 className="font-medium leading-[0.95] tracking-[-0.03em]"
                 style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
               >
-                References
+                {t("home.references")}
               </h2>
               <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-black/5 px-4 py-2 pb-2 text-[13px] text-foreground md:inline-flex">
                 <svg
@@ -588,43 +587,38 @@ function HomePage() {
             items={[
               {
                 name: "Jakub Hrušovský",
-                position: "Co-founder",
+                position: t("ref.position.cofounder"),
                 company: "Birne",
                 photo: refBirne.url,
-                quote:
-                  "Over the past years, Damian worked with us across many projects, always delivering reliable, high-quality results.",
+                quote: t("ref.birne"),
               },
               {
                 name: "Teodor Derzsi",
-                position: "CEO & Founder",
+                position: t("ref.position.ceofounder"),
                 company: "Greenstone",
                 photo: refGreenstone.url,
-                quote:
-                  "Damian helped us bring the project to life with a polished result, clear process, and strong execution.",
+                quote: t("ref.greenstone"),
               },
               {
                 name: "Patrik Zubíček",
-                position: "Project Manager",
+                position: t("ref.position.pm"),
                 company: "Zetshop",
                 photo: refZetshop.url,
-                quote:
-                  "While working on the visual identity, he exceeded our expectations and, thanks to his creative approach, elevated the Zetshop brand several levels higher.",
+                quote: t("ref.zetshop"),
               },
               {
                 name: "René Marek",
-                position: "CEO & Founder",
+                position: t("ref.position.ceofounder"),
                 company: "Lead Summit",
                 photo: refLeadsummit.url,
-                quote:
-                  "Damian translated the energy of our event into a bold identity and confident online presence.",
+                quote: t("ref.leadsummit"),
               },
               {
                 name: "Milan Vizner",
-                position: "CEO",
+                position: t("ref.position.ceo"),
                 company: "Norriv",
                 photo: refNorriv.url,
-                quote:
-                  "Damian captured our hologram and 3D visualization work in a website that feels premium, clear, and future-facing.",
+                quote: t("ref.norriv"),
               },
             ]}
           />

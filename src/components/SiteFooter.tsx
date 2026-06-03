@@ -1,7 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import symbol from "@/assets/symbol.svg";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useT } from "@/lib/i18n";
 
 export function SiteFooter() {
+  const t = useT();
   return (
     <footer className="relative z-10 bg-[#ececec]">
       <div className="px-5 pb-8 pt-20 md:px-6 md:pb-10 md:pt-28">
@@ -12,6 +15,7 @@ export function SiteFooter() {
             <span className="text-[15px] font-medium tracking-tight">DAMIAN VANCO</span>
           </Link>
           <div className="flex items-center gap-2">
+            <LanguageSwitcher />
             <SocialPill
               label="LinkedIn"
               href="https://www.linkedin.com/in/damian-van%C4%8Do-6208551b3/"
@@ -21,7 +25,7 @@ export function SiteFooter() {
 
         {/* bottom row */}
         <div className="mt-20 flex items-center justify-between text-[13px] text-muted-foreground md:mt-28">
-          <span>© {new Date().getFullYear()} Damian Vanco</span>
+          <span>{t("footer.copyright", { year: new Date().getFullYear() })}</span>
           <a
             href="mailto:damian.vanco7@gmail.com"
             className="hover:text-foreground"
