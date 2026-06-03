@@ -17,6 +17,11 @@ import logoTncoc from "@/assets/logos/tncoc.png";
 import logoUnuo from "@/assets/logos/unuo.png";
 import logoCvti from "@/assets/logos/cvti.png";
 import logoNorriv from "@/assets/logos/norriv.png";
+import refBirne from "@/assets/references/birne.png.asset.json";
+import refGreenstone from "@/assets/references/greenstone.png.asset.json";
+import refZetshop from "@/assets/references/zetshop.png.asset.json";
+import refLeadsummit from "@/assets/references/leadsummit.png.asset.json";
+import refNorriv from "@/assets/references/norriv.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -144,6 +149,7 @@ type Reference = {
   position: string;
   company: string;
   quote: string;
+  photo: string;
 };
 
 function ReferencesCarousel({ items }: { items: Reference[] }) {
@@ -205,9 +211,11 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
                 “{r.quote}”
               </blockquote>
               <figcaption className="mt-auto flex items-center gap-3">
-                <span
-                  aria-hidden="true"
-                  className="h-10 w-10 shrink-0 rounded-full bg-black/10"
+                <img
+                  src={r.photo}
+                  alt={r.name}
+                  className="h-10 w-10 shrink-0 rounded-full object-cover"
+                  loading="lazy"
                 />
                 <span className="flex flex-col">
                   <span className="text-[14px] text-foreground">{r.name}</span>
@@ -524,44 +532,42 @@ function HomePage() {
           <ReferencesCarousel
             items={[
               {
-                name: "Jane Doe",
-                position: "Marketing Director",
+                name: "Jakub Hrušovský",
+                position: "Co-founder",
                 company: "Birne",
+                photo: refBirne.url,
                 quote:
                   "Over the past years, Damian worked with us across many projects, always delivering reliable, high-quality results.",
               },
               {
-                name: "Marek Novák",
-                position: "Founder & CEO",
+                name: "Teodor Derzsi",
+                position: "CEO & Founder",
                 company: "Greenstone",
+                photo: refGreenstone.url,
                 quote:
                   "Damian helped us bring the project to life with a polished result, clear process, and strong execution.",
               },
               {
-                name: "Sofia Lindqvist",
-                position: "Head of Product",
+                name: "Patrik Zubíček",
+                position: "Project Manager",
                 company: "Zetshop",
+                photo: refZetshop.url,
                 quote:
-                  "Our new interface made the shopping experience faster, cleaner, and much easier to navigate.",
+                  "While working on the visual identity, he exceeded our expectations and, thanks to his creative approach, elevated the Zetshop brand several levels higher.",
               },
               {
-                name: "Tomáš Horák",
-                position: "Creative Lead",
+                name: "René Marek",
+                position: "CEO & Founder",
                 company: "Lead Summit",
+                photo: refLeadsummit.url,
                 quote:
                   "Damian translated the energy of our event into a bold identity and confident online presence.",
               },
               {
-                name: "Elena Ricci",
-                position: "Brand Manager",
-                company: "Unuo",
-                quote:
-                  "The final result feels elegant, practical, and perfectly aligned with how we want to communicate.",
-              },
-              {
-                name: "Lukas Berger",
-                position: "Co-founder",
+                name: "Milan Vizner",
+                position: "CEO",
                 company: "Norriv",
+                photo: refNorriv.url,
                 quote:
                   "Damian captured our hologram and 3D visualization work in a website that feels premium, clear, and future-facing.",
               },
