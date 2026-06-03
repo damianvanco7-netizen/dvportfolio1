@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { useIsOpeningProject } from "@/lib/nav-transition";
 import { getProject, projects } from "@/data/projects";
 
 export const Route = createFileRoute("/projects/$slug")({
