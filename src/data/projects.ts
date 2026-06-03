@@ -123,7 +123,7 @@ export const projects: readonly Project[] = [
     client: "Velox",
     year: "2026, 1 month",
     liveUrl: "https://veloxsro.sk/en/",
-    gallery: [velox],
+    gallery: [velox, veloxVideo.url],
   },
   {
     slug: "villa-poton",
