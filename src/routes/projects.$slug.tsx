@@ -200,7 +200,7 @@ function ProjectPage() {
                 className="mt-10"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.75, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
               >
                 <p className="mb-3 text-[13px] text-foreground/50">Info</p>
                 <p className="max-w-prose text-[14px] leading-relaxed text-foreground/80">
