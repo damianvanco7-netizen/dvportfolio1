@@ -41,11 +41,40 @@ export const Route = createFileRoute("/projects/$slug")({
   component: ProjectPage,
 });
 
-function InfoRow({ label, value }: { label: string; value: React.ReactNode }) {
+function InfoRow({
+  label,
+  value,
+  delay = 0,
+}: {
+  label: string;
+  value: React.ReactNode;
+  delay?: number;
+}) {
   return (
-    <div className="grid grid-cols-2 gap-4 border-t border-border/60 py-4 text-[13px]">
-      <span className="text-foreground/50">{label}</span>
-      <div className="text-foreground">{value}</div>
+    <div className="relative grid grid-cols-2 gap-4 py-4 text-[13px]">
+      <motion.span
+        aria-hidden
+        className="absolute left-0 right-0 top-0 block h-px origin-left bg-border/60"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 0.6, delay, ease: [0.65, 0, 0.35, 1] }}
+      />
+      <motion.span
+        className="text-foreground/50"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: delay + 0.1, ease: [0.65, 0, 0.35, 1] }}
+      >
+        {label}
+      </motion.span>
+      <motion.div
+        className="text-foreground"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: delay + 0.1, ease: [0.65, 0, 0.35, 1] }}
+      >
+        {value}
+      </motion.div>
     </div>
   );
 }
