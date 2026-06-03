@@ -4,6 +4,8 @@ import { primeProjectOpen } from "@/lib/nav-transition";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { projects } from "@/data/projects";
+import { useT } from "@/lib/i18n";
+import { localizeTags } from "@/lib/project-i18n";
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({
@@ -18,6 +20,7 @@ export const Route = createFileRoute("/projects/")({
 });
 
 function ProjectsPage() {
+  const t = useT();
   return (
     <div className="min-h-screen bg-white text-foreground">
       <SiteHeader />
@@ -69,7 +72,7 @@ function ProjectsPage() {
               </motion.div>
               <div className="mt-4">
                 <p className="text-[13px] text-foreground/50">
-                  {p.tags.join(" / ")}
+                  {localizeTags(t, p.tags).join(" / ")}
                 </p>
                 <h2 className="mt-1 text-[18px] font-medium tracking-tight">
                   {p.title}
