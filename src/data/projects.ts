@@ -209,7 +209,7 @@ export const projects: readonly Project[] = [
     title: "Norriv",
     cover: norriv1,
     tags: ["Web design"],
-    info: "",
+    info: "This project was a web design for norriv, a company creating hologram boxes, 3D visualizations, and immersive presentation solutions. The goal was to translate a highly technical and futuristic product into a clear, premium website that explains the offer, builds trust, and presents the brand as an innovative partner for events, exhibitions, and product showcases.",
     services: ["Web design"],
     client: "Norriv",
     year: "2024, 2 months",
