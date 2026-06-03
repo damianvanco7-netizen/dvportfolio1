@@ -326,6 +326,8 @@ function ProjectCard({
   title: string;
   aspect?: string;
 }) {
+  const t = useT();
+  const localizedTags = localizeTags(t, tags);
   return (
     <Link
       to="/projects/$slug"
@@ -368,10 +370,10 @@ function ProjectCard({
         </span>
       </motion.div>
       <div className="mt-4 flex items-baseline gap-1.5 text-[13px] text-muted-foreground">
-        {tags.map((t, i) => (
-          <span key={t} className="flex items-baseline gap-1.5">
+        {localizedTags.map((tag, i) => (
+          <span key={`${tag}-${i}`} className="flex items-baseline gap-1.5">
             {i > 0 && <span className="opacity-50">/</span>}
-            <span>{t}</span>
+            <span>{tag}</span>
           </span>
         ))}
       </div>
@@ -381,6 +383,7 @@ function ProjectCard({
 }
 
 function HomePage() {
+  const t = useT();
   return (
     <div className="min-h-screen text-foreground">
       <SiteHeader />
