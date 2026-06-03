@@ -61,9 +61,8 @@ const projectsBottom = [
 
 const services = [
   {
-    title: "Web Design and Development",
-    excerpt:
-      "Custom websites built around strong visual direction, clear structure, responsive layouts, and refined front-end execution. The goal is to create websites that not only look distinctive, but also feel intuitive, trustworthy, and easy to use across every device.",
+    titleKey: "service.web",
+    excerptKey: "service.web.excerpt",
     projects: [
       { slug: "aurean-journeys", title: "Aurean Journeys" },
       { slug: "velox", title: "Velox" },
@@ -73,9 +72,8 @@ const services = [
     ],
   },
   {
-    title: "Visual Identity",
-    excerpt:
-      "Visual identities shaped to give brands a clear and recognizable voice across digital and physical touchpoints. From logos, typography, color palettes, and layout systems to supporting brand assets, every element is built to feel consistent, flexible, and true to the character of the brand.",
+    titleKey: "service.identity",
+    excerptKey: "service.identity.excerpt",
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "stable-labs", title: "Stable Labs" },
@@ -85,9 +83,8 @@ const services = [
     ],
   },
   {
-    title: "Social Media Communication",
-    excerpt:
-      "Social media communication designed to keep brands consistent, recognizable, and active across the channels where people meet them most often. From visual templates and campaign direction to content ideas and post designs, every output should feel aligned with the brand and easy to use in everyday communication.",
+    titleKey: "service.social",
+    excerptKey: "service.social.excerpt",
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "lead-summit", title: "Lead Summit" },
@@ -95,9 +92,8 @@ const services = [
     ],
   },
   {
-    title: "Creative Direction",
-    excerpt:
-      "Creative direction that connects the brand, website, campaign, or launch into one clear visual approach. This includes shaping the overall mood, message, visual language, and brand presence, making sure the final outcome feels focused, memorable, and aligned with the brand's goals.",
+    titleKey: "service.creative",
+    excerptKey: "service.creative.excerpt",
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "lava-stone", title: "Lava Stone" },
