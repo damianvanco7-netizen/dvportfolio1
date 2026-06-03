@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from "react";
+import { Check } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -9,9 +10,22 @@ const RECIPIENT = "damian.vanco7@gmail.com";
 
 export function GetInTouchDialog({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState(false);
+  const [sent, setSent] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const reset = () => {
+    setSent(false);
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
+  const handleOpenChange = (next: boolean) => {
+    setOpen(next);
+    if (!next) setTimeout(reset, 200);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,63 +35,94 @@ export function GetInTouchDialog({ children }: { children: ReactNode }) {
       `Name: ${name}\nEmail: ${email}\n\n${message}`,
     );
     window.location.href = `mailto:${RECIPIENT}?subject=${subject}&body=${body}`;
-    setOpen(false);
+    setSent(true);
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="w-[calc(100vw-2rem)] max-w-2xl gap-0 border-border/60 bg-white p-10 shadow-none sm:rounded-md md:p-14">
-        <h2
-          className="font-medium leading-[1.05] tracking-tight text-foreground"
-          style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
-        >
-          Get in touch
-        </h2>
-        <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
-          Leave your name and a short message — I'll get back to you soon.
-        </p>
-
-        <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-10">
-          <Field
-            id="git-name"
-            label="Name"
-            required
-            maxLength={100}
-            value={name}
-            onChange={setName}
-            placeholder="Your name"
-          />
-          <Field
-            id="git-email"
-            label="Email (optional)"
-            type="email"
-            maxLength={255}
-            value={email}
-            onChange={setEmail}
-            placeholder="you@example.com"
-          />
-          <TextareaField
-            id="git-message"
-            label="Message"
-            required
-            maxLength={2000}
-            value={message}
-            onChange={setMessage}
-            placeholder="Tell me about your project..."
-          />
-
-          <div className="pt-2">
+        {sent ? (
+          <div className="flex flex-col items-start">
+            <span
+              className="flex h-12 w-12 items-center justify-center rounded-full text-white"
+              style={{ backgroundColor: "var(--accent-blue)" }}
+            >
+              <Check className="h-6 w-6" strokeWidth={2.5} />
+            </span>
+            <h2
+              className="mt-8 font-medium leading-[1.05] tracking-tight text-foreground"
+              style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
+            >
+              Thank you
+            </h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-foreground/60">
+              Your message is on its way. I'll get back to you soon.
+            </p>
             <button
-              type="submit"
-              className="inline-flex cursor-pointer items-center gap-2 rounded-full px-5 py-2.5 text-[14px] font-medium text-white transition-opacity hover:opacity-90"
+              type="button"
+              onClick={() => handleOpenChange(false)}
+              className="mt-10 inline-flex cursor-pointer items-center gap-2 rounded-full px-5 py-2.5 text-[14px] font-medium text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: "var(--accent-blue)" }}
             >
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
-              Send message
+              Go back
             </button>
           </div>
-        </form>
+        ) : (
+          <>
+            <h2
+              className="font-medium leading-[1.05] tracking-tight text-foreground"
+              style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)" }}
+            >
+              Get in touch
+            </h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-foreground/60">
+              Leave your name and a short message — I'll get back to you soon.
+            </p>
+
+            <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-10">
+              <Field
+                id="git-name"
+                label="Name"
+                required
+                maxLength={100}
+                value={name}
+                onChange={setName}
+                placeholder="Your name"
+              />
+              <Field
+                id="git-email"
+                label="Email (optional)"
+                type="email"
+                maxLength={255}
+                value={email}
+                onChange={setEmail}
+                placeholder="you@example.com"
+              />
+              <TextareaField
+                id="git-message"
+                label="Message"
+                required
+                maxLength={2000}
+                value={message}
+                onChange={setMessage}
+                placeholder="Tell me about your project..."
+              />
+
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-full px-5 py-2.5 text-[14px] font-medium text-white transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "var(--accent-blue)" }}
+                >
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-white" />
+                  Send message
+                </button>
+              </div>
+            </form>
+          </>
+        )}
       </DialogContent>
     </Dialog>
   );
@@ -104,7 +149,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-3 border-b border-border/60 pb-3">
-      <label htmlFor={id} className="text-[12px] uppercase tracking-[0.12em] text-muted-foreground">
+      <label htmlFor={id} className="text-[13px] text-foreground">
         {label}
       </label>
       <input
@@ -140,7 +185,7 @@ function TextareaField({
 }) {
   return (
     <div className="flex flex-col gap-3 border-b border-border/60 pb-3">
-      <label htmlFor={id} className="text-[12px] uppercase tracking-[0.12em] text-muted-foreground">
+      <label htmlFor={id} className="text-[13px] text-foreground">
         {label}
       </label>
       <textarea
