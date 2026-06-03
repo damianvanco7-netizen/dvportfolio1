@@ -243,7 +243,7 @@ function ProjectPage() {
         {/* Next project */}
         <div className="mt-32 flex items-center justify-between border-t border-border/60 pt-8">
           <Link to="/projects" className="text-[14px] text-foreground/60 hover:text-foreground">
-            ← All projects
+            ← Back to projects
           </Link>
           {(() => {
             const idx = projects.findIndex((p) => p.slug === project.slug);
