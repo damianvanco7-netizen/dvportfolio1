@@ -499,54 +499,57 @@ function HomePage() {
       {/* SERVICES */}
       <section className="relative z-10 bg-white border-t border-border/60">
         <div className="px-5 py-12 md:px-6 md:py-16">
-          <div className="mb-10 flex items-end justify-between md:mb-14">
-            <h2
-              className="font-medium leading-[0.95] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
-            >
-              Services
-            </h2>
-            <PillLink to="/about">Learn more about me</PillLink>
-          </div>
+          <Reveal>
+            <div className="mb-10 flex items-end justify-between md:mb-14">
+              <h2
+                className="font-medium leading-[0.95] tracking-[-0.03em]"
+                style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
+              >
+                Services
+              </h2>
+              <PillLink to="/about">Learn more about me</PillLink>
+            </div>
+          </Reveal>
 
           <Accordion type="single" collapsible className="w-full">
             {services.map((s, i) => (
-              <AccordionItem
-                key={s.title}
-                value={s.title}
-                className="border-b border-border/60"
-              >
-                <AccordionTrigger className="group flex w-full items-center gap-6 py-6 hover:no-underline [&>svg]:hidden">
-                  <span className="w-12 shrink-0 text-[18px] tabular-nums text-foreground/40">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="flex-1 text-left text-[clamp(1.25rem,2.5vw,2rem)] font-normal tracking-tight text-foreground">
-                    {s.title}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="relative ml-auto h-5 w-5 shrink-0 text-foreground/60 transition-transform duration-700 group-data-[state=open]:rotate-45"
-                  >
-                    <span className="absolute left-1/2 top-1/2 h-px w-5 -translate-x-1/2 -translate-y-1/2 bg-current" />
-                    <span className="absolute left-1/2 top-1/2 h-5 w-px -translate-x-1/2 -translate-y-1/2 bg-current" />
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="pb-10 pt-2">
-                  <div className="flex flex-col items-start gap-6 pl-0 md:flex-row md:gap-12 md:pl-[72px]">
-                    <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
-                      {s.excerpt}
-                    </p>
-                    <div className="md:flex-1">
-                      <p className="mb-3 text-[13px] text-foreground/50">Example projects</p>
-                      <div className="flex flex-wrap gap-2">
-                        {s.projects.map((p) => (
-                          <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
-                        ))}
+              <Reveal key={s.title} delay={i * 0.08} y={20}>
+                <AccordionItem
+                  value={s.title}
+                  className="border-b border-border/60"
+                >
+                  <AccordionTrigger className="group flex w-full items-center gap-6 py-6 hover:no-underline [&>svg]:hidden">
+                    <span className="w-12 shrink-0 text-[18px] tabular-nums text-foreground/40">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="flex-1 text-left text-[clamp(1.25rem,2.5vw,2rem)] font-normal tracking-tight text-foreground">
+                      {s.title}
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="relative ml-auto h-5 w-5 shrink-0 text-foreground/60 transition-transform duration-700 group-data-[state=open]:rotate-45"
+                    >
+                      <span className="absolute left-1/2 top-1/2 h-px w-5 -translate-x-1/2 -translate-y-1/2 bg-current" />
+                      <span className="absolute left-1/2 top-1/2 h-5 w-px -translate-x-1/2 -translate-y-1/2 bg-current" />
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-10 pt-2">
+                    <div className="flex flex-col items-start gap-6 pl-0 md:flex-row md:gap-12 md:pl-[72px]">
+                      <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
+                        {s.excerpt}
+                      </p>
+                      <div className="md:flex-1">
+                        <p className="mb-3 text-[13px] text-foreground/50">Example projects</p>
+                        <div className="flex flex-wrap gap-2">
+                          {s.projects.map((p) => (
+                            <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+                  </AccordionContent>
+                </AccordionItem>
+              </Reveal>
             ))}
           </Accordion>
         </div>
