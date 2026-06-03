@@ -5,6 +5,8 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useIsOpeningProject } from "@/lib/nav-transition";
 import { getProject, projects } from "@/data/projects";
+import { useT } from "@/lib/i18n";
+import { localizeInfo, localizeTags, localizeYear } from "@/lib/project-i18n";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
