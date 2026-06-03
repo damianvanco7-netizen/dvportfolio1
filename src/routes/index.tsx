@@ -563,7 +563,7 @@ function HomePage() {
                 className="font-medium leading-[0.95] tracking-[-0.03em]"
                 style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
               >
-                References
+                {t("home.references")}
               </h2>
               <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-black/5 px-4 py-2 pb-2 text-[13px] text-foreground md:inline-flex">
                 <svg
@@ -587,43 +587,38 @@ function HomePage() {
             items={[
               {
                 name: "Jakub Hrušovský",
-                position: "Co-founder",
+                position: t("ref.position.cofounder"),
                 company: "Birne",
                 photo: refBirne.url,
-                quote:
-                  "Over the past years, Damian worked with us across many projects, always delivering reliable, high-quality results.",
+                quote: t("ref.birne"),
               },
               {
                 name: "Teodor Derzsi",
-                position: "CEO & Founder",
+                position: t("ref.position.ceofounder"),
                 company: "Greenstone",
                 photo: refGreenstone.url,
-                quote:
-                  "Damian helped us bring the project to life with a polished result, clear process, and strong execution.",
+                quote: t("ref.greenstone"),
               },
               {
                 name: "Patrik Zubíček",
-                position: "Project Manager",
+                position: t("ref.position.pm"),
                 company: "Zetshop",
                 photo: refZetshop.url,
-                quote:
-                  "While working on the visual identity, he exceeded our expectations and, thanks to his creative approach, elevated the Zetshop brand several levels higher.",
+                quote: t("ref.zetshop"),
               },
               {
                 name: "René Marek",
-                position: "CEO & Founder",
+                position: t("ref.position.ceofounder"),
                 company: "Lead Summit",
                 photo: refLeadsummit.url,
-                quote:
-                  "Damian translated the energy of our event into a bold identity and confident online presence.",
+                quote: t("ref.leadsummit"),
               },
               {
                 name: "Milan Vizner",
-                position: "CEO",
+                position: t("ref.position.ceo"),
                 company: "Norriv",
                 photo: refNorriv.url,
-                quote:
-                  "Damian captured our hologram and 3D visualization work in a website that feels premium, clear, and future-facing.",
+                quote: t("ref.norriv"),
               },
             ]}
           />
