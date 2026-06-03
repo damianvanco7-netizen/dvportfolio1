@@ -558,27 +558,31 @@ function HomePage() {
       {/* REFERENCES */}
       <section className="relative z-10 bg-white border-t border-border/60">
         <div className="px-5 py-12 md:px-6 md:py-16">
-          <div className="mb-10 flex items-end justify-between md:mb-14">
-            <h2
-              className="font-medium leading-[0.95] tracking-[-0.03em]"
-              style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
-            >
-              References
-            </h2>
-            <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-black/5 px-4 py-2 pb-2 text-[13px] text-foreground md:inline-flex">
-              <svg
-                aria-hidden="true"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                style={{ color: "var(--accent-blue)" }}
+          <Reveal>
+            <div className="mb-10 flex items-end justify-between md:mb-14">
+              <h2
+                className="font-medium leading-[0.95] tracking-[-0.03em]"
+                style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
               >
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-              4.8
-            </span>
-          </div>
+                References
+              </h2>
+              <span className="hidden items-center gap-1.5 whitespace-nowrap rounded-full bg-black/5 px-4 py-2 pb-2 text-[13px] text-foreground md:inline-flex">
+                <svg
+                  aria-hidden="true"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  style={{ color: "var(--accent-blue)" }}
+                >
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                4.8
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.15}>
 
           <ReferencesCarousel
             items={[
