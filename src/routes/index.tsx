@@ -209,7 +209,7 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
         style={{
           width: `${(list.length * 100) / visible}%`,
           transform: `translateX(-${index * step}%)`,
-          transition: animate ? "transform 700ms ease" : "none",
+          transition: animate ? "transform 1400ms ease" : "none",
         }}
       >
         {list.map((r, i) => (
