@@ -28,22 +28,32 @@ export const Route = createFileRoute("/projects/$slug")({
       ],
     };
   },
-  notFoundComponent: () => (
-    <div className="min-h-screen bg-white px-5 py-32 text-foreground md:px-6">
-      <h1 className="text-3xl font-medium">Project not found</h1>
-      <Link to="/" className="mt-4 inline-block underline">
-        Back to home
-      </Link>
-    </div>
-  ),
-  errorComponent: ({ error }) => (
-    <div className="min-h-screen bg-white px-5 py-32 text-foreground md:px-6">
-      <h1 className="text-2xl font-medium">Something went wrong</h1>
-      <p className="mt-2 text-foreground/60">{error.message}</p>
-    </div>
-  ),
+  notFoundComponent: NotFound,
+  errorComponent: ({ error }) => <ErrorView message={error.message} />,
   component: ProjectPage,
 });
+
+function NotFound() {
+  const t = useT();
+  return (
+    <div className="min-h-screen bg-white px-5 py-32 text-foreground md:px-6">
+      <h1 className="text-3xl font-medium">{t("project.notFound")}</h1>
+      <Link to="/" className="mt-4 inline-block underline">
+        {t("project.backHome")}
+      </Link>
+    </div>
+  );
+}
+
+function ErrorView({ message }: { message: string }) {
+  const t = useT();
+  return (
+    <div className="min-h-screen bg-white px-5 py-32 text-foreground md:px-6">
+      <h1 className="text-2xl font-medium">{t("project.error")}</h1>
+      <p className="mt-2 text-foreground/60">{message}</p>
+    </div>
+  );
+}
 
 function InfoRow({
   label,
