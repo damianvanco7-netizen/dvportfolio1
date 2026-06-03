@@ -10,6 +10,7 @@ import {
 } from "@tanstack/react-router";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
 import { NavTransitionProvider, useIsOpeningProject } from "@/lib/nav-transition";
+import { I18nProvider } from "@/lib/i18n";
 
 import appCss from "../styles.css?url";
 
@@ -123,11 +124,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <NavTransitionProvider>
-        <MotionConfig reducedMotion="user" transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}>
-          <OutletShell />
-        </MotionConfig>
-      </NavTransitionProvider>
+      <I18nProvider>
+        <NavTransitionProvider>
+          <MotionConfig reducedMotion="user" transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}>
+            <OutletShell />
+          </MotionConfig>
+        </NavTransitionProvider>
+      </I18nProvider>
     </QueryClientProvider>
   );
 }
