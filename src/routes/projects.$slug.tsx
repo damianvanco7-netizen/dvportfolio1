@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { useIsOpeningProject } from "@/lib/nav-transition";
 import { getProject, projects } from "@/data/projects";
 
 export const Route = createFileRoute("/projects/$slug")({
@@ -83,6 +84,7 @@ function InfoRow({
 function ProjectPage() {
   const { project } = Route.useLoaderData();
   const [showRest, setShowRest] = useState(false);
+  const isOpening = useIsOpeningProject();
 
   useEffect(() => {
     const t = setTimeout(() => setShowRest(true), 950);
@@ -97,6 +99,14 @@ function ProjectPage() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[3.6fr_1fr] lg:gap-10">
           {/* LEFT — scrolling gallery */}
           <div className="order-2 flex flex-col gap-3 lg:order-1">
+            <Link
+              to="/projects"
+              className="mb-2 inline-flex w-fit items-center gap-2 text-[14px] text-foreground/60 transition-colors hover:text-foreground"
+            >
+              ← Back to projects
+            </Link>
+
+
 
             {project.gallery.map((src: string, i: number) => {
               const isVideo = /\.(mp4|webm|mov)$/i.test(src);
@@ -122,7 +132,7 @@ function ProjectPage() {
                 return (
                   <motion.div
                     key={i}
-                    layoutId={`project-cover-${project.slug}`}
+                    {...(isOpening ? { layoutId: `project-cover-${project.slug}` } : {})}
                     className="w-full overflow-hidden rounded-sm"
                     style={{
                       aspectRatio: "1625 / 1137",
@@ -233,7 +243,7 @@ function ProjectPage() {
         {/* Next project */}
         <div className="mt-32 flex items-center justify-between border-t border-border/60 pt-8">
           <Link to="/projects" className="text-[14px] text-foreground/60 hover:text-foreground">
-            ← All projects
+            ← Back to projects
           </Link>
           {(() => {
             const idx = projects.findIndex((p) => p.slug === project.slug);
