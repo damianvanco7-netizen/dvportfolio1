@@ -101,7 +101,7 @@ function ProjectPage() {
           <div className="order-2 flex flex-col gap-3 lg:order-1">
             <Link
               to="/projects"
-              className="mb-2 inline-flex w-fit items-center gap-2 text-[14px] text-foreground/60 transition-colors hover:text-foreground"
+              className="mb-2 inline-flex w-fit items-center gap-2 text-[14px] text-foreground/60 transition-colors duration-500 hover:text-foreground"
             >
               ← Back to projects
             </Link>
@@ -191,7 +191,7 @@ function ProjectPage() {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors hover:bg-black/10"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors duration-500 hover:bg-black/10"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.95, ease: [0.22, 1, 0.36, 1] }}

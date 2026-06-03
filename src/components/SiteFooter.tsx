@@ -40,7 +40,7 @@ function SocialPill({ label, href }: { label: string; href: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] text-foreground transition-colors hover:bg-black/10"
+      className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] text-foreground transition-colors duration-500 hover:bg-black/10"
     >
       <span
         className="inline-block h-1.5 w-1.5 rounded-full"

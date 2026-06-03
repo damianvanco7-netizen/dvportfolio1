@@ -25,7 +25,7 @@ export function SiteHeader() {
             <Link
               key={item.label}
               to={item.to}
-              className="text-[15px] text-muted-foreground transition-colors hover:text-foreground"
+              className="text-[15px] text-muted-foreground transition-colors duration-500 hover:text-foreground"
               activeProps={{ className: "text-foreground" }}
             >
               {item.label}
