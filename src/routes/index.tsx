@@ -497,11 +497,11 @@ function HomePage() {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="pb-10 pt-2">
-                  <div className="flex flex-col gap-6 pl-0 md:pl-[72px]">
-                    <p className="max-w-2xl text-[14px] leading-relaxed text-foreground/50">
+                  <div className="flex flex-col items-start gap-6 pl-0 md:flex-row md:gap-12 md:pl-[72px]">
+                    <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
                       {s.excerpt}
                     </p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 md:flex-1 md:justify-end">
                       {s.projects.map((p) => (
                         <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
                       ))}
