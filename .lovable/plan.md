@@ -1,40 +1,38 @@
-## Goal
+## Plan
 
-Keep the shared-element animation only when **opening** a project (grid → detail). When going **back** (detail → /projects or /), the new page should appear instantly without any shared cover morph. Make the forward animation perfectly smooth — no jitter, no overshoot, no video reflow stutter.
+### 1. Add the uploaded video to Velox detail
 
-## Changes
+- Upload `velox video.mp4` to Lovable Assets via the sandbox CLI (no binary committed to the repo). Write the pointer to `src/assets/projects/velox-video.mp4.asset.json`.
+- In `src/data/projects.ts`, import the pointer and insert its URL as the **second** entry in the Velox `gallery` array:
+  ```
+  gallery: [velox, veloxVideo.url, /* future items */]
+  ```
+- The detail page already auto-detects `.mp4`/`.webm`/`.mov` URLs and renders them as autoplay/muted/loop video, so no component changes are needed.
 
-### 1. Detect navigation direction
+### 2. Make remaining transitions slower & more seamless
 
-Track previous pathname in a small client-side store (React ref + listener on `useRouterState`). Derive a flag `isOpeningProject`:
+Audit pass to catch the spots that still feel snappy after the previous round:
 
-- `true` when previous path is `/` or `/projects` AND current path matches `/projects/$slug`
-- `false` in all other cases (including back navigation, navigating to a different section, first load)
+- **Tailwind hover / state transitions** — bump any leftover `duration-200` / `duration-300` on route files and shared components (e.g. accordion chevron, SiteHeader/SiteFooter links, project arrow chip, logo opacity hover, accordion +/× icon) to `duration-700` and standardize on `ease-out`.
+- **Global Motion config** in `src/routes/__root.tsx` — keep the smooth ease `[0.22, 1, 0.36, 1]` and increase the default `duration` from `0.9` → `1.1` so any non-overridden `motion.*` element breathes more.
+- **Project detail right-column stagger** in `src/routes/projects.$slug.tsx` — stretch each step's `duration` by ~20% and slightly increase the gaps between heading → button → info → rows → bottom line so the column lands as one flowing reveal instead of discrete pops.
+- **Project open shared-layout morph** — bump cover layout `duration` from `0.9` → `1.05` in `index.tsx`, `projects.index.tsx`, and `projects.$slug.tsx` for a more cinematic open. Closing animation stays disabled.
+- **Carousels** (References + Logos) — slow the slide tween from `1400ms` → `1800ms` while keeping the 6s / 3s intervals so the motion itself looks gentler. (If you want the logo carousel slower too I'll match it.)
+- **Hero entrance** in `index.tsx` — extend the headline/video fade-ins slightly (1.1s → 1.4s on the h1, 1.6s → 2.0s on the video zoom-out) for a calmer first impression.
 
-### 2. Conditionally enable the shared layout
+No structural/layout changes, no new dependencies. Purely timing + the one data addition.
 
-In `src/routes/__root.tsx`, wrap `<Outlet />` with `AnimatePresence` only when `isOpeningProject` is true. On back navigation, render `<Outlet />` directly so no `popLayout` ghost frame and no layoutId interpolation runs.
+### Files touched
 
-On the grid (`src/routes/index.tsx` `ProjectCard` and `src/routes/projects.index.tsx`) and on the detail (`src/routes/projects.$slug.tsx` first gallery item), keep `layoutId={`project-cover-${slug}`}` but only emit it when `isOpeningProject` is true. Otherwise render a plain `<div>` so motion has nothing to match against on back nav.
+- `src/assets/projects/velox-video.mp4.asset.json` (new, via lovable-assets)
+- `src/data/projects.ts`
+- `src/routes/__root.tsx`
+- `src/routes/index.tsx`
+- `src/routes/projects.index.tsx`
+- `src/routes/projects.$slug.tsx`
+- `src/components/SiteHeader.tsx`, `src/components/SiteFooter.tsx` (only if leftover short durations are found)
 
-### 3. Smooth out the forward open animation
+### Out of scope
 
-- Pin scroll: when a project card is clicked, scroll the window to `0,0` synchronously before navigation so the source and destination rects are measured from the same baseline.
-- Lighten the detail page during the transition: render only the first gallery item (the cover) for the first ~650ms, then mount the rest of the gallery. This removes the layout/decoding burden of 10–20 images and videos that currently load simultaneously while the cover is morphing.
-- GPU-promote the cover: add `style={{ willChange: "transform", backfaceVisibility: "hidden" }}` to the `motion.div` covers.
-- Make the right-column stagger start after the cover lands (≈0.55s) instead of overlapping the layout interpolation.
-- Keep the smooth tween (`duration 0.6s`, ease `[0.22, 1, 0.36, 1]`) — no spring, no overshoot.
-
-### 4. Files touched
-
-- `src/routes/__root.tsx` — direction detection, conditional `AnimatePresence`.
-- `src/routes/index.tsx` — conditional `layoutId` on `ProjectCard`, scroll-to-top on click.
-- `src/routes/projects.index.tsx` — conditional `layoutId`, scroll-to-top on click.
-- `src/routes/projects.$slug.tsx` — conditional `layoutId` on first gallery item, deferred mount of remaining gallery items, retimed right-column stagger.
-
-No new dependencies. No design changes outside the transition behavior.
-
-## Out of scope
-
-- Back-navigation animation (intentionally removed).
-- Any visual redesign of the cards, detail layout, or copy.
+- shadcn/ui component internals (dialog, sheet, sidebar, etc.) — those use their own animation conventions and shouldn't be retimed globally.
+- Any visual redesign — only timing/easing changes.

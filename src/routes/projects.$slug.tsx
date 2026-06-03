@@ -59,13 +59,13 @@ function InfoRow({
         className="absolute left-0 right-0 top-0 block h-px origin-left bg-border/60"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: 1 }}
-        transition={{ duration: 0.6, delay, ease: [0.65, 0, 0.35, 1] }}
+        transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
       />
       <motion.span
         className="text-foreground/50"
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: delay + 0.1, ease: [0.65, 0, 0.35, 1] }}
+        transition={{ duration: 0.7, delay: delay + 0.15, ease: [0.22, 1, 0.36, 1] }}
       >
         {label}
       </motion.span>
@@ -73,7 +73,7 @@ function InfoRow({
         className="text-foreground"
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: delay + 0.1, ease: [0.65, 0, 0.35, 1] }}
+        transition={{ duration: 0.7, delay: delay + 0.15, ease: [0.22, 1, 0.36, 1] }}
       >
         {value}
       </motion.div>
@@ -140,7 +140,7 @@ function ProjectPage() {
                       willChange: "transform",
                       backfaceVisibility: "hidden",
                     }}
-                    transition={{ layout: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } }}
+                    transition={{ layout: { duration: 1.05, ease: [0.22, 1, 0.36, 1] } }}
                   >
                     {inner}
                   </motion.div>
@@ -181,7 +181,7 @@ function ProjectPage() {
               style={{ fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.85, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.95, ease: [0.22, 1, 0.36, 1] }}
             >
               {project.title}
             </motion.h1>
@@ -194,7 +194,7 @@ function ProjectPage() {
                 className="mt-6 inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-[13px] transition-colors duration-500 hover:bg-black/10"
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.95, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.7, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
               >
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full"
@@ -210,7 +210,7 @@ function ProjectPage() {
                 className="mt-10"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.8, delay: 1.25, ease: [0.22, 1, 0.36, 1] }}
               >
                 <p className="mb-3 text-[13px] text-foreground/50">Info</p>
                 <p className="max-w-prose text-[14px] leading-relaxed text-foreground/80">
@@ -225,16 +225,16 @@ function ProjectPage() {
                 value={project.services.map((s: string) => (
                   <div key={s}>{s}</div>
                 ))}
-                delay={1.18}
+                delay={1.38}
               />
-              <InfoRow label="Client" value={project.client} delay={1.26} />
-              <InfoRow label="Year" value={project.year} delay={1.34} />
+              <InfoRow label="Client" value={project.client} delay={1.46} />
+              <InfoRow label="Year" value={project.year} delay={1.54} />
               <motion.div
                 aria-hidden
                 className="block h-px origin-left bg-border/60"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 1.42, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.8, delay: 1.6, ease: [0.22, 1, 0.36, 1] }}
               />
             </div>
           </div>
