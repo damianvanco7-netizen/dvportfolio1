@@ -96,9 +96,9 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 top-16 z-40 flex flex-col items-center bg-white px-5 pb-10 pt-8 md:hidden"
+            className="fixed inset-0 top-16 z-40 flex flex-col bg-white px-5 pb-10 pt-8 md:hidden"
           >
-            <nav className="flex flex-1 flex-col items-center justify-center gap-5">
+            <nav className="flex flex-1 flex-col gap-5">
               {navItems.map((item, i) => (
                 <motion.div
                   key={item.to}
@@ -109,7 +109,7 @@ export function SiteHeader() {
                   <Link
                     to={item.to}
                     onClick={() => setOpen(false)}
-                    className="block text-center font-medium leading-[1] tracking-[-0.03em] text-black"
+                    className="block font-medium leading-[1] tracking-[-0.03em] text-black"
                     style={{ fontSize: "clamp(2.5rem, 12vw, 4rem)", opacity: 1 }}
                   >
                     {item.label}
@@ -122,7 +122,7 @@ export function SiteHeader() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col items-center gap-4"
+              className="flex flex-col gap-4"
             >
               <div className="mb-2">
                 <LanguageSwitcher />
