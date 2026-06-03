@@ -30,9 +30,11 @@ function ProjectsPage() {
               params={{ slug: p.slug }}
               className="group block"
             >
-              <div
+              <motion.div
+                layoutId={`project-cover-${p.slug}`}
                 className="relative w-full overflow-hidden rounded-sm"
                 style={{ aspectRatio: "4 / 3", backgroundColor: "var(--surface-cream)" }}
+                transition={{ duration: 0.7, ease: [0.65, 0, 0.35, 1] }}
               >
                 {/\.(mp4|webm|mov)$/i.test(p.cover) ? (
                   <video
@@ -57,7 +59,7 @@ function ProjectsPage() {
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                 </span>
-              </div>
+              </motion.div>
               <div className="mt-4">
                 <p className="text-[13px] text-foreground/50">
                   {p.tags.join(" / ")}
