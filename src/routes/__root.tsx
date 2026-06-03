@@ -9,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
+import { NavTransitionProvider, useIsOpeningProject } from "@/lib/nav-transition";
 
 import appCss from "../styles.css?url";
 
@@ -119,19 +120,29 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   return (
     <QueryClientProvider client={queryClient}>
-      <MotionConfig
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <AnimatePresence mode="popLayout" initial={false}>
-          <motion.div key={pathname}>
-            <Outlet />
-          </motion.div>
-        </AnimatePresence>
-      </MotionConfig>
+      <NavTransitionProvider>
+        <MotionConfig transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
+          <OutletShell />
+        </MotionConfig>
+      </NavTransitionProvider>
     </QueryClientProvider>
+  );
+}
+
+function OutletShell() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const opening = useIsOpeningProject();
+
+  if (!opening) return <Outlet />;
+
+  return (
+    <AnimatePresence mode="popLayout" initial={false}>
+      <motion.div key={pathname}>
+        <Outlet />
+      </motion.div>
+    </AnimatePresence>
   );
 }
