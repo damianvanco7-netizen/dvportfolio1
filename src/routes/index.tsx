@@ -413,9 +413,9 @@ function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              Shaping Brands With
+              {t("home.heroTitle.line1")}
               <br />
-              Clarity and Character
+              {t("home.heroTitle.line2")}
             </motion.h1>
             <motion.span
               className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline"
@@ -423,7 +423,7 @@ function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              (Since 2020)
+              {t("home.since")}
             </motion.span>
           </div>
         </div>
@@ -438,11 +438,9 @@ function HomePage() {
           <div className="max-w-5xl">
             <h2 className="text-[24px] font-medium leading-[1.2] tracking-tight text-foreground md:text-[32px]">
               <span className="mr-3 inline-flex align-middle">
-                <PillLink>About</PillLink>
+                <PillLink>{t("home.aboutPill")}</PillLink>
               </span>
-              My work sits between brand, design, and development: creating
-              visual identities, websites, and communication systems that help
-              brands feel clear, confident, and recognizable.
+              {t("home.aboutText")}
             </h2>
           </div>
         </Reveal>
@@ -473,9 +471,9 @@ function HomePage() {
                 className="font-medium leading-[0.95] tracking-[-0.03em]"
                 style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
               >
-                Latest work
+                {t("home.latestWork")}
               </h2>
-              <PillLink to="/projects">View all projects</PillLink>
+              <PillLink to="/projects">{t("home.viewAllProjects")}</PillLink>
             </div>
           </Reveal>
 
@@ -506,17 +504,17 @@ function HomePage() {
                 className="font-medium leading-[0.95] tracking-[-0.03em]"
                 style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}
               >
-                Services
+                {t("home.services")}
               </h2>
-              <PillLink to="/about">Learn more about me</PillLink>
+              <PillLink to="/about">{t("home.learnMore")}</PillLink>
             </div>
           </Reveal>
 
           <Accordion type="single" collapsible className="w-full">
             {services.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.08} y={20}>
+              <Reveal key={s.titleKey} delay={i * 0.08} y={20}>
                 <AccordionItem
-                  value={s.title}
+                  value={s.titleKey}
                   className="border-b border-border/60"
                 >
                   <AccordionTrigger className="group flex w-full items-center gap-6 py-6 hover:no-underline [&>svg]:hidden">
@@ -524,7 +522,7 @@ function HomePage() {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="flex-1 text-left text-[clamp(1.25rem,2.5vw,2rem)] font-normal tracking-tight text-foreground">
-                      {s.title}
+                      {t(s.titleKey)}
                     </span>
                     <span
                       aria-hidden="true"
@@ -537,10 +535,10 @@ function HomePage() {
                   <AccordionContent className="pb-10 pt-2">
                     <div className="flex flex-col items-start gap-6 pl-0 md:flex-row md:gap-12 md:pl-[72px]">
                       <p className="max-w-md text-[14px] leading-relaxed text-foreground/50 md:flex-1">
-                        {s.excerpt}
+                        {t(s.excerptKey)}
                       </p>
                       <div className="md:flex-1">
-                        <p className="mb-3 text-[13px] text-foreground/50">Example projects</p>
+                        <p className="mb-3 text-[13px] text-foreground/50">{t("home.exampleProjects")}</p>
                         <div className="flex flex-wrap gap-2">
                           {s.projects.map((p) => (
                             <ProjectPill key={p.slug} slug={p.slug} title={p.title} />
