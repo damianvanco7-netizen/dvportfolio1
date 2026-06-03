@@ -99,6 +99,14 @@ function ProjectPage() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[3.6fr_1fr] lg:gap-10">
           {/* LEFT — scrolling gallery */}
           <div className="order-2 flex flex-col gap-3 lg:order-1">
+            <Link
+              to="/projects"
+              className="mb-2 inline-flex w-fit items-center gap-2 text-[14px] text-foreground/60 transition-colors hover:text-foreground"
+            >
+              ← Back to projects
+            </Link>
+
+
 
             {project.gallery.map((src: string, i: number) => {
               const isVideo = /\.(mp4|webm|mov)$/i.test(src);
