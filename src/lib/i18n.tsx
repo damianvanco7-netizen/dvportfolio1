@@ -170,8 +170,8 @@ const sk: Dict = {
 
   "footer.copyright": "© {year} Damian Vančo",
 
-  "home.heroTitle.line1": "Tvarujem značky s",
-  "home.heroTitle.line2": "jasnosťou a charakterom",
+  "home.heroTitle.line1": "Pomáham značkám komunikovať",
+  "home.heroTitle.line2": "konzistentne a s charakterom",
   "home.since": "(Od 2020)",
 
   "home.aboutPill": "O mne",
