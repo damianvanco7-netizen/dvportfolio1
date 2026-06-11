@@ -37,6 +37,29 @@ const en: Dict = {
   "about.title": "About",
   "about.body":
     "A digital-first creative studio transforming ideas into impactful digital experiences through web design, web development and visual content.",
+  "about.hero": "Nice to meet you",
+  "about.storyTitle": "The story behind my work",
+  "about.storyBody":
+    "Over the last five years, I've gained experience across visual identities, UX/UI, user research and vibe coding. I studied Interaction Design in Sweden, where the focus was on understanding how people interact with both digital and physical systems — and how to design those interactions with clarity, structure and a human-centered mindset.",
+  "about.backgroundTitle": "My background",
+  "about.workExperience": "Work experience",
+  "about.role.cofounder": "Co-Founder",
+  "about.role.visualDesigner": "Visual Designer",
+  "about.role.graphicVibe": "Graphic Designer / Vibe Coder",
+  "about.role.uxui": "UX/UI Designer",
+  "about.job.ethereum": "Ethereum Bratislava | 2024 — Current",
+  "about.job.stable": "Stable Labs | 2024 — 2025",
+  "about.job.birne": "Birne | 2022 — 2023 | 2025 — 2026",
+  "about.job.kiuub": "Kiuub | 2020 — 2022",
+  "about.job.ethereum.body":
+    "At Ethereum Bratislava I am responsible for every design output, from digital to printed materials. In 2024, I became part of the team that brought the first conference and hackathon focused on the development of the Ethereum cryptocurrency ecosystem to Slovakia.",
+  "about.job.stable.body":
+    "At Stable Labs, a crypto company building a Czech koruna stablecoin, I was responsible for the full branding and all visual outputs, including the website, social media, pitch decks and conference materials. I left the company after ownership changes in early 2025.",
+  "about.job.birne.body":
+    "At Birne I worked as a graphic designer focusing on visual identities, web design and social-media or marketing campaign design. Over time, I started developing websites and my role grew beyond design into vibe code development. Here, I learned to work in an agile, fast-paced environment.",
+  "about.job.kiuub.body":
+    "At the innovation and service design studio I worked my way through various projects where we focused mainly on improving service and customer experience, analyzing and evaluating qualitative and quantitative research, audience segmentation and customer journey mapping.",
+
 
   // Project detail
   "project.viewLive": "View live site",
@@ -188,6 +211,28 @@ const sk: Dict = {
   "about.title": "O mne",
   "about.body":
     "Digitálne zameraný kreatívny štúdiový prístup, ktorý mení nápady na pôsobivé digitálne zážitky prostredníctvom webdizajnu, vývoja a vizuálneho obsahu.",
+  "about.hero": "Rád vás spoznávam",
+  "about.storyTitle": "Príbeh za mojou prácou",
+  "about.storyBody":
+    "Za posledných päť rokov som získal skúsenosti naprieč vizuálnymi identitami, UX/UI, používateľským výskumom a vibe codingom. Študoval som Interaction Design vo Švédsku, kde sa kládol dôraz na pochopenie toho, ako ľudia interagujú s digitálnymi aj fyzickými systémami — a ako tieto interakcie navrhovať s jasnosťou, štruktúrou a zameraním na človeka.",
+  "about.backgroundTitle": "Moje pozadie",
+  "about.workExperience": "Pracovné skúsenosti",
+  "about.role.cofounder": "Spoluzakladateľ",
+  "about.role.visualDesigner": "Vizuálny dizajnér",
+  "about.role.graphicVibe": "Grafický dizajnér / Vibe Coder",
+  "about.role.uxui": "UX/UI Dizajnér",
+  "about.job.ethereum": "Ethereum Bratislava | 2024 — Súčasnosť",
+  "about.job.stable": "Stable Labs | 2024 — 2025",
+  "about.job.birne": "Birne | 2022 — 2023 | 2025 — 2026",
+  "about.job.kiuub": "Kiuub | 2020 — 2022",
+  "about.job.ethereum.body":
+    "V Ethereum Bratislava som zodpovedný za každý dizajnový výstup, od digitálnych po tlačené materiály. V roku 2024 som sa stal súčasťou tímu, ktorý priniesol na Slovensko prvú konferenciu a hackathon zameraný na rozvoj ekosystému kryptomeny Ethereum.",
+  "about.job.stable.body":
+    "V Stable Labs, krypto spoločnosti budujúcej stablecoin českej koruny, som bol zodpovedný za celý branding a všetky vizuálne výstupy vrátane webu, sociálnych sietí, pitch deckov a konferenčných materiálov. Spoločnosť som opustil po zmenách vo vlastníctve začiatkom roka 2025.",
+  "about.job.birne.body":
+    "V Birne som pracoval ako grafický dizajnér so zameraním na vizuálne identity, webdizajn a dizajn social-media a marketingových kampaní. Postupom času som začal vyvíjať weby a moja rola sa rozšírila z dizajnu na vibe code development. Tu som sa naučil pracovať v agilnom, rýchlom prostredí.",
+  "about.job.kiuub.body":
+    "V tomto inovačnom a service design štúdiu som prešiel rôznymi projektmi, kde sme sa zameriavali najmä na zlepšovanie služieb a zákazníckej skúsenosti, analýzu kvalitatívneho a kvantitatívneho výskumu, segmentáciu publika a mapovanie zákazníckych ciest.",
 
   "project.viewLive": "Zobraziť živú stránku",
   "project.info": "Info",
