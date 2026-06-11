@@ -195,7 +195,9 @@ function ProjectPage() {
         </div>
       </section>
 
-      <SiteFooter />
-    </div>
+        <SiteFooter />
+      </div>
+    </>
   );
+
 }
