@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+
 import { motion } from "motion/react";
 import { primeProjectOpen } from "@/lib/nav-transition";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -164,58 +164,22 @@ type Reference = {
 };
 
 function ReferencesCarousel({ items }: { items: Reference[] }) {
-  const [index, setIndex] = useState(0);
-  const [visible, setVisible] = useState(3);
-  const [animate, setAnimate] = useState(true);
-
-  useEffect(() => {
-    const update = () => {
-      if (window.innerWidth >= 768) setVisible(3);
-      else if (window.innerWidth >= 640) setVisible(2);
-      else setVisible(1);
-    };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setAnimate(true);
-      setIndex((i) => i + 1);
-    }, 6000);
-    return () => clearInterval(id);
-  }, []);
-
-  useEffect(() => {
-    if (index === items.length) {
-      const t = setTimeout(() => {
-        setAnimate(false);
-        setIndex(0);
-        requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
-      }, 1400);
-      return () => clearTimeout(t);
-    }
-  }, [index, items.length]);
-
-  const list = [...items, ...items.slice(0, visible)];
-  const step = 100 / list.length;
+  // Seamless CSS marquee: duplicate list so translateX(-50%) loops cleanly.
+  const loop = [...items, ...items];
+  // ~14s per item for a calm pace
+  const duration = `${items.length * 14}s`;
 
   return (
-    <div className="overflow-hidden">
+    <div className="marquee">
       <div
-        className="flex"
-        style={{
-          width: `${(list.length * 100) / visible}%`,
-          transform: `translateX(-${index * step}%)`,
-          transition: animate ? "transform 1800ms ease" : "none",
-        }}
+        className="marquee-track"
+        style={{ animationDuration: duration }}
       >
-        {list.map((r, i) => (
+        {loop.map((r, i) => (
           <div
             key={`${r.name}-${i}`}
-            className="shrink-0 px-4 first:pl-0 md:px-5"
-            style={{ width: `${100 / list.length}%` }}
+            className="shrink-0 px-4 md:px-5"
+            style={{ width: "min(420px, 85vw)" }}
           >
             <figure className="flex h-full flex-col gap-8 border-t border-border/60 pt-8">
               <blockquote className="text-[18px] leading-[1.5] tracking-tight text-foreground/80">
@@ -244,59 +208,20 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
 }
 
 function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
-
-  const [index, setIndex] = useState(0);
-  const [visible, setVisible] = useState(6);
-  const [animate, setAnimate] = useState(true);
-
-  useEffect(() => {
-    const update = () => {
-      if (window.innerWidth >= 768) setVisible(6);
-      else if (window.innerWidth >= 640) setVisible(3);
-      else setVisible(2);
-    };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setAnimate(true);
-      setIndex((i) => i + 1);
-    }, 3000);
-    return () => clearInterval(id);
-  }, []);
-
-  useEffect(() => {
-    if (index === logos.length) {
-      const t = setTimeout(() => {
-        setAnimate(false);
-        setIndex(0);
-        requestAnimationFrame(() => requestAnimationFrame(() => setAnimate(true)));
-      }, 700);
-      return () => clearTimeout(t);
-    }
-  }, [index, logos.length]);
-
-  const items = [...logos, ...logos.slice(0, visible)];
-  const step = 100 / items.length;
+  const loop = [...logos, ...logos];
+  const duration = `${logos.length * 4}s`;
 
   return (
-    <div className="mt-16 overflow-hidden md:mt-24">
+    <div className="marquee mt-16 md:mt-24">
       <div
-        className="flex"
-        style={{
-          width: `${(items.length * 100) / visible}%`,
-          transform: `translateX(-${index * step}%)`,
-          transition: animate ? "transform 1800ms ease" : "none",
-        }}
+        className="marquee-track"
+        style={{ animationDuration: duration }}
       >
-        {items.map(({ name, src }, i) => (
+        {loop.map(({ name, src }, i) => (
           <div
             key={`${name}-${i}`}
             className="shrink-0 px-1"
-            style={{ width: `${100 / items.length}%` }}
+            style={{ width: "min(220px, 40vw)" }}
           >
             <div className="flex aspect-[5/3] items-center justify-center rounded-sm bg-black/5">
               <img
@@ -312,6 +237,7 @@ function LogoCarousel({ logos }: { logos: { name: string; src: string }[] }) {
     </div>
   );
 }
+
 
 function ProjectCard({
   slug,
