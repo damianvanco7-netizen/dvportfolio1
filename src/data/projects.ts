@@ -165,7 +165,7 @@ export const projects: readonly Project[] = [
     title: "Ethereum Bratislava",
     cover: ethereumBratislava,
     tags: ["Visual Identity", "Web design and development"],
-    info: "This project is a fully custom-designed and developed website built from scratch using a vibe coding approach. From concept and UI design to responsive development and interactive details, I handled the entire process end-to-end, combining creative direction with AI-powered execution. If you want to see more, visit Ethereum Bratislava website directly.",
+    info: "A complete web design and development project for Ethereum Bratislava, combining a refreshed visual identity with smooth interactive animations and a custom 3D logo animation. From concept and UI design through responsive development to motion details, I handled the entire process end-to-end. If you want to see more, visit the Ethereum Bratislava website directly.",
     services: ["Visual Identity", "Web design and development"],
     client: "Ethereum Bratislava",
     year: "2025, 1 month",

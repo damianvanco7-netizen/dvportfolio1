@@ -66,7 +66,7 @@ function ProjectPage() {
   const t = useT();
 
   return (
-    <div className="min-h-screen bg-white text-foreground animate-fade-in">
+    <div className="min-h-screen bg-white text-foreground smooth-fade-in">
       <SiteHeader />
 
       {/* Sticky back link — fixed on screen, inverts over imagery via mix-blend-difference */}
