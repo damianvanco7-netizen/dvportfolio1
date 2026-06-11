@@ -66,10 +66,10 @@ function ProjectPage() {
   const t = useT();
 
   return (
-    <div className="min-h-screen bg-white text-foreground smooth-fade-in">
-      <SiteHeader />
-
-      {/* Sticky back link — fixed on screen, inverts over imagery via mix-blend-difference */}
+    <>
+      {/* Sticky back link — fixed on screen, inverts over imagery via mix-blend-difference.
+          Rendered OUTSIDE the .smooth-fade-in wrapper because its `transform` would
+          otherwise create a containing block and break position: fixed. */}
       <Link
         to="/projects"
         className="pointer-events-auto fixed left-5 top-28 z-40 hidden items-center gap-2 text-[14px] font-medium text-white transition-opacity duration-300 hover:opacity-80 md:left-6 lg:inline-flex"
@@ -77,6 +77,10 @@ function ProjectPage() {
       >
         {t("project.back")}
       </Link>
+
+      <div className="min-h-screen bg-white text-foreground smooth-fade-in">
+        <SiteHeader />
+
 
       <section className="px-5 pt-28 pb-16 md:px-6 md:pt-32">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[3.6fr_1fr] lg:gap-10">
@@ -191,7 +195,9 @@ function ProjectPage() {
         </div>
       </section>
 
-      <SiteFooter />
-    </div>
+        <SiteFooter />
+      </div>
+    </>
   );
+
 }
