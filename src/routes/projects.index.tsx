@@ -1,6 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "motion/react";
-import { primeProjectOpen } from "@/lib/nav-transition";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { projects } from "@/data/projects";
@@ -38,19 +36,14 @@ function ProjectsPage() {
               key={p.slug}
               to="/projects/$slug"
               params={{ slug: p.slug }}
-              onClick={primeProjectOpen}
-              className="group block"
+              className="group block animate-fade-in"
             >
-              <motion.div
-                layoutId={`project-cover-${p.slug}`}
+              <div
                 className="relative w-full overflow-hidden rounded-sm"
                 style={{
                   aspectRatio: "4 / 3",
                   backgroundColor: "var(--surface-cream)",
-                  willChange: "transform",
-                  backfaceVisibility: "hidden",
                 }}
-                transition={{ layout: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }}
               >
                 {/\.(mp4|webm|mov)$/i.test(p.cover) ? (
                   <video
@@ -59,23 +52,23 @@ function ProjectsPage() {
                     muted
                     loop
                     playsInline
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
                 ) : (
                   <img
                     src={p.cover}
                     alt={p.title}
                     loading="lazy"
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
                 )}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-2 items-center justify-center rounded-full bg-white text-foreground opacity-0 shadow-sm transition-all duration-700 group-hover:translate-x-0 group-hover:opacity-100"
+                  className="pointer-events-none absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-2 items-center justify-center rounded-full bg-white text-foreground opacity-0 shadow-sm transition-all duration-500 ease-out group-hover:translate-x-0 group-hover:opacity-100"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                 </span>
-              </motion.div>
+              </div>
               <div className="mt-4">
                 <p className="text-[13px] text-foreground/50">
                   {localizeTags(t, p.tags).join(" / ")}
