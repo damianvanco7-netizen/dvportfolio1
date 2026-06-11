@@ -37,7 +37,7 @@ const en: Dict = {
   "about.title": "About",
   "about.body":
     "A digital-first creative studio transforming ideas into impactful digital experiences through web design, web development and visual content.",
-  "about.hero": "Nice to meet you",
+  "about.hero": "Story behind my work",
   "about.storyTitle": "The story behind my work",
   "about.storyBody":
     "Over the last five years, I've gained experience across visual identities, UX/UI, user research and vibe coding. I studied Interaction Design in Sweden, where the focus was on understanding how people interact with both digital and physical systems — and how to design those interactions with clarity, structure and a human-centered mindset.",
@@ -211,7 +211,7 @@ const sk: Dict = {
   "about.title": "O mne",
   "about.body":
     "Digitálne zameraný kreatívny štúdiový prístup, ktorý mení nápady na pôsobivé digitálne zážitky prostredníctvom webdizajnu, vývoja a vizuálneho obsahu.",
-  "about.hero": "Rád vás spoznávam",
+  "about.hero": "Príbeh za mojou prácou",
   "about.storyTitle": "Príbeh za mojou prácou",
   "about.storyBody":
     "Za posledných päť rokov som získal skúsenosti naprieč vizuálnymi identitami, UX/UI, používateľským výskumom a vibe codingom. Študoval som Interaction Design vo Švédsku, kde sa kládol dôraz na pochopenie toho, ako ľudia interagujú s digitálnymi aj fyzickými systémami — a ako tieto interakcie navrhovať s jasnosťou, štruktúrou a zameraním na človeka.",

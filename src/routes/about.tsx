@@ -31,34 +31,25 @@ function AboutPage() {
       <SiteHeader />
 
       <section className="px-5 pt-16 pb-12 md:px-6 md:pt-24 md:pb-20">
-        <h1
-          className="font-medium leading-[0.95] tracking-[-0.04em] max-w-[14ch]"
-          style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
-        >
-          {t("about.hero")}
-        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+          <h1
+            className="md:col-span-7 font-medium leading-[0.95] tracking-[-0.04em]"
+            style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
+          >
+            {t("about.hero")}
+          </h1>
+          <p className="md:col-span-5 md:pt-3 text-[16px] md:text-[18px] leading-relaxed text-foreground/75">
+            {t("about.storyBody")}
+          </p>
+        </div>
 
-        <div className="mt-10 md:mt-14 overflow-hidden rounded-lg">
+        <div className="mt-12 md:mt-16 overflow-hidden rounded-lg max-w-3xl mx-auto">
           <img
             src={portrait.url}
             alt="Damian Vanco"
             className="w-full h-auto object-cover"
             loading="eager"
           />
-        </div>
-      </section>
-
-      <section className="px-5 md:px-6 pb-16 md:pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-          <h2
-            className="md:col-span-5 font-medium leading-[1] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(1.75rem, 3vw, 2.75rem)" }}
-          >
-            {t("about.storyTitle")}
-          </h2>
-          <p className="md:col-span-7 text-[16px] md:text-[18px] leading-relaxed text-foreground/75">
-            {t("about.storyBody")}
-          </p>
         </div>
       </section>
 
