@@ -32,24 +32,26 @@ function AboutPage() {
 
       <section className="px-5 pt-16 pb-12 md:px-6 md:pt-24 md:pb-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-          <h1
-            className="md:col-span-7 font-medium leading-[0.95] tracking-[-0.04em]"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
-          >
-            {t("about.hero")}
-          </h1>
-          <p className="md:col-span-5 md:pt-3 text-[16px] md:text-[18px] leading-relaxed text-foreground/75">
-            {t("about.storyBody")}
-          </p>
-        </div>
+          <div className="md:col-span-7">
+            <h1
+              className="font-medium leading-[0.95] tracking-[-0.04em]"
+              style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
+            >
+              {t("about.hero")}
+            </h1>
+            <p className="mt-8 text-[16px] md:text-[18px] leading-relaxed text-foreground/75 max-w-xl">
+              {t("about.storyBody")}
+            </p>
+          </div>
 
-        <div className="mt-12 md:mt-16 overflow-hidden rounded-lg max-w-3xl mx-auto">
-          <img
-            src={portrait.url}
-            alt="Damian Vanco"
-            className="w-full h-auto object-cover"
-            loading="eager"
-          />
+          <div className="md:col-span-5 overflow-hidden rounded-lg">
+            <img
+              src={portrait.url}
+              alt="Damian Vanco"
+              className="w-full h-auto object-cover"
+              loading="eager"
+            />
+          </div>
         </div>
       </section>
 
