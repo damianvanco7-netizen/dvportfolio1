@@ -36,7 +36,7 @@ function ProjectsPage() {
               key={p.slug}
               to="/projects/$slug"
               params={{ slug: p.slug }}
-              className="group block animate-fade-in"
+              className="group block smooth-fade-in"
             >
               <div
                 className="relative w-full overflow-hidden rounded-sm"
