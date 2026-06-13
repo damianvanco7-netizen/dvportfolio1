@@ -1,15 +1,23 @@
-Zistil som, že DNS už verejne funguje: `damianvanco.com` aj `www.damianvanco.com` smerujú na Lovable IP a TXT verifikačné záznamy sú viditeľné.
+Z verejnej kontroly teraz vidno toto:
 
-Problém je pravdepodobne v tom, že doména ešte nie je pridaná/aktivovaná v Lovable, alebo jej zlyhalo SSL vystavenie.
+- `damianvanco.com` A záznam smeruje správne na `185.158.133.1`
+- `www.damianvanco.com` A záznam smeruje správne na `185.158.133.1`
+- AAAA IPv6 záznamy už neexistujú, takže ten predchádzajúci konflikt je odstránený
+- TXT verifikačné záznamy `_lovable...` sú viditeľné a správne
+- HTTPS stále padá na SSL handshake chybe
+- Projekt v Lovable stále neukazuje žiadnu custom doménu pripojenú k tomuto projektu
 
-Postup:
-1. V Lovable otvor `Project Settings → Project → Domains`.
-2. Skontroluj, či sú tam pridané obe domény:
+Preto dôvod, prečo to stále nejde, je veľmi pravdepodobne tento: DNS už ukazuje na Lovable, ale doména nie je dokončená/aktívna v Lovable Domains, takže Lovable pre ňu nevystavilo SSL certifikát.
+
+Čo spraviť teraz:
+
+1. Otvor v Lovable: `Project Settings → Project → Domains`.
+2. Skontroluj, či tam reálne vidíš obe domény:
    - `damianvanco.com`
    - `www.damianvanco.com`
 3. Ak tam nie sú, pridaj ich cez `Connect Domain`.
-4. Ak sú tam a status je `Verifying`, klikni `Retry` alebo `Complete setup`, ak je dostupné.
-5. Ak status je `Failed`, klikni `Retry` — DNS už vyzerá správne, takže by malo prebehnúť SSL.
-6. Ak je status `Offline` alebo `Action required`, pošli mi screenshot z tejto Lovable Domains stránky.
+4. Ak tam sú a majú stav `Action required`, klikni `Complete setup`.
+5. Ak majú stav `Failed`, klikni `Retry`.
+6. Ak majú stav `Verifying` alebo `Setting up`, pošli mi screenshot tejto obrazovky — DNS je už správne, takže potrebujeme vidieť konkrétny status v Lovable.
 
-Dôležitý detail: doména teraz vracia SSL chybu, čo znamená, že DNS už smeruje na Lovable, ale certifikát pre `damianvanco.com` ešte nie je správne vystavený/napojený. Toto sa rieši práve cez Domains stránku v Lovable, nie už vo WebSupporte.
+Dôležité: Vo WebSupporte už teraz pravdepodobne netreba meniť nič. Problém nie je v A/TXT/AAAA DNS záznamoch, ale v tom, že Lovable Domains ešte nemá doménu aktívne priradenú k tomuto projektu alebo zlyhalo vystavenie SSL certifikátu.
