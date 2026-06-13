@@ -88,8 +88,10 @@ export function SiteHeader() {
         </button>
       </div>
 
-      {/* Mobile overlay menu */}
-      <AnimatePresence>
+      {/* Mobile overlay menu — rendered in a portal so ancestor `transform`
+          (e.g. .smooth-fade-in) doesn't break position: fixed. */}
+      {typeof document !== "undefined" && createPortal(
+        <AnimatePresence>
         {open && (
           <motion.div
             key="mobile-menu"
