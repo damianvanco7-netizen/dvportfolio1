@@ -72,7 +72,7 @@ function ProjectPage() {
           otherwise create a containing block and break position: fixed. */}
       <Link
         to="/projects"
-        className="pointer-events-auto fixed left-5 top-28 z-40 hidden items-center gap-2 text-[14px] font-medium text-white transition-opacity duration-300 hover:opacity-80 md:left-6 lg:inline-flex"
+        className="pointer-events-auto fixed left-5 top-20 z-40 inline-flex items-center gap-2 text-[14px] font-medium text-white transition-opacity duration-300 hover:opacity-80 md:left-6 lg:top-28"
         style={{ mixBlendMode: "difference" }}
       >
         {t("project.back")}
