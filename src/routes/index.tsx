@@ -340,15 +340,11 @@ function HomePage() {
               transition={{ duration: 1.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
               <span className="md:hidden">
-                {t("home.heroTitle.line1")
-                  .replace(/,?\s*marketing.*$/i, "")
-                  .replace(/\s+a$/i, "")}
-                {/* en: "Design, development, and" | sk: "Dizajn, development" */}
+                {t("home.heroTitle.mobileLine1")}
                 <br />
-                {t("home.heroTitle.line1").match(/marketing.*$/i)?.[0] ?? ""}{" "}
-                {t("home.heroTitle.line2").replace(/\s+(your goals|vašimi cieľmi)\s*$/i, "")}
+                {t("home.heroTitle.mobileLine2")}
                 <br />
-                {t("home.heroTitle.line2").match(/(your goals|vašimi cieľmi)\s*$/i)?.[0] ?? ""}
+                {t("home.heroTitle.mobileLine3")}
               </span>
               <span className="hidden md:inline">
                 {t("home.heroTitle.line1")}
