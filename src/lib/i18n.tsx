@@ -16,8 +16,8 @@ const en: Dict = {
   "footer.copyright": "© {year} Damian Vanco",
 
   // Home — hero
-  "home.heroTitle.line1": "Shaping Brands With",
-  "home.heroTitle.line2": "Clarity and Character",
+  "home.heroTitle.line1": "Design, development, and marketing",
+  "home.heroTitle.line2": "aligned with your goals",
   "home.since": "(Since 2020)",
 
   // Home — intro
