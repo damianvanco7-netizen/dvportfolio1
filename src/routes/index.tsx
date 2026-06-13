@@ -339,9 +339,18 @@ function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.4, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              {t("home.heroTitle.line1")}
-              <br />
-              {t("home.heroTitle.line2")}
+              <span className="md:hidden">
+                {t("home.heroTitle.mobileLine1")}
+                <br />
+                {t("home.heroTitle.mobileLine2")}
+                <br />
+                {t("home.heroTitle.mobileLine3")}
+              </span>
+              <span className="hidden md:inline">
+                {t("home.heroTitle.line1")}
+                <br />
+                {t("home.heroTitle.line2")}
+              </span>
             </motion.h1>
             <motion.span
               className="hidden whitespace-nowrap pb-2 text-[13px] text-muted-foreground md:inline"

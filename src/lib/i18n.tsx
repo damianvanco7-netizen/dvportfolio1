@@ -18,6 +18,9 @@ const en: Dict = {
   // Home — hero
   "home.heroTitle.line1": "Design, development, and marketing",
   "home.heroTitle.line2": "aligned with your goals",
+  "home.heroTitle.mobileLine1": "Design, development, and",
+  "home.heroTitle.mobileLine2": "marketing aligned with",
+  "home.heroTitle.mobileLine3": "your goals",
   "home.since": "(Since 2020)",
 
   // Home — intro
@@ -195,6 +198,9 @@ const sk: Dict = {
 
   "home.heroTitle.line1": "Dizajn, development a marketing",
   "home.heroTitle.line2": "v súlade s vašimi cieľmi",
+  "home.heroTitle.mobileLine1": "Dizajn, development a",
+  "home.heroTitle.mobileLine2": "marketing v súlade s",
+  "home.heroTitle.mobileLine3": "vašimi cieľmi",
   "home.since": "(Od 2020)",
 
   "home.aboutPill": "O mne",
