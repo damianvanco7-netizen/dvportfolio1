@@ -198,6 +198,9 @@ const sk: Dict = {
 
   "home.heroTitle.line1": "Dizajn, development a marketing",
   "home.heroTitle.line2": "v súlade s vašimi cieľmi",
+  "home.heroTitle.mobileLine1": "Dizajn, development a",
+  "home.heroTitle.mobileLine2": "marketing v súlade s",
+  "home.heroTitle.mobileLine3": "vašimi cieľmi",
   "home.since": "(Od 2020)",
 
   "home.aboutPill": "O mne",
