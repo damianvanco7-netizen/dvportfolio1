@@ -158,7 +158,9 @@ export function SiteHeader() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+        document.body,
+      )}
     </header>
   );
 }
