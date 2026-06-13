@@ -1,22 +1,15 @@
-I’ll stabilize the animations instead of adding more effects.
+Zistil som, že DNS už verejne funguje: `damianvanco.com` aj `www.damianvanco.com` smerujú na Lovable IP a TXT verifikačné záznamy sú viditeľné.
 
-Plan:
-1. **Fix the looping carousels**
-   - Replace the current `setInterval + translate reset` logic in the logo and references carousels with seamless CSS-based marquee loops.
-   - Remove the visible “snap back” reset that is likely causing the buggy/stuttering behavior.
-   - Add `will-change: transform` and linear timing so motion stays fluent.
+Problém je pravdepodobne v tom, že doména ešte nie je pridaná/aktivovaná v Lovable, alebo jej zlyhalo SSL vystavenie.
 
-2. **Respect reduced motion**
-   - Add a `prefers-reduced-motion` fallback that disables continuous carousel movement and keeps content static.
+Postup:
+1. V Lovable otvor `Project Settings → Project → Domains`.
+2. Skontroluj, či sú tam pridané obe domény:
+   - `damianvanco.com`
+   - `www.damianvanco.com`
+3. Ak tam nie sú, pridaj ich cez `Connect Domain`.
+4. Ak sú tam a status je `Verifying`, klikni `Retry` alebo `Complete setup`, ak je dostupné.
+5. Ak status je `Failed`, klikni `Retry` — DNS už vyzerá správne, takže by malo prebehnúť SSL.
+6. Ak je status `Offline` alebo `Action required`, pošli mi screenshot z tejto Lovable Domains stránky.
 
-3. **Reduce risky layout animations**
-   - Keep only lightweight opacity/translate reveal animations.
-   - If the project-card shared image transition is still unstable, remove the shared `layoutId` transition and keep navigation clean/static.
-
-4. **Avoid expensive animation effects**
-   - Do not introduce blur/backdrop-blur over moving content.
-   - Keep transforms/opacity only, which are the most reliable for smooth performance.
-
-5. **Validate in preview**
-   - Check the homepage carousels and project navigation visually after implementation.
-   - If any animation still visibly glitches, remove that specific animation rather than leaving a buggy experience.
+Dôležitý detail: doména teraz vracia SSL chybu, čo znamená, že DNS už smeruje na Lovable, ale certifikát pre `damianvanco.com` ešte nie je správne vystavený/napojený. Toto sa rieši práve cez Domains stránku v Lovable, nie už vo WebSupporte.
