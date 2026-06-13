@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
 import symbol from "@/assets/symbol.svg";
 import { GetInTouchDialog } from "@/components/GetInTouchDialog";
@@ -87,8 +88,10 @@ export function SiteHeader() {
         </button>
       </div>
 
-      {/* Mobile overlay menu */}
-      <AnimatePresence>
+      {/* Mobile overlay menu — rendered in a portal so ancestor `transform`
+          (e.g. .smooth-fade-in) doesn't break position: fixed. */}
+      {typeof document !== "undefined" && createPortal(
+        <AnimatePresence>
         {open && (
           <motion.div
             key="mobile-menu"
@@ -155,7 +158,9 @@ export function SiteHeader() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+        document.body,
+      )}
     </header>
   );
 }
