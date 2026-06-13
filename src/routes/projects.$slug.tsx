@@ -89,7 +89,8 @@ function ProjectPage() {
             {/* Mobile/tablet sticky back link — sits above first image, sticks under header on scroll */}
             <Link
               to="/projects"
-              className="sticky top-16 z-30 -mx-5 mb-1 inline-flex w-fit items-center gap-2 bg-white/90 px-5 py-2 text-[14px] font-medium text-foreground backdrop-blur transition-colors duration-300 hover:text-foreground/70 md:-mx-6 md:px-6 lg:hidden"
+              className="sticky top-16 z-30 -mx-5 mb-1 inline-flex w-fit items-center gap-2 px-5 py-2 text-[14px] font-medium text-white transition-opacity duration-300 hover:opacity-80 md:-mx-6 md:px-6 lg:hidden"
+              style={{ mixBlendMode: "difference" }}
             >
               {t("project.back")}
             </Link>
