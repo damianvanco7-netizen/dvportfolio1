@@ -72,7 +72,7 @@ function ProjectPage() {
           otherwise create a containing block and break position: fixed. */}
       <Link
         to="/projects"
-        className="pointer-events-auto fixed left-5 top-20 z-40 inline-flex items-center gap-2 text-[14px] font-medium text-white transition-opacity duration-300 hover:opacity-80 md:left-6 lg:top-28"
+        className="pointer-events-auto fixed left-6 top-28 z-40 hidden items-center gap-2 text-[14px] font-medium text-white transition-opacity duration-300 hover:opacity-80 lg:inline-flex"
         style={{ mixBlendMode: "difference" }}
       >
         {t("project.back")}
@@ -86,6 +86,14 @@ function ProjectPage() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[3.6fr_1fr] lg:gap-10">
           {/* LEFT — scrolling gallery */}
           <div className="order-2 flex flex-col gap-3 lg:order-1">
+            {/* Mobile/tablet sticky back link — sits above first image, sticks under header on scroll */}
+            <Link
+              to="/projects"
+              className="sticky top-16 z-30 -mx-5 mb-1 inline-flex w-fit items-center gap-2 bg-white/90 px-5 py-2 text-[14px] font-medium text-foreground backdrop-blur transition-colors duration-300 hover:text-foreground/70 md:-mx-6 md:px-6 lg:hidden"
+            >
+              {t("project.back")}
+            </Link>
+
 
             {project.gallery.map((src: string, i: number) => {
               const isVideo = /\.(mp4|webm|mov)$/i.test(src);
