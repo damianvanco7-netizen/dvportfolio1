@@ -216,7 +216,7 @@ export const projects: readonly Project[] = [
     client: "Norriv",
     year: "2024, 2 months",
     liveUrl: "https://www.norriv.com/",
-    gallery: [norriv1, norriv2, norriv3, norriv4],
+    gallery: [norriv1, norrivVideo.url, norriv2, norriv3, norriv4],
   },
 ];
 
