@@ -99,6 +99,13 @@ import epicBarbers10 from "@/assets/projects/epic-barbers-10.png.asset.json";
 import epicBarbers11 from "@/assets/projects/epic-barbers-11.png.asset.json";
 import epicBarbers12 from "@/assets/projects/epic-barbers-12.png.asset.json";
 import epicBarbers13 from "@/assets/projects/epic-barbers-13.png.asset.json";
+import epicBarbers14 from "@/assets/projects/epic-barbers-14.png.asset.json";
+import epicBarbers15 from "@/assets/projects/epic-barbers-15.png.asset.json";
+import epicBarbers16 from "@/assets/projects/epic-barbers-16.png.asset.json";
+import epicBarbers17 from "@/assets/projects/epic-barbers-17.png.asset.json";
+import epicBarbers18 from "@/assets/projects/epic-barbers-18.png.asset.json";
+import epicBarbers19 from "@/assets/projects/epic-barbers-19.png.asset.json";
+import epicBarbers20 from "@/assets/projects/epic-barbers-20.png.asset.json";
 
 export type Project = {
   slug: string;
@@ -239,7 +246,7 @@ export const projects: readonly Project[] = [
     services: ["Visual identity", "Web design"],
     client: "Epic Barbers",
     year: "2025, 2 months",
-    gallery: [epicBarbers1.url, epicBarbers2.url, epicBarbers3.url, epicBarbers4.url, epicBarbers5.url, epicBarbers6.url, epicBarbers7.url, epicBarbers8.url, epicBarbers9.url, epicBarbers10.url, epicBarbers11.url, epicBarbers12.url, epicBarbers13.url],
+    gallery: [epicBarbers1.url, epicBarbers2.url, epicBarbers3.url, epicBarbers4.url, epicBarbers5.url, epicBarbers6.url, epicBarbers7.url, epicBarbers8.url, epicBarbers9.url, epicBarbers10.url, epicBarbers11.url, epicBarbers12.url, epicBarbers13.url, "::saga-divider::", epicBarbers14.url, epicBarbers15.url, epicBarbers16.url, epicBarbers17.url, epicBarbers18.url, epicBarbers19.url, epicBarbers20.url],
   },
 ];
 

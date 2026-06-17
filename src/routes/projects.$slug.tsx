@@ -97,6 +97,19 @@ function ProjectPage() {
 
 
             {project.gallery.map((src: string, i: number) => {
+              if (src === "::saga-divider::") {
+                return (
+                  <div key={i} className="w-full py-8 md:py-12">
+                    <div className="h-px w-full bg-black" />
+                    <h2
+                      className="mt-8 md:mt-12 font-medium leading-[0.9] tracking-[-0.03em]"
+                      style={{ fontSize: "clamp(3rem, 10vw, 8rem)" }}
+                    >
+                      SAGA
+                    </h2>
+                  </div>
+                );
+              }
               const isVideo = /\.(mp4|webm|mov)$/i.test(src);
               const inner = isVideo ? (
                 <video
