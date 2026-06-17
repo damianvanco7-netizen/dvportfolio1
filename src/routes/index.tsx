@@ -171,26 +171,39 @@ type Reference = {
 };
 
 function ReferencesCarousel({ items }: { items: Reference[] }) {
-  // Seamless CSS marquee: duplicate list so translateX(-50%) loops cleanly.
-  const loop = [...items, ...items];
-  // ~14s per item for a calm pace
-  const duration = `${items.length * 14}s`;
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!api || isHovered) return;
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [api, isHovered]);
 
   return (
-    <div className="marquee">
-      <div
-        className="marquee-track"
-        style={{ animationDuration: duration }}
-      >
-        {loop.map((r, i) => (
-          <div
+    <Carousel
+      setApi={setApi}
+      opts={{
+        loop: true,
+        align: "start",
+        skipSnaps: false,
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="w-full"
+    >
+      <CarouselContent className="-ml-4 md:-ml-5">
+        {items.map((r, i) => (
+          <CarouselItem
             key={`${r.name}-${i}`}
-            className="shrink-0 px-4 md:px-5"
-            style={{ width: "min(420px, 85vw)" }}
+            className="pl-4 md:pl-5"
+            style={{ width: "min(420px, 85vw)", flex: "0 0 auto" }}
           >
             <figure className="flex h-full flex-col gap-8 border-t border-border/60 pt-8">
               <blockquote className="text-[18px] leading-[1.5] tracking-tight text-foreground/80">
-                “{r.quote}”
+                &ldquo;{r.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-auto flex items-center gap-3">
                 <img
@@ -207,10 +220,10 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
                 </span>
               </figcaption>
             </figure>
-          </div>
+          </CarouselItem>
         ))}
-      </div>
-    </div>
+      </CarouselContent>
+    </Carousel>
   );
 }
 
