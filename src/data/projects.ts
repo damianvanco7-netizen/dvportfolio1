@@ -86,6 +86,15 @@ import norriv1 from "@/assets/projects/norriv-1.png";
 import norrivVideo from "@/assets/projects/norriv-video.mp4.asset.json";
 import norrivVideo2 from "@/assets/projects/norriv-video-2.mp4.asset.json";
 import norriv4 from "@/assets/projects/norriv-4.png";
+import epicBarbers1 from "@/assets/projects/epic-barbers-1.png.asset.json";
+import epicBarbers2 from "@/assets/projects/epic-barbers-2.png.asset.json";
+import epicBarbers3 from "@/assets/projects/epic-barbers-3.png.asset.json";
+import epicBarbers4 from "@/assets/projects/epic-barbers-4.png.asset.json";
+import epicBarbers5 from "@/assets/projects/epic-barbers-5.png.asset.json";
+import epicBarbers6 from "@/assets/projects/epic-barbers-6.png.asset.json";
+import epicBarbers7 from "@/assets/projects/epic-barbers-7.png.asset.json";
+import epicBarbers8 from "@/assets/projects/epic-barbers-8.png.asset.json";
+import epicBarbers9 from "@/assets/projects/epic-barbers-9.png.asset.json";
 
 export type Project = {
   slug: string;
