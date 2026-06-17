@@ -12,6 +12,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   const navItems = [
+    { label: t("nav.home"), to: "/" },
     { label: t("nav.projects"), to: "/projects" },
     { label: t("nav.about"), to: "/about" },
   ] as const;
