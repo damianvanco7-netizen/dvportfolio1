@@ -226,6 +226,17 @@ export const projects: readonly Project[] = [
     liveUrl: "https://www.norriv.com/",
     gallery: [norriv1, norrivVideo.url, norrivVideo2.url, norriv4],
   },
+  {
+    slug: "epic-barbers",
+    title: "Epic Barbers & SAGA",
+    cover: epicBarbers1.url,
+    tags: ["Visual identity", "Web design"],
+    info: "Epic Barbers is a visual identity for a barbershop, developed with the brand design studio Birne. The project also includes SAGA, a barber product line created as part of the Epic Barbers brand system. Both identities share the same visual language and color palette, while the color hierarchy is adjusted to clearly distinguish the barbershop from the product line. The connection between Epic Barbers and SAGA is further reinforced through the use of the eye symbol and various offline brand applications.",
+    services: ["Visual identity", "Web design"],
+    client: "Epic Barbers",
+    year: "2025, 2 months",
+    gallery: [epicBarbers1.url, epicBarbers2.url, epicBarbers3.url, epicBarbers4.url, epicBarbers5.url, epicBarbers6.url, epicBarbers7.url, epicBarbers8.url, epicBarbers9.url],
+  },
 ];
 
 export const getProject = (slug: string) =>
