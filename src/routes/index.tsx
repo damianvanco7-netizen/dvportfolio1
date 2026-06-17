@@ -198,8 +198,7 @@ function ReferencesCarousel({ items }: { items: Reference[] }) {
         {items.map((r, i) => (
           <CarouselItem
             key={`${r.name}-${i}`}
-            className="pl-4 md:pl-5"
-            style={{ width: "min(420px, 85vw)", flex: "0 0 auto" }}
+            className="pl-4 md:pl-5 basis-[85vw] md:basis-1/3"
           >
             <figure className="flex h-full flex-col gap-8 border-t border-border/60 pt-8">
               <blockquote className="text-[18px] leading-[1.5] tracking-tight text-foreground/80">
