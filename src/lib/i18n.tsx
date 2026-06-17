@@ -8,6 +8,7 @@ type Dict = Record<string, string>;
 
 const en: Dict = {
   // Nav / header
+  "nav.home": "Home",
   "nav.projects": "Projects",
   "nav.about": "About",
   "nav.getInTouch": "Get in touch",
