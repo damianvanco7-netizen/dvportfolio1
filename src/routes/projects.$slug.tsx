@@ -78,7 +78,7 @@ function ProjectPage() {
         {t("project.back")}
       </Link>
 
-      <div className="min-h-screen bg-white text-foreground smooth-fade-in">
+      <div className="min-h-screen bg-white text-foreground">
         <SiteHeader />
 
 
