@@ -191,6 +191,7 @@ const en: Dict = {
 };
 
 const sk: Dict = {
+  "nav.home": "Domov",
   "nav.projects": "Projekty",
   "nav.about": "O mne",
   "nav.getInTouch": "Kontakt",
