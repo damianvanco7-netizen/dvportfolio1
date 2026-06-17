@@ -86,6 +86,15 @@ import norriv1 from "@/assets/projects/norriv-1.png";
 import norrivVideo from "@/assets/projects/norriv-video.mp4.asset.json";
 import norrivVideo2 from "@/assets/projects/norriv-video-2.mp4.asset.json";
 import norriv4 from "@/assets/projects/norriv-4.png";
+import epicBarbers1 from "@/assets/projects/epic-barbers-1.png.asset.json";
+import epicBarbers2 from "@/assets/projects/epic-barbers-2.png.asset.json";
+import epicBarbers3 from "@/assets/projects/epic-barbers-3.png.asset.json";
+import epicBarbers4 from "@/assets/projects/epic-barbers-4.png.asset.json";
+import epicBarbers5 from "@/assets/projects/epic-barbers-5.png.asset.json";
+import epicBarbers6 from "@/assets/projects/epic-barbers-6.png.asset.json";
+import epicBarbers7 from "@/assets/projects/epic-barbers-7.png.asset.json";
+import epicBarbers8 from "@/assets/projects/epic-barbers-8.png.asset.json";
+import epicBarbers9 from "@/assets/projects/epic-barbers-9.png.asset.json";
 
 export type Project = {
   slug: string;
@@ -216,6 +225,17 @@ export const projects: readonly Project[] = [
     year: "2024, 2 months",
     liveUrl: "https://www.norriv.com/",
     gallery: [norriv1, norrivVideo.url, norrivVideo2.url, norriv4],
+  },
+  {
+    slug: "epic-barbers",
+    title: "Epic Barbers & SAGA",
+    cover: epicBarbers1.url,
+    tags: ["Visual identity", "Web design"],
+    info: "Epic Barbers is a visual identity for a barbershop, developed with the brand design studio Birne. The project also includes SAGA, a barber product line created as part of the Epic Barbers brand system. Both identities share the same visual language and color palette, while the color hierarchy is adjusted to clearly distinguish the barbershop from the product line. The connection between Epic Barbers and SAGA is further reinforced through the use of the eye symbol and various offline brand applications.",
+    services: ["Visual identity", "Web design"],
+    client: "Epic Barbers",
+    year: "2025, 2 months",
+    gallery: [epicBarbers1.url, epicBarbers2.url, epicBarbers3.url, epicBarbers4.url, epicBarbers5.url, epicBarbers6.url, epicBarbers7.url, epicBarbers8.url, epicBarbers9.url],
   },
 ];
 
