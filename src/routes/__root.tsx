@@ -4,12 +4,10 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
-  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { AnimatePresence, motion, MotionConfig } from "motion/react";
-import { NavTransitionProvider, useIsOpeningProject } from "@/lib/nav-transition";
+import { NavTransitionProvider } from "@/lib/nav-transition";
 import { I18nProvider } from "@/lib/i18n";
 
 import appCss from "../styles.css?url";
