@@ -126,26 +126,9 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <I18nProvider>
         <NavTransitionProvider>
-          <MotionConfig reducedMotion="user" transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}>
-            <OutletShell />
-          </MotionConfig>
+          <Outlet />
         </NavTransitionProvider>
       </I18nProvider>
     </QueryClientProvider>
-  );
-}
-
-function OutletShell() {
-  const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const opening = useIsOpeningProject();
-
-  if (!opening) return <Outlet />;
-
-  return (
-    <AnimatePresence mode="popLayout" initial={false}>
-      <motion.div key={pathname}>
-        <Outlet />
-      </motion.div>
-    </AnimatePresence>
   );
 }
