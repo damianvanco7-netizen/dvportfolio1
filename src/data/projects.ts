@@ -84,8 +84,8 @@ import leadSummit9 from "@/assets/projects/lead-summit-9.webp";
 import leadSummit10 from "@/assets/projects/lead-summit-10.webp";
 import norriv1 from "@/assets/projects/norriv-1.png";
 import norrivVideo from "@/assets/projects/norriv-video.mp4.asset.json";
+import norrivVideo2 from "@/assets/projects/norriv-video-2.mp4.asset.json";
 import norriv2 from "@/assets/projects/norriv-2.png";
-import norriv3 from "@/assets/projects/norriv-3.png";
 import norriv4 from "@/assets/projects/norriv-4.png";
 
 export type Project = {
@@ -216,7 +216,7 @@ export const projects: readonly Project[] = [
     client: "Norriv",
     year: "2024, 2 months",
     liveUrl: "https://www.norriv.com/",
-    gallery: [norriv1, norrivVideo.url, norriv2, norriv3, norriv4],
+    gallery: [norriv1, norrivVideo.url, norriv2, norrivVideo2.url, norriv4],
   },
 ];
 
