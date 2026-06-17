@@ -1,8 +1,15 @@
+import * as React from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { motion } from "motion/react";
 import { primeProjectOpen } from "@/lib/nav-transition";
 import { SiteHeader } from "@/components/SiteHeader";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Reveal } from "@/components/Reveal";
