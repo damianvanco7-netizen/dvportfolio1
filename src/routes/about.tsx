@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useT } from "@/lib/i18n";
-import portrait from "@/assets/damian-portrait-new.png.asset.json";
+import portrait from "@/assets/damian-portrait-v2.png.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
