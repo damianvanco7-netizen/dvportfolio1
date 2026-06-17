@@ -95,6 +95,10 @@ import epicBarbers6 from "@/assets/projects/epic-barbers-6.png.asset.json";
 import epicBarbers7 from "@/assets/projects/epic-barbers-7.png.asset.json";
 import epicBarbers8 from "@/assets/projects/epic-barbers-8.png.asset.json";
 import epicBarbers9 from "@/assets/projects/epic-barbers-9.png.asset.json";
+import epicBarbers10 from "@/assets/projects/epic-barbers-10.png.asset.json";
+import epicBarbers11 from "@/assets/projects/epic-barbers-11.png.asset.json";
+import epicBarbers12 from "@/assets/projects/epic-barbers-12.png.asset.json";
+import epicBarbers13 from "@/assets/projects/epic-barbers-13.png.asset.json";
 
 export type Project = {
   slug: string;
@@ -235,7 +239,7 @@ export const projects: readonly Project[] = [
     services: ["Visual identity", "Web design"],
     client: "Epic Barbers",
     year: "2025, 2 months",
-    gallery: [epicBarbers1.url, epicBarbers2.url, epicBarbers3.url, epicBarbers4.url, epicBarbers5.url, epicBarbers6.url, epicBarbers7.url, epicBarbers8.url, epicBarbers9.url],
+    gallery: [epicBarbers1.url, epicBarbers2.url, epicBarbers3.url, epicBarbers4.url, epicBarbers5.url, epicBarbers6.url, epicBarbers7.url, epicBarbers8.url, epicBarbers9.url, epicBarbers10.url, epicBarbers11.url, epicBarbers12.url, epicBarbers13.url],
   },
 ];
 
