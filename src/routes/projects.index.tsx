@@ -52,6 +52,7 @@ function ProjectsPage() {
                     muted
                     loop
                     playsInline
+                    preload="metadata"
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
                 ) : (
@@ -59,6 +60,7 @@ function ProjectsPage() {
                     src={p.cover}
                     alt={p.title}
                     loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
                 )}

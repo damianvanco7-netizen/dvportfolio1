@@ -297,6 +297,7 @@ function ProjectCard({
             muted
             loop
             playsInline
+            preload="metadata"
             className="h-full w-full object-cover"
           />
         ) : (
@@ -304,6 +305,7 @@ function ProjectCard({
             src={img}
             alt={title}
             loading="lazy"
+            decoding="async"
             className="h-full w-full object-cover"
           />
         )}

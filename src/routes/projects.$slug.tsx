@@ -118,6 +118,7 @@ function ProjectPage() {
                   muted
                   loop
                   playsInline
+                  preload="metadata"
                   className="h-full w-full object-cover"
                 />
               ) : (
@@ -125,6 +126,8 @@ function ProjectPage() {
                   src={src}
                   alt={`${project.title} — image ${i + 1}`}
                   loading={i === 0 ? "eager" : "lazy"}
+                  decoding={i === 0 ? "sync" : "async"}
+                  {...(i === 0 ? { fetchPriority: "high" as const } : {})}
                   className="h-full w-full object-cover"
                 />
               );
