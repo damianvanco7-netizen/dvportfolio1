@@ -30,7 +30,7 @@ import logoUnuo from "@/assets/logos/unuo.png";
 import logoCvti from "@/assets/logos/cvti.png";
 import logoNorriv from "@/assets/logos/norriv.png";
 import refBirne from "@/assets/references/birne.png.asset.json";
-import refGreenstone from "@/assets/references/greenstone.png.asset.json";
+
 import refZetshop from "@/assets/references/zetshop.png.asset.json";
 import refLeadsummit from "@/assets/references/leadsummit.png.asset.json";
 import refNorriv from "@/assets/references/norriv.png.asset.json";
