@@ -549,13 +549,6 @@ function HomePage() {
                 quote: t("ref.birne"),
               },
               {
-                name: "Teodor Derzsi",
-                position: t("ref.position.ceofounder"),
-                company: "Greenstone",
-                photo: refGreenstone.url,
-                quote: t("ref.greenstone"),
-              },
-              {
                 name: "Patrik Zubíček",
                 position: t("ref.position.pm"),
                 company: "Zetshop",
