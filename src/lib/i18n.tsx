@@ -110,6 +110,10 @@ const en: Dict = {
   "tag.webDesign": "Web design",
   "tag.identity": "Visual Identity",
   "tag.social": "Social media communication",
+  "tag.product": "Product design",
+  "tag.uxui": "UX/UI design",
+  "tag.webDev": "Web development",
+  "client.personal": "Personal project",
 
   // Project info (full descriptions)
   "project.aurean-journeys.info":
