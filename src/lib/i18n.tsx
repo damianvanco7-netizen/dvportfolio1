@@ -137,6 +137,9 @@ const en: Dict = {
   "project.norriv.info":
     "This project was a web design for norriv, a company creating hologram boxes, 3D visualizations, and immersive presentation solutions. The goal was to translate a highly technical and futuristic product into a clear, premium website that explains the offer, builds trust, and presents the brand as an innovative partner for events, exhibitions, and product showcases.",
 
+  "project.alfred.info":
+    "Alfred is a private, mobile-first finance companion I designed and built to replace fragmented project and income notes. It brings projects, invoices, partial payments, yearly history, forecasts and a recurring property-value estimate into one installable PWA. The experience was shaped around fast daily entry, a clear financial overview and privacy, with owner-only access and a second device-level lock.",
+
   // References (quotes)
   "ref.birne":
     "Over the past years, Damian worked with us across many projects, always delivering reliable, high-quality results.",
