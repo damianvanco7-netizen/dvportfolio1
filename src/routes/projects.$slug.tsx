@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getProject, projects } from "@/data/projects";
 import { useT } from "@/lib/i18n";
-import { localizeInfo, localizeTags, localizeYear } from "@/lib/project-i18n";
+import { localizeClient, localizeInfo, localizeTags, localizeYear } from "@/lib/project-i18n";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -187,7 +187,7 @@ function ProjectPage() {
                   <div key={s}>{s}</div>
                 ))}
               />
-              <InfoRow label={t("project.client")} value={project.client} />
+              <InfoRow label={t("project.client")} value={localizeClient(t, project.client)} />
               <InfoRow label={t("project.year")} value={localizeYear(t, project.year)} />
             </div>
           </div>
