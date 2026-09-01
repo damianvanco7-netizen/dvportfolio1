@@ -315,6 +315,9 @@ const sk: Dict = {
     "Lead Summit je marketingová konferencia s dynamickou a flexibilnou vizuálnou identitou navrhnutou tak, aby zachytila rýchle tempo lead generation. Branding je postavený na odvážnej, ťažkej typografii a ukotvený silnou, výraznou oranžovou ako kľúčovým prvkom, vďaka čomu má podujatie nápadnú a zapamätateľnú prezentáciu.",
   "project.norriv.info":
     "Tento projekt bol webdizajn pre norriv, spoločnosť vytvárajúcu hologramové boxy, 3D vizualizácie a immerzívne prezentačné riešenia. Cieľom bolo preložiť vysoko technický a futuristický produkt do jasného, prémiového webu, ktorý vysvetľuje ponuku, buduje dôveru a prezentuje značku ako inovatívneho partnera pre eventy, výstavy a prezentácie produktov.",
+  "project.alfred.info":
+    "Alfred je súkromný finančný pomocník navrhnutý primárne pre mobil, ktorý som vytvoril ako náhradu za roztrúsené poznámky o projektoch a príjmoch. Spája projekty, fakturácie, čiastočné platby, históriu rokov, odhady príjmov a pravidelne aktualizovaný odhad hodnoty nehnuteľnosti do jednej inštalovateľnej PWA aplikácie. Celý zážitok je postavený na rýchlom každodennom zadávaní, jasnom finančnom prehľade a súkromí – s prístupom iba pre vlastníka a druhou vrstvou ochrany na úrovni zariadenia.",
+
 
   "ref.birne":
     "Za posledné roky s nami Damian spolupracoval na mnohých projektoch a vždy doručil spoľahlivé a kvalitné výsledky.",
