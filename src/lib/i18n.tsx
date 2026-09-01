@@ -159,6 +159,7 @@ const en: Dict = {
   "ref.year.duration.2m": "2 months",
   "ref.year.duration.3m": "3 months",
   "ref.year.duration.6m": "6 months",
+  "ref.year.ongoing": "ongoing",
 
   // Privacy
   "privacy.title": "Privacy Policy",
@@ -337,6 +338,7 @@ const sk: Dict = {
   "ref.year.duration.2m": "2 mesiace",
   "ref.year.duration.3m": "3 mesiace",
   "ref.year.duration.6m": "6 mesiacov",
+  "ref.year.ongoing": "prebieha",
 
   "privacy.title": "Zásady ochrany súkromia",
   "privacy.lastUpdated": "Posledná aktualizácia: máj 2026",
