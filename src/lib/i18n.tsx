@@ -290,6 +290,10 @@ const sk: Dict = {
   "tag.webDesign": "Webdizajn",
   "tag.identity": "Vizuálna identita",
   "tag.social": "Komunikácia na sociálnych sieťach",
+  "tag.product": "Produktový dizajn",
+  "tag.uxui": "UX/UI dizajn",
+  "tag.webDev": "Vývoj webu",
+  "client.personal": "Osobný projekt",
 
   "project.aurean-journeys.info":
     "Tento projekt bol o preložení pocitu exkluzivity a vycibreného cestovania do digitálneho zážitku. Navrhol a vyvinul som front-end webu pre novovzniknutú značku luxusného cestovania a formoval jej online prezentáciu od základov. Dôraz bol kladený na atmosféru elegancie a dôvery, pričom prechod webom mal pôsobiť rovnako plynulo a premyslene ako samotné cesty. Ak chcete vidieť viac, navštívte web Aurean Journeys priamo.",
