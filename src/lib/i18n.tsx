@@ -110,6 +110,10 @@ const en: Dict = {
   "tag.webDesign": "Web design",
   "tag.identity": "Visual Identity",
   "tag.social": "Social media communication",
+  "tag.product": "Product design",
+  "tag.uxui": "UX/UI design",
+  "tag.webDev": "Web development",
+  "client.personal": "Personal project",
 
   // Project info (full descriptions)
   "project.aurean-journeys.info":
@@ -133,6 +137,9 @@ const en: Dict = {
   "project.norriv.info":
     "This project was a web design for norriv, a company creating hologram boxes, 3D visualizations, and immersive presentation solutions. The goal was to translate a highly technical and futuristic product into a clear, premium website that explains the offer, builds trust, and presents the brand as an innovative partner for events, exhibitions, and product showcases.",
 
+  "project.alfred.info":
+    "Alfred is a private, mobile-first finance companion I designed and built to replace fragmented project and income notes. It brings projects, invoices, partial payments, yearly history, forecasts and a recurring property-value estimate into one installable PWA. The experience was shaped around fast daily entry, a clear financial overview and privacy, with owner-only access and a second device-level lock.",
+
   // References (quotes)
   "ref.birne":
     "Over the past years, Damian worked with us across many projects, always delivering reliable, high-quality results.",
@@ -152,6 +159,7 @@ const en: Dict = {
   "ref.year.duration.2m": "2 months",
   "ref.year.duration.3m": "3 months",
   "ref.year.duration.6m": "6 months",
+  "ref.year.ongoing": "ongoing",
 
   // Privacy
   "privacy.title": "Privacy Policy",
@@ -283,6 +291,10 @@ const sk: Dict = {
   "tag.webDesign": "Webdizajn",
   "tag.identity": "Vizuálna identita",
   "tag.social": "Komunikácia na sociálnych sieťach",
+  "tag.product": "Produktový dizajn",
+  "tag.uxui": "UX/UI dizajn",
+  "tag.webDev": "Vývoj webu",
+  "client.personal": "Osobný projekt",
 
   "project.aurean-journeys.info":
     "Tento projekt bol o preložení pocitu exkluzivity a vycibreného cestovania do digitálneho zážitku. Navrhol a vyvinul som front-end webu pre novovzniknutú značku luxusného cestovania a formoval jej online prezentáciu od základov. Dôraz bol kladený na atmosféru elegancie a dôvery, pričom prechod webom mal pôsobiť rovnako plynulo a premyslene ako samotné cesty. Ak chcete vidieť viac, navštívte web Aurean Journeys priamo.",
@@ -304,6 +316,9 @@ const sk: Dict = {
     "Lead Summit je marketingová konferencia s dynamickou a flexibilnou vizuálnou identitou navrhnutou tak, aby zachytila rýchle tempo lead generation. Branding je postavený na odvážnej, ťažkej typografii a ukotvený silnou, výraznou oranžovou ako kľúčovým prvkom, vďaka čomu má podujatie nápadnú a zapamätateľnú prezentáciu.",
   "project.norriv.info":
     "Tento projekt bol webdizajn pre norriv, spoločnosť vytvárajúcu hologramové boxy, 3D vizualizácie a immerzívne prezentačné riešenia. Cieľom bolo preložiť vysoko technický a futuristický produkt do jasného, prémiového webu, ktorý vysvetľuje ponuku, buduje dôveru a prezentuje značku ako inovatívneho partnera pre eventy, výstavy a prezentácie produktov.",
+  "project.alfred.info":
+    "Alfred je súkromný finančný pomocník navrhnutý primárne pre mobil, ktorý som vytvoril ako náhradu za roztrúsené poznámky o projektoch a príjmoch. Spája projekty, fakturácie, čiastočné platby, históriu rokov, odhady príjmov a pravidelne aktualizovaný odhad hodnoty nehnuteľnosti do jednej inštalovateľnej PWA aplikácie. Celý zážitok je postavený na rýchlom každodennom zadávaní, jasnom finančnom prehľade a súkromí – s prístupom iba pre vlastníka a druhou vrstvou ochrany na úrovni zariadenia.",
+
 
   "ref.birne":
     "Za posledné roky s nami Damian spolupracoval na mnohých projektoch a vždy doručil spoľahlivé a kvalitné výsledky.",
@@ -323,6 +338,7 @@ const sk: Dict = {
   "ref.year.duration.2m": "2 mesiace",
   "ref.year.duration.3m": "3 mesiace",
   "ref.year.duration.6m": "6 mesiacov",
+  "ref.year.ongoing": "prebieha",
 
   "privacy.title": "Zásady ochrany súkromia",
   "privacy.lastUpdated": "Posledná aktualizácia: máj 2026",

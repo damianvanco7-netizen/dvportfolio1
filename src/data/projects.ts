@@ -1,4 +1,9 @@
 
+import alfredHero from "@/assets/projects/alfred-hero.png.asset.json";
+import alfredDashboard from "@/assets/projects/alfred-dashboard.png.asset.json";
+import alfredMobile from "@/assets/projects/alfred-mobile.png.asset.json";
+import alfredSystem from "@/assets/projects/alfred-system.png.asset.json";
+import alfredPrivacy from "@/assets/projects/alfred-privacy.png.asset.json";
 import aureanJourneys3 from "@/assets/projects/aurean-journeys-3.png";
 import aureanJourneys4 from "@/assets/projects/aurean-journeys-4.png";
 import aureanJourneysVideo from "@/assets/projects/aurean-journeys.mp4";
@@ -125,6 +130,17 @@ export type Project = {
 };
 
 export const projects: readonly Project[] = [
+  {
+    slug: "alfred",
+    title: "Alfred",
+    cover: alfredHero.url,
+    tags: ["Product design", "UX/UI design", "Web development"],
+    info: "Alfred is a private, mobile-first finance companion I designed and built to replace fragmented project and income notes. It brings projects, invoices, partial payments, yearly history, forecasts and a recurring property-value estimate into one installable PWA. The experience was shaped around fast daily entry, a clear financial overview and privacy, with owner-only access and a second device-level lock.",
+    services: ["Product design", "UX/UI design", "Web development"],
+    client: "Personal project",
+    year: "2026, ongoing",
+    gallery: [alfredHero.url, alfredDashboard.url, alfredMobile.url, alfredSystem.url, alfredPrivacy.url],
+  },
   {
     slug: "aurean-journeys",
     title: "Aurean Journeys",
