@@ -1,7 +1,7 @@
 
-import alfredHero from "@/assets/projects/alfred-hero.png.asset.json";
-import alfredDashboard from "@/assets/projects/alfred-dashboard.png.asset.json";
-import alfredMobile from "@/assets/projects/alfred-mobile.png.asset.json";
+import alfredHero from "@/assets/projects/alfred-hero-v2.png.asset.json";
+import alfredDashboard from "@/assets/projects/alfred-dashboard-v2.png.asset.json";
+import alfredMobile from "@/assets/projects/alfred-mobile-v2.png.asset.json";
 import alfredSystem from "@/assets/projects/alfred-system.png.asset.json";
 import alfredPrivacy from "@/assets/projects/alfred-privacy.png.asset.json";
 import aureanJourneys3 from "@/assets/projects/aurean-journeys-3.png";
