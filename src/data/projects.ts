@@ -1,6 +1,6 @@
 
 import alfredCover from "@/assets/projects/alfred-iphone-screen-mockup-v3.png.asset.json";
-import alfredG1 from "@/assets/projects/alfred-iphone-screen-mockup-with-copy-v2-v3.png.asset.json";
+import alfredG1 from "@/assets/projects/alfred-iphone-screen-mockup-with-copy-v4.png.asset.json";
 import alfredG2 from "@/assets/projects/alfred-app-icon-mockup-v3.png.asset.json";
 import alfredG3 from "@/assets/projects/alfred-editorial-screen-grid-v3.png.asset.json";
 import alfredG4 from "@/assets/projects/alfred-three-iphone-mockup-v3.png.asset.json";
