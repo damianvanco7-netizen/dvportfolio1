@@ -1,9 +1,9 @@
 
-import alfredHero from "@/assets/projects/alfred-hero-v2.png.asset.json";
-import alfredDashboard from "@/assets/projects/alfred-dashboard-v2.png.asset.json";
-import alfredMobile from "@/assets/projects/alfred-mobile-v2.png.asset.json";
-import alfredSystem from "@/assets/projects/alfred-system.png.asset.json";
-import alfredPrivacy from "@/assets/projects/alfred-privacy.png.asset.json";
+import alfredCover from "@/assets/projects/alfred-iphone-screen-mockup-v3.png.asset.json";
+import alfredG1 from "@/assets/projects/alfred-iphone-screen-mockup-with-copy-v2-v3.png.asset.json";
+import alfredG2 from "@/assets/projects/alfred-app-icon-mockup-v3.png.asset.json";
+import alfredG3 from "@/assets/projects/alfred-editorial-screen-grid-v3.png.asset.json";
+import alfredG4 from "@/assets/projects/alfred-three-iphone-mockup-v3.png.asset.json";
 import aureanJourneys3 from "@/assets/projects/aurean-journeys-3.png";
 import aureanJourneys4 from "@/assets/projects/aurean-journeys-4.png";
 import aureanJourneysVideo from "@/assets/projects/aurean-journeys.mp4";
