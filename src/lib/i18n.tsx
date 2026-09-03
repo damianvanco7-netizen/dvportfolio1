@@ -44,7 +44,7 @@ const en: Dict = {
   "about.hero": "Story behind my work",
   "about.storyTitle": "The story behind my work",
   "about.storyBody":
-    "Over the last five years, I've gained experience across visual identities, UX/UI, user research and vibe coding. I studied Interaction Design in Sweden, where the focus was on understanding how people interact with both digital and physical systems — and how to design those interactions with clarity, structure and a human-centered mindset.",
+    "Over the last five years, I've gained experience across visual identities, UX/UI, user research and vibe coding. I studied Interaction Design in Sweden, where the focus was on understanding how people interact with both digital and physical systems, and how to design those interactions with clarity, structure and a human-centered mindset.",
   "about.backgroundTitle": "My background",
   "about.workExperience": "Work experience",
   "about.role.cofounder": "Co-Founder",
@@ -79,7 +79,7 @@ const en: Dict = {
 
   // Get in touch dialog
   "git.title": "Get in touch",
-  "git.subtitle": "Leave your name and a short message — I'll get back to you soon.",
+  "git.subtitle": "Leave your name and a short message, and I'll get back to you soon.",
   "git.name": "Name",
   "git.namePlaceholder": "Your name",
   "git.email": "Email (optional)",
@@ -121,11 +121,11 @@ const en: Dict = {
   "project.velox.info":
     "This project was a website redesign for a long-established accounting company that wanted to modernize its online presence and communicate greater reliability and trust. The main goal was to improve the overall UX and navigation, making the site clearer and more intuitive. If you want to see more, visit Velox website directly.",
   "project.villa-poton.info":
-    "A quiet, editorial site for a contemporary stone villa — letting architecture and natural light carry the story through generous whitespace and serif typography.",
+    "A quiet, editorial site for a contemporary stone villa, letting architecture and natural light carry the story through generous whitespace and serif typography.",
   "project.surikado.info":
     "I developed both the front-end and back-end of this project, delivering a fully functional and user friendly website. It features advanced interactive effects and refined UI details that elevate the overall user experience. If you want to see more, visit Surikado website directly.",
   "project.8bites.info":
-    "8bites is a web development studio with a bold, pixel-inspired identity. The project covers the full brand system — from logo and iconography to web design and responsive layouts — built around a vibrant green and black palette that captures the studio's playful yet technical character.",
+    "8bites is a web development studio with a bold, pixel-inspired identity. The project covers the full brand system, from logo and iconography to web design and responsive layouts, built around a vibrant green and black palette that captures the studio's playful yet technical character.",
   "project.ethereum-bratislava.info":
     "This project is a fully custom-designed and developed website built from scratch using a vibe coding approach. From concept and UI design to responsive development and interactive details, I handled the entire process end-to-end, combining creative direction with AI-powered execution. If you want to see more, visit Ethereum Bratislava website directly.",
   "project.stable-labs.info":
@@ -138,7 +138,7 @@ const en: Dict = {
     "This project was a web design for norriv, a company creating hologram boxes, 3D visualizations, and immersive presentation solutions. The goal was to translate a highly technical and futuristic product into a clear, premium website that explains the offer, builds trust, and presents the brand as an innovative partner for events, exhibitions, and product showcases.",
 
   "project.alfred.info":
-    "Alfred is a private, mobile-first finance companion I designed and built to replace fragmented project and income notes. It brings projects, invoices, partial payments, yearly history, forecasts and a recurring property-value estimate into one installable PWA. The experience was shaped around fast daily entry, a clear financial overview and privacy, with owner-only access and a second device-level lock.",
+    "Alfred is a private, mobile-first finance companion I designed and built to replace fragmented project and income notes. It brings projects, invoices, partial payments, yearly history, forecasts and a regularly updated estimate of property value into one installable PWA. The experience was shaped around fast daily entry, a clear financial overview and privacy, with owner-only access and a second device-level lock.",
 
   // References (quotes)
   "ref.birne":
@@ -230,7 +230,7 @@ const sk: Dict = {
   "about.hero": "Príbeh za mojou prácou",
   "about.storyTitle": "Príbeh za mojou prácou",
   "about.storyBody":
-    "Za posledných päť rokov som získal skúsenosti naprieč vizuálnymi identitami, UX/UI, používateľským výskumom a vibe codingom. Študoval som Interaction Design vo Švédsku, kde sa kládol dôraz na pochopenie toho, ako ľudia interagujú s digitálnymi aj fyzickými systémami — a ako tieto interakcie navrhovať s jasnosťou, štruktúrou a zameraním na človeka.",
+    "Za posledných päť rokov som získal skúsenosti naprieč vizuálnymi identitami, UX/UI, používateľským výskumom a vibe codingom. Študoval som Interaction Design vo Švédsku, kde sa kládol dôraz na pochopenie toho, ako ľudia interagujú s digitálnymi aj fyzickými systémami, a ako tieto interakcie navrhovať s jasnosťou, štruktúrou a zameraním na človeka.",
   "about.backgroundTitle": "Moje pozadie",
   "about.workExperience": "Pracovné skúsenosti",
   "about.role.cofounder": "Spoluzakladateľ",
@@ -262,7 +262,7 @@ const sk: Dict = {
   "project.error": "Niečo sa pokazilo",
 
   "git.title": "Kontaktujte ma",
-  "git.subtitle": "Nechajte mi vaše meno a krátku správu — ozvem sa vám čoskoro.",
+  "git.subtitle": "Nechajte mi vaše meno a krátku správu a ozvem sa vám čoskoro.",
   "git.name": "Meno",
   "git.namePlaceholder": "Vaše meno",
   "git.email": "Email (nepovinné)",
@@ -281,9 +281,9 @@ const sk: Dict = {
   "service.web.excerpt":
     "Webové stránky na mieru postavené na silnom vizuálnom smerovaní, jasnej štruktúre, responzívnych layoutoch a precíznom front-end spracovaní. Cieľom je vytvoriť weby, ktoré nielen vyzerajú výnimočne, ale pôsobia intuitívne, dôveryhodne a sú jednoduché na používanie na každom zariadení.",
   "service.identity.excerpt":
-    "Vizuálne identity, ktoré dávajú značkám jasný a rozpoznateľný hlas naprieč digitálnymi aj fyzickými miestami kontaktu. Od loga, typografie, farebných paliet a layoutových systémov až po doplnkové brandové prvky — každý detail je navrhnutý tak, aby pôsobil konzistentne, flexibilne a verne charakteru značky.",
+    "Vizuálne identity, ktoré dávajú značkám jasný a rozpoznateľný hlas naprieč digitálnymi aj fyzickými miestami kontaktu. Od loga, typografie, farebných paliet a layoutových systémov až po doplnkové brandové prvky. Každý detail je navrhnutý tak, aby pôsobil konzistentne, flexibilne a verne charakteru značky.",
   "service.social.excerpt":
-    "Komunikácia na sociálnych sieťach navrhnutá tak, aby značky pôsobili konzistentne, rozpoznateľne a aktívne na kanáloch, kde ich ľudia stretávajú najčastejšie. Od vizuálnych šablón cez smerovanie kampaní až po nápady a dizajn príspevkov — všetko je zladené so značkou a ľahko použiteľné v každodennej komunikácii.",
+    "Komunikácia na sociálnych sieťach navrhnutá tak, aby značky pôsobili konzistentne, rozpoznateľne a aktívne na kanáloch, kde ich ľudia stretávajú najčastejšie. Od vizuálnych šablón cez smerovanie kampaní až po nápady a dizajn príspevkov. Všetko je zladené so značkou a ľahko použiteľné v každodennej komunikácii.",
   "service.creative.excerpt":
     "Kreatívne smerovanie, ktoré prepája značku, web, kampaň alebo launch do jedného jasného vizuálneho prístupu. Zahŕňa formovanie celkovej atmosféry, posolstva, vizuálneho jazyka a prezentácie značky, aby výsledok pôsobil sústredene, zapamätateľne a v súlade s cieľmi značky.",
 
@@ -301,23 +301,23 @@ const sk: Dict = {
   "project.velox.info":
     "Tento projekt bol redizajn webu pre etablovanú účtovnícku spoločnosť, ktorá chcela zmodernizovať svoju online prezentáciu a komunikovať väčšiu spoľahlivosť a dôveru. Hlavným cieľom bolo zlepšiť celkovú UX a navigáciu, aby bol web zrozumiteľnejší a intuitívnejší. Ak chcete vidieť viac, navštívte web Velox priamo.",
   "project.villa-poton.info":
-    "Tichý, editoriálny web pre súčasnú kamennú vilu — architektúra a prirodzené svetlo nesú príbeh prostredníctvom veľkorysého priestoru a serifovej typografie.",
+    "Tichý, editoriálny web pre súčasnú kamennú vilu, kde architektúra a prirodzené svetlo nesú príbeh prostredníctvom veľkorysého priestoru a serifovej typografie.",
   "project.surikado.info":
     "Vyvinul som front-end aj back-end tohto projektu a dodal plne funkčný a používateľsky príjemný web. Obsahuje pokročilé interaktívne efekty a vycibrené UI detaily, ktoré pozdvihujú celkový používateľský zážitok. Ak chcete vidieť viac, navštívte web Surikado priamo.",
   "project.8bites.info":
-    "8bites je štúdio web developmentu s odvážnou identitou inšpirovanou pixelmi. Projekt pokrýva celý brand systém — od loga a ikonografie po webdizajn a responzívne layouty — postavený na výraznej zeleno-čiernej palete, ktorá zachytáva hravý a zároveň technický charakter štúdia.",
+    "8bites je štúdio web developmentu s odvážnou identitou inšpirovanou pixelmi. Projekt pokrýva celý brand systém, od loga a ikonografie po webdizajn a responzívne layouty, postavený na výraznej zeleno-čiernej palete, ktorá zachytáva hravý a zároveň technický charakter štúdia.",
   "project.ethereum-bratislava.info":
-    "Tento projekt je úplne na mieru navrhnutý a vyvinutý web postavený od základov pomocou vibe coding prístupu. Od konceptu a UI dizajnu cez responzívny vývoj až po interaktívne detaily — celý proces som zastrešil sám a skombinoval kreatívne smerovanie s AI-powered realizáciou. Ak chcete vidieť viac, navštívte web Ethereum Bratislava priamo.",
+    "Tento projekt je úplne na mieru navrhnutý a vyvinutý web postavený od základov pomocou vibe coding prístupu. Od konceptu a UI dizajnu cez responzívny vývoj až po interaktívne detaily. Celý proces som zastrešil sám a skombinoval kreatívne smerovanie s AI-powered realizáciou. Ak chcete vidieť viac, navštívte web Ethereum Bratislava priamo.",
   "project.stable-labs.info":
     "Stable Labs je fintech projekt zameraný na prenesenie českej koruny a tradičných aktív na blockchain prostredníctvom CZK stablecoinu a tokenizačnej platformy.",
   "project.lava-stone.info":
-    "Lavastone ponúka produkty z lávového kameňa od dvoch talentovaných sicílskych tvorcov — Pietracolata a Sansone. Okrem predaja ich diel poskytujú aj dizajn, poradenstvo či kompletnú realizáciu.",
+    "Lavastone ponúka produkty z lávového kameňa od dvoch talentovaných sicílskych tvorcov, Pietracolata a Sansone. Okrem predaja ich diel poskytujú aj dizajn, poradenstvo či kompletnú realizáciu.",
   "project.lead-summit.info":
     "Lead Summit je marketingová konferencia s dynamickou a flexibilnou vizuálnou identitou navrhnutou tak, aby zachytila rýchle tempo lead generation. Branding je postavený na odvážnej, ťažkej typografii a ukotvený silnou, výraznou oranžovou ako kľúčovým prvkom, vďaka čomu má podujatie nápadnú a zapamätateľnú prezentáciu.",
   "project.norriv.info":
     "Tento projekt bol webdizajn pre norriv, spoločnosť vytvárajúcu hologramové boxy, 3D vizualizácie a immerzívne prezentačné riešenia. Cieľom bolo preložiť vysoko technický a futuristický produkt do jasného, prémiového webu, ktorý vysvetľuje ponuku, buduje dôveru a prezentuje značku ako inovatívneho partnera pre eventy, výstavy a prezentácie produktov.",
   "project.alfred.info":
-    "Alfred je súkromný finančný pomocník navrhnutý primárne pre mobil, ktorý som vytvoril ako náhradu za roztrúsené poznámky o projektoch a príjmoch. Spája projekty, fakturácie, čiastočné platby, históriu rokov, odhady príjmov a pravidelne aktualizovaný odhad hodnoty nehnuteľnosti do jednej inštalovateľnej PWA aplikácie. Celý zážitok je postavený na rýchlom každodennom zadávaní, jasnom finančnom prehľade a súkromí – s prístupom iba pre vlastníka a druhou vrstvou ochrany na úrovni zariadenia.",
+    "Alfred je súkromný finančný pomocník navrhnutý primárne pre mobil, ktorý som vytvoril ako náhradu za roztrúsené poznámky o projektoch a príjmoch. Spája projekty, fakturácie, čiastočné platby, históriu rokov, odhady príjmov a pravidelne aktualizovaný odhad hodnoty nehnuteľnosti do jednej inštalovateľnej PWA aplikácie. Celý zážitok je postavený na rýchlom každodennom zadávaní, jasnom finančnom prehľade a súkromí, s prístupom iba pre vlastníka a druhou vrstvou ochrany na úrovni zariadenia.",
 
 
   "ref.birne":
