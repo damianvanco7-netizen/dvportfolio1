@@ -133,7 +133,7 @@ export const projects: readonly Project[] = [
   {
     slug: "alfred",
     title: "Alfred",
-    cover: alfredHero.url,
+    cover: alfredCover.url,
     tags: ["Product design", "UX/UI design", "Web development"],
     info: "Alfred is a private, mobile-first finance companion I designed and built to replace fragmented project and income notes. It brings projects, invoices, partial payments, yearly history, forecasts and a recurring property-value estimate into one installable PWA. The experience was shaped around fast daily entry, a clear financial overview and privacy, with owner-only access and a second device-level lock.",
     services: ["Product design", "UX/UI design", "Web development"],
