@@ -139,7 +139,7 @@ export const projects: readonly Project[] = [
     services: ["Product design", "UX/UI design", "Web development"],
     client: "Personal project",
     year: "2026, ongoing",
-    gallery: [alfredHero.url, alfredDashboard.url, alfredMobile.url, alfredSystem.url, alfredPrivacy.url],
+    gallery: [alfredG1.url, alfredG2.url, alfredG3.url, alfredG4.url],
   },
   {
     slug: "aurean-journeys",
