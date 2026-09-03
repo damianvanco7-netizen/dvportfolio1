@@ -1,6 +1,6 @@
 
 import alfredCover from "@/assets/projects/alfred-iphone-screen-mockup-v3.png.asset.json";
-import alfredG1 from "@/assets/projects/alfred-iphone-screen-mockup-with-copy-v2-v3.png.asset.json";
+import alfredG1 from "@/assets/projects/alfred-iphone-screen-mockup-with-copy-v4.png.asset.json";
 import alfredG2 from "@/assets/projects/alfred-app-icon-mockup-v3.png.asset.json";
 import alfredG3 from "@/assets/projects/alfred-editorial-screen-grid-v3.png.asset.json";
 import alfredG4 from "@/assets/projects/alfred-three-iphone-mockup-v3.png.asset.json";
@@ -135,7 +135,7 @@ export const projects: readonly Project[] = [
     title: "Alfred",
     cover: alfredCover.url,
     tags: ["Product design", "UX/UI design", "Web development"],
-    info: "Alfred is a private, mobile-first finance companion I designed and built to replace fragmented project and income notes. It brings projects, invoices, partial payments, yearly history, forecasts and a recurring property-value estimate into one installable PWA. The experience was shaped around fast daily entry, a clear financial overview and privacy, with owner-only access and a second device-level lock.",
+    info: "Alfred is a private, mobile-first finance companion I designed and built to replace fragmented project and income notes. It brings projects, invoices, partial payments, yearly history, forecasts and a regularly updated estimate of property value into one installable PWA. The experience was shaped around fast daily entry, a clear financial overview and privacy, with owner-only access and a second device-level lock.",
     services: ["Product design", "UX/UI design", "Web development"],
     client: "Personal project",
     year: "2026, ongoing",
@@ -170,7 +170,7 @@ export const projects: readonly Project[] = [
     title: "Villa Potôn",
     cover: villaPotonVideo2,
     tags: ["Web design and development"],
-    info: "A quiet, editorial site for a contemporary stone villa — letting architecture and natural light carry the story through generous whitespace and serif typography.",
+    info: "A quiet, editorial site for a contemporary stone villa, letting architecture and natural light carry the story through generous whitespace and serif typography.",
     services: ["Web design and development"],
     client: "Villa Potôn",
     year: "2024, 2 months",
@@ -194,7 +194,7 @@ export const projects: readonly Project[] = [
     title: "8bites",
     cover: eightBitesCover,
     tags: ["Visual Identity", "Web design"],
-    info: "8bites is a web development studio with a bold, pixel-inspired identity. The project covers the full brand system — from logo and iconography to web design and responsive layouts — built around a vibrant green and black palette that captures the studio's playful yet technical character.",
+    info: "8bites is a web development studio with a bold, pixel-inspired identity. The project covers the full brand system, from logo and iconography to web design and responsive layouts, built around a vibrant green and black palette that captures the studio's playful yet technical character.",
     services: ["Visual Identity", "Web design"],
     client: "8bites",
     year: "2024, 3 months",
