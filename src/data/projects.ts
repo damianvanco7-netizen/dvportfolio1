@@ -135,7 +135,7 @@ export type Project = {
 export const projects: readonly Project[] = [
   {
     slug: "jay",
-    title: "J - Booking System",
+    title: "JAY - Booking System",
     cover: jayCover,
     tags: ["UX/UI design", "Web development", "Visual identity"],
     info: "I designed and built a booking system for movement sessions and massage. Clients choose a service, specify the areas they want to focus on for a massage, pick an available time and send a booking request. I refined the logo and animated the service icons and transitions. I also built an installable admin app (PWA) for reviewing requests, confirming appointments and communicating with clients.",
