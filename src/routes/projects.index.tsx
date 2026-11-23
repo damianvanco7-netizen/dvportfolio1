@@ -48,6 +48,7 @@ function ProjectsPage() {
                 {/\.(mp4|webm|mov)$/i.test(p.cover) ? (
                   <video
                     src={p.cover}
+                    style={p.slug === "jay" ? { objectPosition: "center 26%" } : undefined}
                     autoPlay
                     muted
                     loop
