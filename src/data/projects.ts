@@ -1,3 +1,6 @@
+import fridhaimCover from "@/assets/projects/fridhaim-cover.jpg";
+import fridhaimIntro from "@/assets/projects/fridhaim-intro.mp4";
+import fridhaimMotion from "@/assets/projects/fridhaim-motion.mp4";
 import jayCover from "@/assets/projects/jay-macbook.mp4";
 import jayServices from "@/assets/projects/jay-services.mp4";
 import jayMassage from "@/assets/projects/jay-massage.mp4";
@@ -129,10 +132,23 @@ export type Project = {
   client: string;
   year: string;
   liveUrl?: string;
+  hidden?: boolean;
   gallery: readonly string[];
 };
 
-export const projects: readonly Project[] = [
+const allProjects: readonly Project[] = [
+  {
+    slug: "fridhaim",
+    title: "Fridhaim Studio",
+    cover: fridhaimCover,
+    tags: ["Web design and development", "Visual identity", "Creative direction"],
+    info: "I led the creative direction, designed the Fridhaim Studio logo and built the website. The wordmark and its four-point symbol set the tone for the typography and motion. I designed and built the animations for the site, from the opening sequence to the crosshair cursor and the wireframe graphics that respond as you explore the homepage.",
+    services: ["Web design and development", "Visual identity", "Creative direction"],
+    client: "Fridhaim Studio",
+    year: "2026",
+    liveUrl: "https://www.fridhaim.com/",
+    gallery: [fridhaimIntro, fridhaimMotion],
+  },
   {
     slug: "jay",
     title: "JAY - Booking System",
@@ -144,6 +160,18 @@ export const projects: readonly Project[] = [
     year: "2026",
     liveUrl: "https://jayrezervacia.com/",
     gallery: [jayServices, jayMassage],
+  },
+  {
+    slug: "norriv",
+    title: "Norriv",
+    cover: norriv1,
+    tags: ["Web design"],
+    info: "This project was a web design for norriv, a company creating hologram boxes, 3D visualizations, and immersive presentation solutions. The goal was to translate a highly technical and futuristic product into a clear, premium website that explains the offer, builds trust, and presents the brand as an innovative partner for events, exhibitions, and product showcases.",
+    services: ["Web design"],
+    client: "Norriv",
+    year: "2024, 2 months",
+    liveUrl: "https://www.norriv.com/",
+    gallery: [norriv1, norrivVideo.url, norrivVideo2.url, norriv4],
   },
   {
     slug: "alfred",
@@ -194,6 +222,7 @@ export const projects: readonly Project[] = [
   },
   {
     slug: "surikado",
+    hidden: true,
     title: "Surikado AI",
     cover: surikadoVideo,
     tags: ["Web design and development"],
@@ -251,6 +280,7 @@ export const projects: readonly Project[] = [
   },
   {
     slug: "lead-summit",
+    hidden: true,
     title: "Lead Summit",
     cover: leadSummit1,
     tags: ["Visual identity", "Web design", "Social Media Communication"],
@@ -259,18 +289,6 @@ export const projects: readonly Project[] = [
     client: "ByWednesday",
     year: "2025, 2 months",
     gallery: [leadSummit1, leadSummit2, leadSummit3, leadSummit4, leadSummit5, leadSummit6, leadSummit7, leadSummit8, leadSummit9, leadSummit10],
-  },
-  {
-    slug: "norriv",
-    title: "Norriv",
-    cover: norriv1,
-    tags: ["Web design"],
-    info: "This project was a web design for norriv, a company creating hologram boxes, 3D visualizations, and immersive presentation solutions. The goal was to translate a highly technical and futuristic product into a clear, premium website that explains the offer, builds trust, and presents the brand as an innovative partner for events, exhibitions, and product showcases.",
-    services: ["Web design"],
-    client: "Norriv",
-    year: "2024, 2 months",
-    liveUrl: "https://www.norriv.com/",
-    gallery: [norriv1, norrivVideo.url, norrivVideo2.url, norriv4],
   },
   {
     slug: "epic-barbers",
@@ -284,6 +302,8 @@ export const projects: readonly Project[] = [
     gallery: [epicBarbers1.url, epicBarbers2.url, epicBarbers3.url, epicBarbers4.url, epicBarbers5.url, epicBarbers6.url, epicBarbers7.url, epicBarbers8.url, epicBarbers9.url, epicBarbers10.url, epicBarbers11.url, epicBarbers12.url, epicBarbers13.url, "::saga-divider::", epicBarbers14.url, epicBarbers15.url, epicBarbers16.url, epicBarbers17.url, epicBarbers18.url, epicBarbers19.url, epicBarbers20.url, epicBarbers21.url, epicBarbers22.url, epicBarbers23.url, epicBarbers24.url],
   },
 ];
+
+export const projects = allProjects.filter((project) => !project.hidden);
 
 export const getProject = (slug: string) =>
   projects.find((p) => p.slug === slug);

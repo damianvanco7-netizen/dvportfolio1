@@ -23,7 +23,6 @@ import villaPotonVideo from "@/assets/projects/villa-poton-2.mp4";
 import ethereumBratislava from "@/assets/projects/ethereum-bratislava.jpg";
 import logoBirne from "@/assets/logos/birne.png";
 import logoGreenstone from "@/assets/logos/greenstone.png";
-import logoLeadsummit from "@/assets/logos/leadsummit.png";
 import logoZetshop from "@/assets/logos/zetshop.png";
 import logoTncoc from "@/assets/logos/tncoc.png";
 import logoUnuo from "@/assets/logos/unuo.png";
@@ -32,7 +31,6 @@ import logoNorriv from "@/assets/logos/norriv.png";
 import refBirne from "@/assets/references/birne.png.asset.json";
 
 import refZetshop from "@/assets/references/zetshop.png.asset.json";
-import refLeadsummit from "@/assets/references/leadsummit.png.asset.json";
 import refNorriv from "@/assets/references/norriv.png.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -73,7 +71,8 @@ const services = [
     projects: [
       { slug: "aurean-journeys", title: "Aurean Journeys" },
       { slug: "velox", title: "Velox" },
-      { slug: "surikado", title: "Surikado AI" },
+      { slug: "fridhaim", title: "Fridhaim Studio" },
+      { slug: "norriv", title: "Norriv" },
       { slug: "villa-poton", title: "Villa Potôn" },
       { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
     ],
@@ -86,7 +85,7 @@ const services = [
       { slug: "stable-labs", title: "Stable Labs" },
       { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
       { slug: "lava-stone", title: "Lava Stone" },
-      { slug: "lead-summit", title: "Lead Summit" },
+      { slug: "fridhaim", title: "Fridhaim Studio" },
     ],
   },
   {
@@ -94,7 +93,6 @@ const services = [
     excerptKey: "service.social.excerpt",
     projects: [
       { slug: "8bites", title: "8bites" },
-      { slug: "lead-summit", title: "Lead Summit" },
       { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
     ],
   },
@@ -104,7 +102,7 @@ const services = [
     projects: [
       { slug: "8bites", title: "8bites" },
       { slug: "lava-stone", title: "Lava Stone" },
-      { slug: "lead-summit", title: "Lead Summit" },
+      { slug: "fridhaim", title: "Fridhaim Studio" },
       { slug: "ethereum-bratislava", title: "Ethereum Bratislava" },
     ],
   },
@@ -407,7 +405,6 @@ function HomePage() {
             logos={[
               { name: "Birne", src: logoBirne },
               { name: "Greenstone", src: logoGreenstone },
-              { name: "Lead Summit", src: logoLeadsummit },
               { name: "Zetshop", src: logoZetshop },
               { name: "The Netherlands Chamber of Commerce", src: logoTncoc },
               { name: "Unuo", src: logoUnuo },
@@ -554,13 +551,6 @@ function HomePage() {
                 company: "Zetshop",
                 photo: refZetshop.url,
                 quote: t("ref.zetshop"),
-              },
-              {
-                name: "René Marek",
-                position: t("ref.position.ceofounder"),
-                company: "Lead Summit",
-                photo: refLeadsummit.url,
-                quote: t("ref.leadsummit"),
               },
               {
                 name: "Milan Vizner",

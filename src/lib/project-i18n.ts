@@ -11,6 +11,7 @@ export function localizeTag(t: T, raw: string): string {
   if (k === "product design") return t("tag.product");
   if (k === "ux/ui design") return t("tag.uxui");
   if (k === "web development") return t("tag.webDev");
+  if (k === "creative direction") return t("tag.creative");
   return raw;
 }
 

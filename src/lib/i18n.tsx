@@ -113,6 +113,7 @@ const en: Dict = {
   "tag.product": "Product design",
   "tag.uxui": "UX/UI design",
   "tag.webDev": "Web development",
+  "tag.creative": "Creative direction",
   "client.personal": "Personal project",
 
   // Project info (full descriptions)
@@ -294,6 +295,7 @@ const sk: Dict = {
   "tag.product": "Produktový dizajn",
   "tag.uxui": "UX/UI dizajn",
   "tag.webDev": "Vývoj webu",
+  "tag.creative": "Kreatívne smerovanie",
   "client.personal": "Osobný projekt",
 
   "project.aurean-journeys.info":
@@ -316,6 +318,8 @@ const sk: Dict = {
     "Lead Summit je marketingová konferencia s dynamickou a flexibilnou vizuálnou identitou navrhnutou tak, aby zachytila rýchle tempo lead generation. Branding je postavený na odvážnej, ťažkej typografii a ukotvený silnou, výraznou oranžovou ako kľúčovým prvkom, vďaka čomu má podujatie nápadnú a zapamätateľnú prezentáciu.",
   "project.norriv.info":
     "Tento projekt bol webdizajn pre norriv, spoločnosť vytvárajúcu hologramové boxy, 3D vizualizácie a immerzívne prezentačné riešenia. Cieľom bolo preložiť vysoko technický a futuristický produkt do jasného, prémiového webu, ktorý vysvetľuje ponuku, buduje dôveru a prezentuje značku ako inovatívneho partnera pre eventy, výstavy a prezentácie produktov.",
+  "project.fridhaim.info":
+    "Pre Fridhaim Studio som viedol kreatívne smerovanie, navrhol logo a vytvoril web. Typografia a pohyb na stránke vychádzajú z logotypu a jeho štvorcípeho symbolu. Animácie som navrhol a vytvoril na mieru, od úvodnej sekvencie cez kurzor v tvare zameriavača až po drôtené grafiky, ktoré reagujú na pohyb po úvodnej stránke.",
   "project.jay.title": "JAY - Rezervačný systém",
   "project.jay.info":
     "Navrhol a vyvinul som rezervačný systém na pohybové cvičenia a masáže. Klienti si vyberú službu, pri masáži označia oblasti, ktorým sa chcú venovať, zvolia voľný termín a odošlú žiadosť o rezerváciu. Upravil som logo a animoval ikony služieb aj prechody medzi krokmi. Vytvoril som aj inštalovateľnú administráciu (PWA) na kontrolu žiadostí, potvrdzovanie termínov a komunikáciu s klientmi.",
