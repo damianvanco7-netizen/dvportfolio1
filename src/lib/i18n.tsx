@@ -316,8 +316,9 @@ const sk: Dict = {
     "Lead Summit je marketingová konferencia s dynamickou a flexibilnou vizuálnou identitou navrhnutou tak, aby zachytila rýchle tempo lead generation. Branding je postavený na odvážnej, ťažkej typografii a ukotvený silnou, výraznou oranžovou ako kľúčovým prvkom, vďaka čomu má podujatie nápadnú a zapamätateľnú prezentáciu.",
   "project.norriv.info":
     "Tento projekt bol webdizajn pre norriv, spoločnosť vytvárajúcu hologramové boxy, 3D vizualizácie a immerzívne prezentačné riešenia. Cieľom bolo preložiť vysoko technický a futuristický produkt do jasného, prémiového webu, ktorý vysvetľuje ponuku, buduje dôveru a prezentuje značku ako inovatívneho partnera pre eventy, výstavy a prezentácie produktov.",
+  "project.jay.title": "Rezervačný systém",
   "project.jay.info":
-    "Pre Jakuba Adama som navrhol a vyvinul rezervačný systém na pohybové cvičenia a masáže. Klienti si vyberú službu a voľný termín a odošlú žiadosť o rezerváciu. Upravil som logo JAY a do rozhrania pridal animácie, ktoré nadväzujú na pohybový charakter značky. Pre Jakuba som vytvoril aj inštalovateľnú administráciu (PWA), ktorú si otvorí priamo z plochy. Môže v nej kontrolovať žiadosti, potvrdzovať termíny a komunikovať s klientmi.",
+    "Navrhol a vyvinul som rezervačný systém na pohybové cvičenia a masáže. Klienti si vyberú službu, pri masáži označia oblasti, ktorým sa chcú venovať, zvolia voľný termín a odošlú žiadosť o rezerváciu. Upravil som logo a animoval ikony služieb aj prechody medzi krokmi. Vytvoril som aj inštalovateľnú administráciu (PWA) na kontrolu žiadostí, potvrdzovanie termínov a komunikáciu s klientmi.",
   "project.alfred.info":
     "Alfred je súkromný finančný pomocník navrhnutý primárne pre mobil, ktorý som vytvoril ako náhradu za roztrúsené poznámky o projektoch a príjmoch. Spája projekty, fakturácie, čiastočné platby, históriu rokov, odhady príjmov a pravidelne aktualizovaný odhad hodnoty nehnuteľnosti do jednej inštalovateľnej PWA aplikácie. Celý zážitok je postavený na rýchlom každodennom zadávaní, jasnom finančnom prehľade a súkromí, s prístupom iba pre vlastníka a druhou vrstvou ochrany na úrovni zariadenia.",
 

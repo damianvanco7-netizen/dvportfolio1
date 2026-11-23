@@ -37,6 +37,12 @@ export function localizeYear(t: T, raw: string): string {
     });
 }
 
+export function localizeTitle(t: T, project: Project): string {
+  const key = `project.${project.slug}.title`;
+  const localized = t(key);
+  return localized === key ? project.title : localized;
+}
+
 export function localizeInfo(t: T, project: Project): string {
   const key = `project.${project.slug}.info`;
   const localized = t(key);

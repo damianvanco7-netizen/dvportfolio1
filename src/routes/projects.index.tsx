@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { projects } from "@/data/projects";
 import { useT } from "@/lib/i18n";
-import { localizeTags } from "@/lib/project-i18n";
+import { localizeTags, localizeTitle } from "@/lib/project-i18n";
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({
@@ -58,7 +58,7 @@ function ProjectsPage() {
                 ) : (
                   <img
                     src={p.cover}
-                    alt={p.title}
+                    alt={localizeTitle(t, p)}
                     loading="lazy"
                     decoding="async"
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.02]"
@@ -76,7 +76,7 @@ function ProjectsPage() {
                   {localizeTags(t, p.tags).join(" / ")}
                 </p>
                 <h2 className="mt-1 text-[18px] font-medium tracking-tight">
-                  {p.title}
+                  {localizeTitle(t, p)}
                 </h2>
               </div>
             </Link>

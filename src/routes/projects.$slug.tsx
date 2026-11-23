@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getProject, projects } from "@/data/projects";
 import { useT } from "@/lib/i18n";
-import { localizeClient, localizeInfo, localizeTags, localizeYear } from "@/lib/project-i18n";
+import { localizeClient, localizeInfo, localizeTags, localizeTitle, localizeYear } from "@/lib/project-i18n";
 
 export const Route = createFileRoute("/projects/$slug")({
   loader: ({ params }) => {
@@ -64,6 +64,7 @@ function InfoRow({ label, value }: { label: string; value: React.ReactNode }) {
 function ProjectPage() {
   const { project } = Route.useLoaderData();
   const t = useT();
+  const title = localizeTitle(t, project);
 
   return (
     <>
@@ -124,7 +125,7 @@ function ProjectPage() {
               ) : (
                 <img
                   src={src}
-                  alt={`${project.title} — image ${i + 1}`}
+                  alt={`${title} — image ${i + 1}`}
                   loading={i === 0 ? "eager" : "lazy"}
                   decoding={i === 0 ? "sync" : "async"}
                   {...(i === 0 ? { fetchPriority: "high" as const } : {})}
@@ -135,7 +136,7 @@ function ProjectPage() {
               return (
                 <div
                   key={i}
-                  className="w-full overflow-hidden rounded-sm"
+                  className={`w-full overflow-hidden ${project.slug === "jay" ? "rounded-xl" : "rounded-sm"}`}
                   style={{
                     aspectRatio: "1625 / 1137",
                     backgroundColor: "var(--surface-cream)",
@@ -153,7 +154,7 @@ function ProjectPage() {
               className="font-medium leading-[1] tracking-[-0.03em]"
               style={{ fontSize: "clamp(1.75rem, 2.4vw, 2.5rem)" }}
             >
-              {project.title}
+              {title}
             </h1>
 
             {project.liveUrl && (
@@ -207,7 +208,7 @@ function ProjectPage() {
                 params={{ slug: next.slug }}
                 className="text-[14px] text-foreground hover:underline"
               >
-                {t("project.next", { title: next.title })}
+                {t("project.next", { title: localizeTitle(t, next) })}
               </Link>
             );
           })()}

@@ -1,6 +1,6 @@
-import jayCover from "@/assets/projects/jay-cover.jpg";
-import jayBooking from "@/assets/projects/jay-booking.jpg";
-import jayVideo from "@/assets/projects/jay-motion.mp4";
+import jayCover from "@/assets/projects/jay-hero.mp4";
+import jayServices from "@/assets/projects/jay-services.mp4";
+import jayMassage from "@/assets/projects/jay-massage.mp4";
 
 import alfredCover from "@/assets/projects/alfred-iphone-screen-mockup-v3.png.asset.json";
 import alfredG1 from "@/assets/projects/alfred-iphone-screen-mockup-with-copy-v4.png.asset.json";
@@ -135,15 +135,15 @@ export type Project = {
 export const projects: readonly Project[] = [
   {
     slug: "jay",
-    title: "JAY",
+    title: "Booking System",
     cover: jayCover,
     tags: ["UX/UI design", "Web development", "Visual identity"],
-    info: "For Jakub Adam, I designed and built a booking system for movement sessions and massage. Clients choose a service, pick an available time and send a booking request. I refined the JAY logo and used animation throughout the experience to give the brand a sense of movement. I also built an installable admin app (PWA) so Jakub can open it from his home screen, review requests, confirm appointments and stay in touch with clients.",
+    info: "I designed and built a booking system for movement sessions and massage. Clients choose a service, specify the areas they want to focus on for a massage, pick an available time and send a booking request. I refined the logo and animated the service icons and transitions. I also built an installable admin app (PWA) for reviewing requests, confirming appointments and communicating with clients.",
     services: ["UX/UI design", "Web development", "Visual identity"],
-    client: "Jakub Adam",
+    client: "J",
     year: "2026",
     liveUrl: "https://jayrezervacia.com/",
-    gallery: [jayVideo, jayBooking],
+    gallery: [jayServices, jayMassage],
   },
   {
     slug: "alfred",
